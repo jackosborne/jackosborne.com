@@ -13,7 +13,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/_/images/");
     eleventyConfig.addPassthroughCopy("./src/_/js/");
     //eleventyConfig.addPassthroughCopy("./src/blog/");
-    eleventyConfig.addPassthroughCopy({ "./CNAME": "CNAME" });
+    eleventyConfig.addPassthroughCopy({ "./src/CNAME": "CNAME" });
 
     // Create a helpful production flag
     const isProduction = process.env.NODE_ENV === "production";
