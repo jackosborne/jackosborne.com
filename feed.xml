@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>Blog | Jack Osborne</title>
+  <subtitle>The Blog of Jack Osborne</subtitle>
+  <link href="https://jackosborne.com/feed.xml" rel="self" />
+  <link href="https://jackosborne.com/blog/" />
+  <updated>2025-03-21T00:00:00Z</updated>
+  <id>https://jackosborne.com/blog/</id>
+  <author>
+    <name>Jack Osborne</name>
+    <email>jack@jackosborne.com</email>
+  </author>
+  <entry>
+    <title>Hello, Old Friend</title>
+    <link href="https://jackosborne.com/blog/2025/03/hello-old-friend/" />
+    <updated>2025-03-21T00:00:00Z</updated>
+    <id>https://jackosborne.com/blog/2025/03/hello-old-friend/</id>
+    <content type="html">&lt;p&gt;It has been over a decade since I published anything significant on this website. Much has changed, yet so much remains the same. Opportunities to capture, critique, and discuss have slipped by, leaving my little corner of the internet to quietly decay.&lt;/p&gt;&lt;p&gt;There&#39;s a bittersweet irony in yearning to create while allowing the platform that set me out on this journey to stagnate. I invested my energy in the websites of others, lost my focus, and drifted away from a simple joy that brought me much fulfilment. Today, I am correcting a mistake that should never have been made. I am relaunching my website, and while it may not be perfect, it&#39;s mine and something I can continue to refine and learn from.&lt;/p&gt;&lt;p&gt;Today also marks my Mum&#39;s birthday, and this post serves as both a tribute to her and a promise—to reconnect with the spirit of creativity and exploration she always nurtured in me.&lt;/p&gt;&lt;p&gt;Happy birthday, Mum. Miss you.&lt;/p&gt;</content>
+  </entry>
+</feed>
