@@ -1,0 +1,31 @@
+{
+  "name": "jackosbone.com",
+  "version": "1.0.0",
+  "description": "Jack Osborne is a Digital Product Designer based out of Brooklyn, New York via Greenock, Scotland.",
+  "author": {
+    "name": "Jack Osborne",
+    "email": "jack@jackosborne.com",
+    "url": "https://jackosbone.com/"
+  },
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "css": "gulp minifyCSS",
+    "js": "gulp minifyJS",
+    "start": "npm run css && npm run js && npx @11ty/eleventy --serve --quiet"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^6.0.1",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-rss": "^2.0.3",
+    "clean-css": "^5.3.3",
+    "dayjs": "^1.11.13",
+    "html-minifier-terser": "^7.2.0"
+  },
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-terser": "^2.1.0"
+  }
+}

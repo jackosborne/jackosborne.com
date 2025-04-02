@@ -1,0 +1,36 @@
+{% set assetHash = global.random() %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    {% include "partials/meta.html" %}
+    <link rel="stylesheet" href="/_/css/style.min.css?{{ assetHash }}" />
+    <link type="text/plain" rel="author" href="/humans.txt">
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+</head>
+
+<body id="{% if page.url == '/' %}home{% elif page.url == '/blog/' %}blog{% elif page.url.indexOf('/blog/') === 0 %}blog-post{% elif page.url == '/reading/' %}reading{% elif page.url == '/tickets/' %}tickets{% elif page.url == '/pattern-library/' %}pattern{% elif page.url == '/work/' %}work{% elif page.url.indexOf('/work/') === 0 %}case-study{% elif page.url == '/404/' %}error{% else %}{% endif %}">
+
+    <div class="wrapper">
+        {% include "partials/header.html" %}
+        <main tabindex="-1" id="main">
+            {% block content %}{% endblock %}
+        </main>
+        {% include "partials/footer.html" %}
+    </div>
+
+    {% if page.url == '/' %}
+        <script src="/_/js/master.min.js?{{ assetHash }}"></script>
+    {% endif %}
+
+    {% if '/work/' in page.url %}
+        {% if page.url != '/work/' %}
+            <script src="/_/js/project.min.js?{{ assetHash }}"></script>
+        {% endif %}
+    {% endif %}
+
+</body>
+</html>

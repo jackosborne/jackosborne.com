@@ -1,0 +1,24 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<article class="content">
+    <div class="header">
+        <h2>{{title}}</h2>
+        {{ content | safe }}
+    </div>
+
+    <div class="main">
+        <div id="error-strip" class="wrapper">
+            <div class="grid">
+                <div style="background:#D8D8D6;"></div>
+                <div style="background:#EFEF2D;"></div>
+                <div style="background:#26EEEC;"></div>
+                <div style="background:#18E818;"></div>
+                <div style="background:#EC1FEA;"></div>
+                <div style="background:#EB1F20;"></div>
+                <div style="background:#2A29EF;"></div>
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock %}

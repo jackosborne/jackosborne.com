@@ -1,0 +1,42 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+<article>
+    <div class="header">
+        <h5>
+            <time datetime="{{ post.data.date | date('YYYY-MM-DD') }}" class="output">
+                {{ date | date('Do MMMM YYYY') }}
+            </time>
+        </h5>
+        <h2>
+            {{ title }}
+        </h2>
+    </div>
+    <div>
+        {{ content | safe }}
+    </div>
+    <div>
+        <ul style="list-style-type: none; padding: 0; margin: 0; color: var(--text-emph);">
+            {%- if location %}
+            <li>
+                <span class="heading">Location:</span>
+                <span class="output">{{ location }}</span>
+            </li>
+            {%- endif %}
+
+            {%- if mood %}
+            <li>
+                <span class="heading">Mood:</span>
+                <span class="output">{{ mood }}</span>
+            </li>
+            {%- endif %}
+
+            {%- if song %}
+            <li>
+                <span class="heading">Song:</span>
+                <span class="output">{{ song }}</span>
+            </li>
+            {%- endif %}
+        </ul>
+    </div>
+</article>
+{% endblock %}

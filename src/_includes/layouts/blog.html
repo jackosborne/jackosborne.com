@@ -1,0 +1,25 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div class="content">
+    {% for post in collections.blog | reverse %}
+        <article>
+        <div class="header">
+            <h5>
+                <time datetime="{{ post.data.date | date('YYYY-MM-DD') }}">
+                    {{ post.data.date | date('Do MMMM YYYY') }}
+                </time>
+            </h5>
+            <h2>
+                <a href="{{ post.url }}" style="color: var(--text)">
+                    {{ post.data.title }}
+                </a>
+            </h2>
+        </div>
+        <div>
+            {{ post.content | safe }}
+        </div>
+    </article>
+    {% endfor %}
+</div>
+{% endblock %}

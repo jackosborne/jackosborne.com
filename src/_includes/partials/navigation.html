@@ -1,0 +1,27 @@
+<ul>
+    <li>
+        <a href="/" {% if page.url=='/' %}class="active" {% endif %}>
+            /
+        </a>
+    </li>
+    <li></li>
+        <a href="/blog/" {% if page.url=='/blog/' %}class="active" {% endif %}>
+            Blog
+            {% if '/blog/' in page.url %}
+            {% if page.url != '/blog/' %}
+            <span class="active"> / {{date | date('YYYY')}} / {{date | date('MM')}} / {{title}} </span>
+            {% endif %}
+            {% endif %}
+        </a>
+    </li>
+    <li>
+        <a href="/work/" {% if page.url=='/work/' %}class="active" {% endif %}>
+            Work
+            {% if '/work/' in page.url %}
+            {% if page.url != '/work/' %}
+            <span class="active"> / {{shortcode}} / {{title}}</span>
+            {% endif %}
+            {% endif %}
+        </a>
+    </li>
+</ul>
