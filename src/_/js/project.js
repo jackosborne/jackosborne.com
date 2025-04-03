@@ -47,7 +47,7 @@ window.onload = function () {
       isPaused = !isPaused;
 
       if (!isPaused) {
-          intervalId = setInterval(passActiveClass, 750);
+          intervalId = setInterval(passActiveClass, 500);
           bannerContainer.classList.add("playing");
           bannerContainer.classList.remove("paused");
           controls.classList.add("playing");
@@ -84,7 +84,7 @@ window.onload = function () {
   });
 
   // Start slideshow
-  intervalId = setInterval(passActiveClass, 1000);
+  intervalId = setInterval(passActiveClass, 500);
 
   // Add click event listener to toggle pause/play
   if (bannerContainer) {

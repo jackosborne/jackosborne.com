@@ -7,9 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     {% include "partials/meta.html" %}
-    <link rel="stylesheet" href="/_/css/style.min.css?{{ assetHash }}" />
-    <link type="text/plain" rel="author" href="/humans.txt">
-    <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+
+    {% set cssPath = '/_/css/style.min.css?hash=' + assetHash %}
+    <link rel="stylesheet" href="{{ cssPath | url }}">
+
+    <link type="text/plain" rel="author" href="{{ '/humans.txt' | url }}">
+    <link rel="alternate" type="application/rss+xml" href="{{ '/feed.xml' | url }}" />
 </head>
 
 <body id="{% if page.url == '/' %}home{% elif page.url == '/blog/' %}blog{% elif page.url.indexOf('/blog/') === 0 %}blog-post{% elif page.url == '/reading/' %}reading{% elif page.url == '/tickets/' %}tickets{% elif page.url == '/pattern-library/' %}pattern{% elif page.url == '/work/' %}work{% elif page.url.indexOf('/work/') === 0 %}case-study{% elif page.url == '/404/' %}error{% else %}{% endif %}">
@@ -23,13 +26,13 @@
     </div>
 
     {% if page.url == '/' %}
-        <script src="/_/js/master.min.js?{{ assetHash }}"></script>
+        {% set jsPath = '/_/js/master.min.js?hash=' + assetHash %}
+        <script src="{{ jsPath | url }}"></script>
     {% endif %}
 
-    {% if '/work/' in page.url %}
-        {% if page.url != '/work/' %}
-            <script src="/_/js/project.min.js?{{ assetHash }}"></script>
-        {% endif %}
+    {% if '/work/' in page.url and page.url != '/work/' %}
+        {% set projectJsPath = '/_/js/project.min.js?hash=' + assetHash %}
+        <script src="{{ projectJsPath | url }}"></script>
     {% endif %}
 
 </body>
