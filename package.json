@@ -8,7 +8,7 @@
     "url": "https://jackosbone.com/"
   },
   "scripts": {
-    "build": "npx @11ty/eleventy",
+    "build": "npm run css && npm run js && npx @11ty/eleventy",
     "css": "gulp minifyCSS",
     "js": "gulp minifyJS",
     "start": "npm run css && npm run js && npx @11ty/eleventy --serve --quiet"
