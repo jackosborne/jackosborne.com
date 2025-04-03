@@ -15,7 +15,7 @@
     <link rel="alternate" type="application/rss+xml" href="{{ '/feed.xml' | url }}" />
 </head>
 
-<body id="{% if page.url == '/' %}home{% elif page.url == '/blog/' %}blog{% elif page.url.indexOf('/blog/') === 0 %}blog-post{% elif page.url == '/reading/' %}reading{% elif page.url == '/tickets/' %}tickets{% elif page.url == '/pattern-library/' %}pattern{% elif page.url == '/work/' %}work{% elif page.url.indexOf('/work/') === 0 %}case-study{% elif page.url == '/404/' %}error{% else %}{% endif %}">
+<body id="{% if page.url == '/' %}home{% elif page.url == '/blog/' %}blog{% elif page.url.indexOf('/blog/') === 0 %}blog-post{% elif page.url == '/reading/' %}reading{% elif page.url == '/tickets/' %}tickets{% elif page.url == '/pattern-library/' %}pattern{% elif page.url == '/work/' %}work{% elif page.url.indexOf('/work/') === 0 %}case-study{% elif page.url == '/404.html' %}error{% else %}{% endif %}">
 
     <div class="wrapper">
         {% include "partials/header.html" %}
