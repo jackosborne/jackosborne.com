@@ -92,6 +92,8 @@ I began by venturing to the app stores to gain an understanding of the needs and
 
 Early in the process, it became clear that several apps shared recurring user pain points. We weeded through the reviews, listing the pros and cons, discussing what worked and what didn't, and pinpointing opportunities for differentiation and innovation, which were mapped on an effort/impact matrix.
 
+<div style="overflow-x:auto;">
+
 | Discussion Point                                           | Effort | Impact |
 | ---------------------------------------------------------- | - | - |
 | High quality audio narration                               | High | High |
@@ -100,7 +102,9 @@ Early in the process, it became clear that several apps shared recurring user pa
 | Create a map level interface                               | High | High |
 | Large Collection of Guides available in multiple languages | Low | High |
 | Insider tips and recs for a wide range of destinations     | Low | High |
-| Social sharing functionality                               | Low | Low |  
+| Social sharing functionality                               | Low | Low |
+
+</div>
 
 ##### 03&mdash;Ideate
 ### Shifting Your Perspective

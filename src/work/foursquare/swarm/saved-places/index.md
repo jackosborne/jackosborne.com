@@ -349,10 +349,15 @@ Creating the Saved Places feature was an iterative process shaped by feedback fr
 As we progressed, we shared weekly builds with employees for internal feedback and bi-weekly builds with our Superuser community. Superusers shared screenshots and recordings through Slack, helping us spot usability issues and uncover new ideas. This combination of internal and external feedback gave us a well-rounded view of users' needs. It allowed us to improve the feature step by step and ensure it fits seamlessly into the app before launching.
 
 ### Design Revisions
+
+<div style="overflow-x:auto;">
+
 | Issue | Initial Design | Feedback | Change Implemented |
 | ----- | ---------------| ---------| -------------------|
 | **Saved & Visited Views** | Separate entry points pushed distinct pages. | Users found switching between the two views inconvenient due to their similarity. | Introduced a tab bar at the top of the bottom sheet for seamless toggling.                                          |
 | **Bottom Sheet Navigation** | Collapsed when the map was panned, fetching new data and reactivating slowly. | Users described this process as slow and cumbersome, with no easy way to return to a previous state. | Added a breadcrumb menu to anchor navigation, enabling users to return to previous states without relying on the map. |
+
+</div>
 
 
 <figure class="img">

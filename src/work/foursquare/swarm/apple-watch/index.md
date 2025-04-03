@@ -327,10 +327,15 @@ During the testing phase, we encountered the same initial challenges due to the 
 Our approach relied heavily on feedback from our dedicated community of super users, whose invaluable insights guided our improvements. Early responses from our community have been encouraging, highlighting usability and interface intuitiveness enhancements.
 
 ### Design Revisions
+
+<div style="overflow-x:auto;">
+
 | Issue                   | Initial Design | Feedback | Change Implemented |
 |-------------------------|----------------|----------|--------------------|
 | **Step-Based Text Effect** | The text grew larger as it moved toward the centre of the viewport and shrank toward the top and bottom, creating a "step-like" effect. | Engineering determined this design was too difficult or potentially impossible to implement. | All text was made the same size. The selected text, positioned in the middle of the list, was highlighted in orange, while unselected text remained white. |
 | **Sticker Selection Feedback** | Users could long-press on the Apple Watch screen to open a sticker picker, select a sticker, and return to the list view before hitting the check-in button. | Users were confused about their selection. They wanted better visibility of their chosen sticker and a way to confirm or change it. | The check-in button was reduced in size, and the selected sticker was displayed to the right of the button. This created a clear visual relationship and allowed users to return to the sticker picker if needed. |
+
+</div>
 
 <figure class="img">
   <div class="multi col bg padding">

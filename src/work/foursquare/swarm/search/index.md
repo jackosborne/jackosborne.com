@@ -412,11 +412,15 @@ At this stage, we followed a proven method we had successfully employed in earli
 ### Design Revisions
 As the weeks passed, we conducted A/B testing to compare the performance and engagement of the new search feature with the old one. The results showed a significant improvement in speed, accuracy, and discoverability. However, a few pieces of feedback stood out:
 
+<div style="overflow-x:auto;">
+
 | Issue                   | Initial Design | Feedback | Change Implemented |
 |-------------------------|----------------|----------|--------------------|
 | **On This Day** | A static rectangular block that opened a new view displaying the user's chronological check‐ins for that specific day. | Users loved the nostalgia but wanted it to be more prominently displayed on the screen. | We broke out each year into individual cards, making it easier to navigate past activities while giving each year its own space to be celebrated. |
 | **Clear previous searches** | N/A | Users requested the ability to clear out previous searches. | An easy clear all button was placed on the landing page of search. |
 | **Keyboard on Search** | The initial design focused on the landing page, with the keyboard only being exposed when the user clicks the search bar again. | Users felt like this was one click too many. | The keyboard is now accessible and overlaid on the search landing page immediately after the user clicks. |
+
+</div>
 
 <figure class="img">
   <div class="multi col bg padding">

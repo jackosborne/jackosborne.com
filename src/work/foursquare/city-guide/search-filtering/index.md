@@ -434,11 +434,16 @@ Once the core functionality was solidified, we expanded testing to include our S
 This feedback loop, starting with internal reviews and expanding to external input, allowed us to iterate quickly and ensure the feature struck the right balance between guiding users and maintaining a seamless search experience.
 
 ### Design Revisions
+
+<div style="overflow-x:auto;">
+
 | Issue             | Initial Design | Feedback | Change Implemented |
 |-------------------|----------------|----------|--------------------|
 | **Filter Bar Escape Hatch** | N/A | Users found it inconvenient to scroll to the end of the filter bar to access more filters. | Incorporated a "More Filters" option at the end of the filter bar to open the filter sheet directly. |
 | **Expand Search Area** | N/A | Users who applied too many filters often had few or no search results. | Added a CTA that allowed users to expand their search radius to find more results within their parameters. |
 | **Search Pivots** | N/A | Users requested more clarity around specific searches. | Highlighted useful data points (e.g., "close to closing" or typos) within search results for easier refinement. |
+
+</div>
 
 <figure class="img">
   <div class="multi col padding bg">

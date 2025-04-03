@@ -62,14 +62,19 @@ We aimed to extend key features from the mobile app to the web, improving access
 ### Assumptions and Risks
 We assessed which features could seamlessly transition to a desktop environment from a backend perspective. This initial evaluation was crucial in identifying elements that could be effectively adapted to the desktop's technical architecture, ensuring a smooth transition before considering how they could fully leverage the desktop interface's enhanced capabilities and more significant screen real estate.
 
+<div style="overflow-x:auto;">
+
 | Assumptions | Risks |
 | -------- | -------- |
 | **Feature Adaptability**<br /> We assumed that most mobile app features could be adapted to desktop without major redesigns. | **Feature Misalignment**<br /> Features that performed well on mobile might not translate effectively to desktop. |
 | **User Behaviour Consistency**<br /> We assumed that user behaviour patterns on mobile would carry over to desktop interactions. | **User Adaptation**<br /> Users accustomed to mobile interactions might struggle to adjust to a desktop interface. |
 | **Technical Feasibility**<br /> We assumed that the backend infrastructure could support additional functionalities for the desktop version. | **Technical Constraints**<br /> Adapting the backend for desktop-specific functionalities could present unforeseen challenges. |
 
+</div>
+
 With a clearer understanding of what could be effectively adapted, we turned to user data from the mobile app, where we gained valuable insights into user preferences and engagement patterns by analysing the most frequently accessed screens. We also consulted a select group of 'Superusers'<span class="aside-anchor" aria-hidden></span><span class="aside" role="complementary"><span class="aside__content">A group of Foursquare users who are responsible for maintaining the accuracy and quality of the venue database</span></span> who provided their insights delivering an additional validation layer, helping us challenge assumptions and refine our priorities based on real-world feedback.
 
+<div style="overflow-x:auto;">
 
 | Feature                                 | Portable | Suitable | High-Traffic |
 | --------------------------------------- | - | - | - |
@@ -83,6 +88,8 @@ With a clearer understanding of what could be effectively adapted, we turned to 
 | Settings                                | <span class="icon-check-yes"></span> | <span class="icon-check-yes"></span> | <span class="icon-check-no"></span> |
 | Timelimes (me, social & check-ins)      | <span class="icon-check-yes"></span> | <span class="icon-check-yes"></span> | <span class="icon-check-yes"></span> |
 | Venue Page                              | <span class="icon-check-no"></span> | <span class="icon-check-yes"></span> | <span class="icon-check-yes"></span> |
+
+</div>
 
 This combination of quantitative data and qualitative feedback helped mitigate feature adaptation risks and user acceptance risks. It gave us the confidence to prioritise the most impactful features first, ensuring the desktop experience remained intuitive and engaging for our diverse user base.
 

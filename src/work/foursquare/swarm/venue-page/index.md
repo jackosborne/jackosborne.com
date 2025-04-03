@@ -218,6 +218,8 @@ This dual-mode approach ensured that venue interactions felt dynamic and meaning
 ### Content as a Framework
 Recognising the growing demand for richer venue information, we decided it was imperative to move beyond the limitations of our existing modal-based venue page and transition to a more expansive view. To maintain focus, we streamlined the venue details to highlight social features like tips, ratings and saves. For those seeking more in-depth information, we would continue to lean on City Guide, which enabled users to explore comprehensive content without disrupting Swarm's social flow.
 
+<div style="overflow-x:auto;">
+
 | Feature | 5.0 | 6.0 |
 | -------------------------------------------------------------------------------------- | - | - |
 | Basic Info (Name, Location & Meta Information) | <span class="icon-check-yes">Yes</span> | <span class="icon-check-yes">Yes</span> |
@@ -225,6 +227,8 @@ Recognising the growing demand for richer venue information, we decided it was i
 | City Guide Escape Hatch | <span class="icon-check-yes">Yes</span> | <span class="icon-check-yes">Yes</span> |
 | User Interactions (Save, Rate, Write Tip & Share) | <span class="icon-check-no">No</span> | <span class="icon-check-yes">Yes</span> |
 | Friends Generated Content (Photos & Tips) | <span class="icon-check-no">No</span> | <span class="icon-check-yes">Yes</span> |
+
+</div>
 
 At the heart of the redesign was the goal of immediately immersing users in a sense of community, and we opted to do this through user-generated photos. However, we also had to account for venues where photos might be unavailable or hidden for privacy reasons—such as gyms, hospitals, or law offices<span class="aside-anchor" aria-hidden></span><span class="aside" role="complementary"><span class="aside__content">Foursquare has consistently prioritised safeguarding user privacy, with a firm commitment to preventing the misuse of location data. [Learn more about our approach to location data privacy][1]</span></span>. To address this, we adapted City Guide's approach, using blurred placeholder images to preserve the lively, colourful aesthetic while respecting user privacy.
 
@@ -405,12 +409,17 @@ To gather diverse perspectives, we established a steady feedback loop, sharing w
 Combining these insights with internal feedback gave us a comprehensive understanding of user needs. This iterative process ensured the design was continuously refined, aligning with user expectations and delivering an intuitive and impactful feature at launch.
 
 ### Design Revisions
+
+<div style="overflow-x:auto;">
+
 | Issue             | Initial Design | Feedback | Change Implemented |
 |-------------------|----------------|----------|--------------------|
 | **See More Tips** | Initially displaying up to three tips: your tip (if available) and two others, or three tips from others if you hadn't. Tips were ordered by recency to keep the content fresh and relevant. | Users desired to view more tips beyond the initial three. | A "see more" option was added at the bottom of the tips section, allowing users to access a dedicated view with additional tips. |
 | **Stats Block** | N/A | Users requested additional venue-specific metrics, including total and unique visitor counts, the creator's name, and the current Mayor. | Venue-specific metrics were added, including total and unique visitor counts, the creator's name, and the current Mayor, reinforcing Swarm's competitive and community-driven spirit. Additionally, an option to transition to City Guide was introduced to provide deeper venue insights. |
 | **Edit Venues** | Venue information relied on Superusers for updates, but accessing the add/edit flow required navigating through multiple steps. | Superusers requested quicker access to the add/edit flow to make real-time updates to venue data. | A direct shortcut was added to the venue page, providing quicker access to the editing interface. This streamlined the workflow for Superusers, enabling them to maintain accurate venue data more efficiently and enhancing the overall user experience. |
 | **Disclosure Arrow on Venue Card** | Initially, the venue rating was displayed as a more prominent signal to encourage further exploration. | Feedback suggested that while this was useful, some people still missed that the cell was clickable. | Opted to switch out the rating for a disclosure arrow. |
+
+</div>
 
 <figure class="img">
   <div class="multi col bg padding">

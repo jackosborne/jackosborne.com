@@ -270,11 +270,16 @@ Testing for the updated Opinionator feature began with internal employee reviews
 To validate the updates further, we conducted a limited rollout to a small percentage of users, analysing real-world usage patterns and performance metrics. This combination of internal, beta, and live testing highlighted key areas of friction and validated early design assumptions, which directly informed the following revisions.
 
 ### Design Revisions
+
+<div style="overflow-x:auto;">
+
 | Issue             | Initial Design | Feedback | Change Implemented |
 |-------------------|----------------|----------|--------------------|
 | **Lack of clarity on progress** | A green progress wheel was introduced, which users enjoyed for its completionist appeal. | While users appreciated the progress wheel, some still found it unclear how many questions were left in the flow. | Added a text placeholder (e.g., "1 of 5") to communicate the user's position in the flow explicitly. |
 | **Integration with Expertise feature** | Expertise was a standalone feature unrelated to the Opinionator. | This was an internal decision rather than direct feedback, aiming to tie the features together to increase engagement. | Connected the Opinionator to the Expertise feature, rewarding users by linking contributions to their Expertise rank within specific categories. |
 | **Further reduction of question set** | Users still felt too many questions were in the flow despite prior adjustments. | Feedback indicated that the number of questions remained overwhelming, discouraging completion. | Further shortened the question sets to make the flow feel quicker and more attainable. |
+
+</div>
 
 <figure class="img">
   <div class="multi col bg padding">

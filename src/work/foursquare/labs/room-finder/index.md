@@ -69,6 +69,8 @@ The following weekend, armed with a copy of the office's architectural drawings,
 
 Next, we visited all forty-five conference rooms, positioning our phones at the approximate centre of each one and pausing briefly—to minimise GPS drift—before capturing another set of lat-long coordinates. The goal was to map room-to-WAP connections, allowing the app to snap users to the strongest signal for more precise positioning.
 
+<div style="overflow-x:auto;">
+
 | Latitude | Longitude | Conference Room  | Cardinal Direction | Room ID |
 |----------|----------|-------------------|--|----|
 | *****    | *****    | Ski Lift         | South | 809 |
@@ -76,6 +78,8 @@ Next, we visited all forty-five conference rooms, positioning our phones at the 
 | --   | --   | --       | -- | -- | -- |
 | *****    | *****    | Discotheque   | North | 863 |
 | *****    | *****    | Auto Garage   | South | 864 |
+
+</div>
 
 After collecting the data, we returned to our desks, eager to see how well our mapping had worked. Instead, we ran into an unexpected challenge: GPS drift. Despite our best efforts, the location data jumped inconsistently—sometimes placing a room several feet from its actual location.
 

@@ -278,12 +278,16 @@ Hypertrending
 ### Design Revisions
 After reviewing feedback from our internal testers, it became clear that certain areas needed improvement and additional functionality to enhance the user experience further.
 
+<div style="overflow-x:auto;">
+
 | Issue                            | Initial Design | Feedback | Change Implemented |
 |----------------------------------|----------------|----------|--------------------|
 | **Clarity on Data Accuracy** | The heatmap displayed circular data points to represent activity but lacked a clear indication of data recency. | Users wanted better clarity on the freshness of the heatmap data to ensure its relevance. | A timestamp was added to the map to show when it was last refreshed, along with a time-based fading system where the dots gradually disappeared to keep the map current and uncluttered. |
 | **Alternate View: Top 100 List** | The original design focused on maps to display venue information and trends. | Users requested a list-based format as an alternative to maps for easier browsing of venues. | Inspired by the Billboard music charts, a Top 100 list view was introduced that indicated whether venues were trending up or down. |
 | **Privacy & Data Transparency** | The original design lacked explicit communication about data privacy and the origin or use of data. | The legal team emphasised the need for clear messaging about data privacy, including the source, use, and the time-limited nature of the experience. | An "About" page was added, explaining where the data originated and how it was being used. It also clarified that the experience was limited to the two-week duration of the South by Southwest (SXSW) festival. |
 | **Map Boundaries Limits** | The map displayed data limited to Austin, but users could scroll beyond the supported area without clear boundaries. | Users needed a visual cue to understand where the app's data coverage ended. | A unique visual overlay was added, gradually fading the map to black as users scrolled beyond Austin, providing subtle feedback to reinforce the app's localised scope. |
+
+</div>
 
 <figure class="img">
  <div class="multi col bg padding">

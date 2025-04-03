@@ -189,6 +189,8 @@ In some cases, users weren't setting out to create a new venue; they were trying
 
 In contrast, venue editing behaviour was different. Users focused their updates on entirely different sets of attributes, which tended to be edited in batches rather than making one-off changes.
 
+<div style="overflow-x:auto;">
+
 | **Feature** | **Add Flow** | **Edit Flow** |
 |----------------------|-------------|--------------|
 | Name                 | <span class="icon-check-yes">Yes</span> | <span class="icon-check-yes">Yes</span> |
@@ -202,6 +204,8 @@ In contrast, venue editing behaviour was different. Users focused their updates 
 | Features             | <span class="icon-check-no">No</span> | <span class="icon-check-yes">Yes</span> |
 | Socials              | <span class="icon-check-no">No</span> | <span class="icon-check-yes">Yes</span> |
 | Report               | <span class="icon-check-no">No</span> | <span class="icon-check-yes">Yes</span> |
+
+</div>
 
 ##### 03&mdash;Ideate
 ### Venue Editing for Scannability and Usability
@@ -430,11 +434,16 @@ As we progressed into pre-build testing, we introduced low-fidelity clickable pr
 The final phase, live beta testing, brought these concepts into a real-world environment through internal app releases. Observing Superusers interact with live data revealed edge cases that slipped through, allowing us to refine the experience before launching further.
 
 ### Design Revisions
+
+<div style="overflow-x:auto;">
+
 | **Issue** | **Initial Design** | **Feedback** | **Change Implemented** |
 |-----------|--------------------|--------------|------------------------|
 | **Grouping of Venue Attributes** | Certain attributes surfaced prominently based on past data trends. | Superusers felt some fields weren't as high a priority as the data suggested. | Adjusted attribute hierarchy based on Superuser workflows. |
 | **Form Submission Feedback** | Users weren't always sure if their edits had been saved.  | lack of clear confirmation led to confusion. | Introduced clearer success/error states for form submissions. |
 | **Clearer Venue Addition in Search** | The "Add Venue" option was always visible. | Users wanted it to surface more often. | "Add Venue" CTA now appears more often in search results. |
+
+</div>
 
 ##### 05&mdash;Release
 ### Room for Improvement

@@ -213,12 +213,16 @@ Superusers helped validate what we had learned while surfacing new insights abou
 ### Design Revisions
 We identified several areas where improvements were needed throughout internal and external testing. The table below outlines key issues, the initial design, the feedback received, and the changes implemented to refine the final experience.
 
+<div style="overflow-x:auto;">
+
 | **Issue** | **Initial Design** | **Feedback** | **Change Implemented** |
 |------------------------|-------------------|--------------|------------------------|
 | **Lack of pagination/flow awareness** | No visible indicator of progress through highlights. | Users felt unsure how many highlights remained or how far they were in the experience. | Introduced a subtle progress bar at the top (similar to Instagram Stories) to indicate position. |
 | **No way to return to previous highlight** | Swiping was one-directional (forward only). | Users wanted a way to go back if they moved too quickly. | Enabled tap to go back (left edge of the screen) to revisit the previous highlight. |
 | **Disclaimer** | N/A. | People wondered how this content was sourced, organised and compiled.  | A disclaimer was introduced at the bottom of the view that stayed throughout the experience. |
 | **Auto-selected tips didn't always feel relevant** | Tips and photos were automatically paired based on engagement data. | Some Superusers noted that certain pairings felt random or less valuable. | Improved content ranking algorithm prioritises recent, high-quality tips with strong engagement. |
+
+</div>
 
 <figure class="img">
   <div class="multi col padding bg">
