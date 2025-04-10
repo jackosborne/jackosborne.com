@@ -8,12 +8,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     {% include "partials/meta.html" %}
 
+    <!--
     {% set cssPath = '/_/css/style' %}
-        {% if process.env.NODE_ENV == 'production' %}
+    {% if process.env.NODE_ENV == 'production' %}
         {% set cssPath = cssPath + '.min.css?hash=' + assetHash %}
     {% else %}
         {% set cssPath = cssPath + '.css' %}
     {% endif %}
+    <link rel="stylesheet" href="{{ cssPath | url }}">
+    -->
+
+    {% set cssPath = '/_/css/style.min.css?hash=' + assetHash %}
     <link rel="stylesheet" href="{{ cssPath | url }}">
 
     <link type="text/plain" rel="author" href="{{ '/humans.txt' | url }}">
