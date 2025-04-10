@@ -1,0 +1,25 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div class="header">
+    <h5>Recommended</h5>
+    <h2>Reading</h2>
+</div>
+
+<ul class="grid gallery">
+    {% for book in books %}
+    <li class="item book">
+        <figure>
+            <img src="{{book.cover}}" loading="lazy" alt="{{book.title}} by {{book.author}}">
+            <figcaption>
+                {{book.title}}
+                <span>
+                    {{book.author}}
+                </span>
+            </figcaption>
+        </figure>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
