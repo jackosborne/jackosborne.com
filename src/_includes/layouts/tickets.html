@@ -1,0 +1,31 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div class="header">
+    <h5>2002-2020</h5>
+    <h2>Tickets</h2>
+    <p>
+        Inspired by my good friend <a href="https://robbiemanson.com/tickets/" alt="Robbie Mansons ticket page">Robbie Manson</a>, this page celebrates the physical gig ticket. Scroll down memory lane to look at the concerts I attended, and the ticket designs themselves.
+    </p>
+</div>
+
+<ul class="gallery grid">
+    {% for ticket in tickets | reverse %}
+    <li class="item ticket {{ticket.year}} {{ticket.district}}">
+        <figure>
+            <a href="{{ticket.stub}}">
+                <img src="{{ticket.stub}}" loading="lazy" alt="{{ intro.alt }}" width="{{ticket.band}} ticket" />
+            </a>
+            <figcaption>
+                {{ticket.band}}
+                <span>
+                    {{ticket.venue}}, {{ticket.district}}<br />
+                    {{ticket.date}} {{ticket.year}}
+                </span>
+            </figcaption>
+        </figure>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
