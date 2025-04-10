@@ -1197,6 +1197,26 @@ body#case-study .banner-container .loader {
   fill: var(--text);
 }
 
+/* TICKETS */
+#reading .gallery,
+#tickets .gallery {
+  list-style: none;
+  padding: 0;
+}
+
+.ticket img {
+  height: auto;
+}
+
+/* READING */
+.book img {
+  height: 320px;
+  min-height: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: left bottom;
+}
+
 /* FOOTER */
 footer[role=contentinfo] {
   color: var(--text-emph);
@@ -1342,6 +1362,10 @@ body#error #error-strip {
 @media screen and (min-width: 992px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  #tickets .grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   /* MAIN */
