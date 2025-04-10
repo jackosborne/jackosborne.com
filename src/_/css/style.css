@@ -626,7 +626,7 @@ transform: scale(1.1);
 
 #archive ul ul {
   display: block;
-  font-size: var(--font-size-two);
+  /*font-size: var(--font-size-two);*/
   margin-bottom: calc(3 * var(--spacing-unit));
   letter-spacing: -0.016em;
 }
