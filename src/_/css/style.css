@@ -39,6 +39,8 @@
   --line-height-five: 1.1428571429;
   --line-height-six: 1.0834933333;
 
+  --mono: ui-monospace, SFMono-Regular ,Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+
   --spacing-unit: 8px;
 }
 
@@ -142,6 +144,10 @@ strong {
 
 small {
   font-size: 75%;
+}
+
+.num {
+  font-family: var(--mono);
 }
 
 /*
@@ -633,6 +639,8 @@ transform: scale(1.1);
 
 #archive ul ul .year {
   color: var(--text-emph);
+  font-family: var(--mono);
+  font-size: var(--font-size-two);
   padding-top: calc(2.5 * var(--spacing-unit));
 }
 
@@ -1462,6 +1470,7 @@ body#error #error-strip {
 
   #case-study .content .main p .aside::before {
     content: counter(aside-counter) ".";
+    font-family: var(--mono);
     padding-right: calc(0.5 * var(--spacing-unit));
   }
 
