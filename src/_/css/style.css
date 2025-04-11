@@ -576,6 +576,12 @@ body#home main {
   z-index: 2;
 }
 
+.intro .text h2 {
+  font-size: var(--font-size-four);
+  line-height: var(--line-height-four);
+  font-weight: 600;
+}
+
 /* WORK */
   
 
@@ -1304,6 +1310,12 @@ body#error #error-strip {
 }
 
 @media screen and (min-width: 540px) {
+  body#home .intro .text h2 {
+    font-size: var(--font-size-six);
+    font-weight: 400;
+    line-height: var(--line-height-six);
+  }
+  
   body#case-study .banner-container {
     height: 330px;
   }
