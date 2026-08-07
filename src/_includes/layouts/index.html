@@ -1,0 +1,102 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="home-container home-grid">
+    <h1>Jack Osborne is a Digital Product Designer with over fifteen years of experience, based in Brooklyn, New York, via <span class="topography-trigger" tabindex="0" aria-describedby="topography-coordinates">Greenock, Scotland</span>.</h1>
+    <span class="topography-coordinates mono" id="topography-coordinates">55.947° N · 4.768° W</span>
+    <a href="/about/" class="hero__cta">Read More</a>
+  </div>
+</section>
+
+<div class="home-container">
+  <section class="work-grid">
+    <section class="product" aria-labelledby="product-savewise-title">
+      <header class="product__header">
+        <div class="product__logo product__logo--savewise" aria-hidden="true"><img src="/_/images/work/freelance/savewise/_logo.png" alt=""></div>
+        <div class="product__intro">
+          <div class="product__meta">
+            <h2 class="product__title" id="product-savewise-title">Savewise</h2>
+            <p class="product__timeline">2025–Present <span class="product__status">· Coming soon</span></p>
+          </div>
+          <p class="product__description">A rewards platform that helps people earn more cashback, miles and points by bringing together shopping portals, card-linked offers and loyalty programmes in a single experience.</p>
+        </div>
+      </header>
+      <div class="product__projects">
+        <div class="work-card work-card--split-stage work-card--disabled">
+          <div class="work-card__media" aria-hidden="true">
+            <div class="work-card__mock laptop">{% cardImage "src/_/images/work/freelance/savewise/card/laptop.png", "", "(min-width: 1320px) 1176px, calc(100vw - 96px)", "wide" %}</div>
+            <div class="work-card__mock phone">{% cardImage "src/_/images/work/freelance/savewise/card/phone.png", "", "(min-width: 1320px) 300px, 30vw" %}</div>
+          </div>
+          <div class="work-card__text"><h3>Savewise</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product" aria-labelledby="product-labs-title">
+      <header class="product__header">
+        <div class="product__logo product__logo--labs" aria-hidden="true"><img src="/_/images/work/foursquare/labs/_logo.png" alt=""></div>
+        <div class="product__intro">
+          <div class="product__meta">
+            <h2 class="product__title" id="product-labs-title">FSQ Labs</h2>
+            <p class="product__timeline">2019–2021</p>
+          </div>
+          <p class="product__description">An innovation team focused on exploring emerging technologies, rapidly prototyping new product concepts, and shaping the future of location-based experiences.</p>
+        </div>
+      </header>
+      <div class="product__projects">
+        <a class="work-card work-card--single-phone" href="/work/foursquare/labs/hypertrending/" aria-label="View Hypertrending project">
+          <div class="work-card__media" aria-hidden="true">
+            <div class="work-card__mock phone">{% cardImage "src/_/images/work/foursquare/labs/hypertrending/card/featured.png", "", "(min-width: 1320px) 370px, (min-width: 641px) 30vw, 120px" %}</div>
+          </div>
+          <div class="work-card__text"><h3>Hypertrending</h3></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="product" aria-labelledby="product-swarm-title">
+      <header class="product__header">
+        <div class="product__logo product__logo--swarm" aria-hidden="true"><img src="/_/images/work/foursquare/swarm/_logo.png" alt=""></div>
+        <div class="product__intro">
+          <div class="product__meta">
+            <h2 class="product__title" id="product-swarm-title">FSQ Swarm</h2>
+            <p class="product__timeline">2017–2019</p>
+          </div>
+          <p class="product__description">A location-sharing app that lets people check in, share where they are with friends, and build a personal timeline of the places they've visited and experiences they've collected over time.</p>
+        </div>
+      </header>
+      <div class="product__projects">
+        <a class="work-card work-card--single-phone" href="/work/foursquare/swarm/saved-places/" aria-label="View Saved Places project"><div class="work-card__media" aria-hidden="true"><div class="work-card__mock phone">{% cardImage "src/_/images/work/foursquare/swarm/saved-places/card/featured.png", "", "(min-width: 1320px) 370px, (min-width: 641px) 30vw, 120px" %}</div></div><div class="work-card__text"><h3>Saved Places</h3></div></a>
+        <a class="work-card work-card--single-phone work-card--half" href="/work/foursquare/swarm/search/" aria-label="View Search project"><div class="work-card__media" aria-hidden="true"><div class="work-card__mock phone">{% cardImage "src/_/images/work/foursquare/swarm/search/card/featured.png", "", "(min-width: 1320px) 245px, (min-width: 1024px) 20vw, 120px" %}</div></div><div class="work-card__text"><h3>Search</h3></div></a>
+        <a class="work-card work-card--single-phone work-card--half" href="/work/foursquare/swarm/venue-page/" aria-label="View Venue Page project"><div class="work-card__media" aria-hidden="true"><div class="work-card__mock phone">{% cardImage "src/_/images/work/foursquare/swarm/venue-page/card/featured.png", "", "(min-width: 1320px) 245px, (min-width: 1024px) 20vw, 120px" %}</div></div><div class="work-card__text"><h3>Venue Page</h3></div></a>
+        <a class="work-card work-card--device-row" href="/work/foursquare/swarm/pci-cards/" aria-label="View PCI Cards project"><div class="work-card__media" aria-hidden="true"><div class="work-card__mock phone">{% cardImage "src/_/images/work/foursquare/swarm/pci-cards/card/01.png", "", "(min-width: 1320px) 245px, 25vw" %}</div><div class="work-card__mock phone">{% cardImage "src/_/images/work/foursquare/swarm/pci-cards/card/02.png", "", "(min-width: 1320px) 245px, 25vw" %}</div><div class="work-card__mock phone">{% cardImage "src/_/images/work/foursquare/swarm/pci-cards/card/03.png", "", "(min-width: 1320px) 245px, 25vw" %}</div></div><div class="work-card__text"><h3>PCI Cards</h3></div></a>
+        <a class="work-card work-card--wide-browser work-card--half" href="/work/foursquare/swarm/website/" aria-label="View Website project"><div class="work-card__media" aria-hidden="true"><div class="work-card__mock laptop">{% cardImage "src/_/images/work/foursquare/swarm/website/card/featured.png", "", "(min-width: 1320px) 560px, (min-width: 1024px) 44vw, calc(100vw - 64px)", "wide" %}</div></div><div class="work-card__text"><h3>Website</h3></div></a>
+        <a class="work-card work-card--single-phone work-card--half" href="/work/foursquare/swarm/apple-watch/" aria-label="View Apple Watch project"><div class="work-card__media" aria-hidden="true"><div class="work-card__mock watch">{% cardImage "src/_/images/work/foursquare/swarm/apple-watch/card/featured.png", "", "(min-width: 1320px) 316px, (min-width: 1024px) 24vw, 50vw", "watch" %}</div></div><div class="work-card__text"><h3>Apple Watch</h3></div></a>
+      </div>
+    </section>
+
+    <section class="product" aria-labelledby="product-city-guide-title">
+      <header class="product__header">
+        <div class="product__logo product__logo--city-guide" aria-hidden="true"><img src="/_/images/work/foursquare/city-guide/_logo.png" alt=""></div>
+        <div class="product__intro">
+          <div class="product__meta">
+            <h2 class="product__title" id="product-city-guide-title">FSQ City Guide</h2>
+            <p class="product__timeline">2012–2017</p>
+          </div>
+          <p class="product__description">A local search and discovery app that helps people find personalised recommendations for places to eat, drink, shop and explore based on their location, tastes and previous experiences.</p>
+        </div>
+      </header>
+      <div class="product__projects">
+        <a class="work-card work-card--single-phone" href="/work/foursquare/city-guide/search-filtering/" aria-label="View Search Filtering project"><div class="work-card__media" aria-hidden="true"><div class="work-card__mock phone">{% cardImage "src/_/images/work/foursquare/city-guide/search-filtering/card/featured.png", "", "(min-width: 1320px) 370px, (min-width: 641px) 30vw, 120px" %}</div></div><div class="work-card__text"><h3>Search Filtering</h3></div></a>
+        <a class="work-card work-card--single-phone" href="/work/foursquare/city-guide/add-edit-flow/" aria-label="View Add and Edit Flow project"><div class="work-card__media" aria-hidden="true"><div class="work-card__mock phone">{% cardImage "src/_/images/work/foursquare/city-guide/add-edit-flow/card/featured.png", "", "(min-width: 1320px) 370px, (min-width: 641px) 30vw, 120px" %}</div></div><div class="work-card__text"><h3>Add &amp; Edit Flow</h3></div></a>
+        <a class="work-card work-card--device-row" href="/work/foursquare/city-guide/opinionator/" aria-label="View Opinionator project"><div class="work-card__media" aria-hidden="true"><div class="work-card__mock phone">{% cardImage "src/_/images/work/foursquare/city-guide/opinionator/card/01.png", "", "(min-width: 1320px) 245px, 25vw" %}</div><div class="work-card__mock phone">{% cardImage "src/_/images/work/foursquare/city-guide/opinionator/card/02.png", "", "(min-width: 1320px) 245px, 25vw" %}</div><div class="work-card__mock phone">{% cardImage "src/_/images/work/foursquare/city-guide/opinionator/card/03.png", "", "(min-width: 1320px) 245px, 25vw" %}</div></div><div class="work-card__text"><h3>Opinionator</h3></div></a>
+        <a class="work-card work-card--single-phone work-card--half" href="/work/foursquare/city-guide/summaries/" aria-label="View Summaries project"><div class="work-card__media" aria-hidden="true"><div class="work-card__mock phone">{% cardImage "src/_/images/work/foursquare/city-guide/summaries/card/featured.png", "", "(min-width: 1320px) 245px, (min-width: 1024px) 20vw, 120px" %}</div></div><div class="work-card__text"><h3>Summaries</h3></div></a>
+        <a class="work-card work-card--single-phone work-card--half" href="/work/foursquare/web/touch-pages/" aria-label="View Touch Pages project"><div class="work-card__media" aria-hidden="true"><div class="work-card__mock phone">{% cardImage "src/_/images/work/foursquare/web/touch-pages/card/featured.png", "", "(min-width: 1320px) 245px, (min-width: 1024px) 20vw, 120px" %}</div></div><div class="work-card__text"><h3>Touch Pages</h3></div></a>
+      </div>
+    </section>
+
+  </section>
+</div>
+
+{% endblock %}

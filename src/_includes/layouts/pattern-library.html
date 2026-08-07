@@ -1,0 +1,437 @@
+{% extends "layouts/base.html" %}
+{% from "partials/accordion.html" import accordion %}
+{% from "partials/page-intro.html" import pageIntro %}
+
+{% block content %}
+
+{{ pageIntro(title, site.domain, "The foundations, elements and interface patterns used across this site. This page is generated from the same tokens and components as the rest of the site, so it evolves with the work.") }}
+
+<div class="pattern-shell grid">
+  <aside class="pattern-index" aria-label="Pattern library sections">
+    <p class="pattern-kicker">Contents</p>
+    <nav>
+      <ol>
+        <li><a href="#foundations" data-pattern-section>Foundations</a></li>
+        <li><a href="#elements" data-pattern-section>Elements</a></li>
+        <li><a href="#components" data-pattern-section>Components</a></li>
+        <li><a href="#accessibility" data-pattern-section>Accessibility</a></li>
+      </ol>
+    </nav>
+  </aside>
+
+  <div class="pattern-content">
+    <section class="pattern-group" id="foundations" aria-labelledby="foundations-title">
+      <header class="pattern-group__header">
+        <h2 id="foundations-title">Foundations</h2>
+        <p>Semantic tokens keep the visual hierarchy consistent across light and dark appearances.</p>
+      </header>
+
+      <article class="pattern-specimen" id="color">
+        <header class="pattern-specimen__header">
+          <h3>Color</h3>
+          <p>Interface colors describe purpose rather than a fixed appearance.</p>
+        </header>
+        <fieldset class="pattern-switcher" data-pattern-theme-switcher>
+          <legend class="visually-hidden">Color appearance</legend>
+          <button type="button" aria-pressed="true" data-pattern-theme="light">Light</button>
+          <button type="button" aria-pressed="false" data-pattern-theme="dark">Dark</button>
+        </fieldset>
+        <div class="pattern-color-preview" data-pattern-color-preview data-pattern-theme="light">
+        <ul class="pattern-swatches" aria-label="Semantic color tokens">
+          <li class="pattern-swatch pattern-swatch--canvas"><span></span><code>--color-canvas</code></li>
+          <li class="pattern-swatch pattern-swatch--ink"><span></span><code>--color-ink</code></li>
+          <li class="pattern-swatch pattern-swatch--muted"><span></span><code>--color-ink-muted</code></li>
+          <li class="pattern-swatch pattern-swatch--stage"><span></span><code>--color-stage</code></li>
+          <li class="pattern-swatch pattern-swatch--hover"><span></span><code>--color-stage-hover</code></li>
+          <li class="pattern-swatch pattern-swatch--image"><span></span><code>--color-image-surface</code></li>
+          <li class="pattern-swatch pattern-swatch--callout"><span></span><code>--color-callout-bg</code></li>
+          <li class="pattern-swatch pattern-swatch--focus"><span></span><code>--color-focus</code></li>
+        </ul>
+        </div>
+      </article>
+
+      <article class="pattern-specimen" id="typography">
+        <header class="pattern-specimen__header">
+          <h3>Typography</h3>
+          <p>The system stack carries the interface; mono is reserved for numbers, tokens and compact metadata.</p>
+        </header>
+        <div class="pattern-type-scale">
+          <div><span class="pattern-label">Hero · H1</span><h1>Clear thinking, carefully made.</h1></div>
+          <div><span class="pattern-label">Section · H2</span><h2>A major section</h2></div>
+          <div><span class="pattern-label">Supporting · H3</span><h3>A supporting idea</h3></div>
+          <div><span class="pattern-label">Body</span><p>Body copy supports sustained reading with a restrained size, comfortable measure and generous line height.</p></div>
+          <div><span class="pattern-label">Utility · H5</span><h5>2025–Present · Brooklyn, New York</h5></div>
+          <div><span class="pattern-label">Mono · .mono</span><p class="mono">01 — 2025–Present</p></div>
+        </div>
+      </article>
+
+      <article class="pattern-specimen" id="spacing">
+        <header class="pattern-specimen__header">
+          <h3>Spacing</h3>
+          <p>An 8px foundation scales from compact controls to broad composition.</p>
+        </header>
+        <ol class="pattern-spacing" aria-label="Spacing scale">
+          <li><code>8</code><span class="pattern-space pattern-space--1"></span></li>
+          <li><code>16</code><span class="pattern-space pattern-space--2"></span></li>
+          <li><code>24</code><span class="pattern-space pattern-space--3"></span></li>
+          <li><code>32</code><span class="pattern-space pattern-space--4"></span></li>
+          <li><code>48</code><span class="pattern-space pattern-space--6"></span></li>
+          <li><code>72</code><span class="pattern-space pattern-space--9"></span></li>
+          <li><code>96</code><span class="pattern-space pattern-space--12"></span></li>
+        </ol>
+      </article>
+
+      <article class="pattern-specimen" id="grid">
+        <header class="pattern-specimen__header">
+          <h3>Grid</h3>
+          <p>Twenty-four implementation tracks resolve into four conceptual rails.</p>
+        </header>
+        <div class="pattern-grid-demo" aria-label="Four groups of six grid tracks">
+          <span><b>01–06</b></span>
+          <span><b>07–12</b></span>
+          <span><b>13–18</b></span>
+          <span><b>19–24</b></span>
+        </div>
+        <p class="pattern-caption mono">Editorial content typically occupies tracks 07–18.</p>
+        <div class="pattern-grid-placements" aria-label="Common grid placements">
+          <div><span class="pattern-grid-block pattern-grid-block--full"></span><code>grid-column: 1 / 25</code><p>Full grid</p></div>
+          <div><span class="pattern-grid-block pattern-grid-block--editorial"></span><code>grid-column: 7 / 19</code><p>Editorial rail</p></div>
+          <div><span class="pattern-grid-block pattern-grid-block--push-left"></span><code>grid-column: 4 / 16</code><p>Left push</p></div>
+          <div><span class="pattern-grid-block pattern-grid-block--push-right"></span><code>grid-column: 10 / 22</code><p>Right push</p></div>
+        </div>
+        <div class="pattern-code" data-pattern-code>
+          <div class="pattern-code__bar"><span>CSS</span><button type="button" data-copy-code>Copy</button></div>
+          <pre><code>.full-grid { grid-column: 1 / 25; }
+.editorial-rail { grid-column: 7 / 19; }
+.push-left { grid-column: 4 / 16; }
+.push-right { grid-column: 10 / 22; }</code></pre>
+        </div>
+      </article>
+
+      <article class="pattern-specimen" id="shape">
+        <header class="pattern-specimen__header">
+          <h3>Shape</h3>
+          <p>Radius communicates object type: restrained for utility, generous for project stages.</p>
+        </header>
+        <div class="pattern-radii">
+          <div><span class="pattern-radius pattern-radius--small"></span><code>12px · Small</code></div>
+          <div><span class="pattern-radius pattern-radius--mobile"></span><code>24px · Mobile card</code></div>
+          <div><span class="pattern-radius pattern-radius--card"></span><code>32px · Card</code></div>
+          <div><span class="pattern-radius pattern-radius--pill"></span><code>999px · Pill</code></div>
+        </div>
+        <div class="pattern-code" data-pattern-code>
+          <div class="pattern-code__bar"><span>CSS</span><button type="button" data-copy-code>Copy</button></div>
+          <pre><code>.utility { border-radius: var(--radius-small); }
+.mobile-card { border-radius: var(--radius-card-mobile); }
+.card { border-radius: var(--radius-card); }
+.pill { border-radius: var(--radius-pill); }</code></pre>
+        </div>
+      </article>
+    </section>
+
+    <section class="pattern-group" id="elements" aria-labelledby="elements-title">
+      <header class="pattern-group__header">
+        <h2 id="elements-title">Elements</h2>
+        <p>Native HTML carries the hierarchy before components add any behavior.</p>
+      </header>
+
+      <article class="pattern-specimen">
+        <header class="pattern-specimen__header"><h3>Prose</h3></header>
+        <div class="pattern-prose prose">
+          <p>Good interface writing is direct, useful and human. It explains enough to create confidence without competing with the work.</p>
+          <p>An <a href="#links">inline link</a> remains visibly identifiable, while <strong>strong text</strong> provides semantic emphasis rather than decoration.</p>
+          <blockquote>Design systems are most useful when they capture decisions, not merely inventory.</blockquote>
+        </div>
+        <div class="pattern-code" data-pattern-code>
+          <div class="pattern-code__bar"><span>HTML</span><button type="button" data-copy-code>Copy</button></div>
+          <pre><code>&lt;p&gt;Good interface writing is direct and useful.&lt;/p&gt;
+&lt;blockquote&gt;Design systems capture decisions.&lt;/blockquote&gt;</code></pre>
+        </div>
+      </article>
+
+      <article class="pattern-specimen">
+        <header class="pattern-specimen__header"><h3>Lists</h3><p>Use unordered lists for related items and ordered lists when sequence matters.</p></header>
+        <div class="pattern-list-grid prose">
+          <div><h5>Unordered</h5><ul><li>Prefer semantic HTML.</li><li>Reuse established patterns.</li><li>Keep the work visually primary.</li></ul></div>
+          <div><h5>Ordered</h5><ol><li>Frame the problem.</li><li>Test the important assumption.</li><li>Refine the outcome.</li></ol></div>
+        </div>
+        <div class="pattern-code" data-pattern-code>
+          <div class="pattern-code__bar"><span>HTML</span><button type="button" data-copy-code>Copy</button></div>
+          <pre><code>&lt;ul&gt;
+  &lt;li&gt;Prefer semantic HTML.&lt;/li&gt;
+  &lt;li&gt;Reuse established patterns.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Frame the problem.&lt;/li&gt;
+  &lt;li&gt;Test the assumption.&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+        </div>
+      </article>
+
+      <article class="pattern-specimen" id="links">
+        <header class="pattern-specimen__header"><h3>Links and actions</h3></header>
+        <div class="pattern-actions">
+          <a href="#components">Editorial text link</a>
+          <a class="button-link" href="#components">Compact action</a>
+          <button class="pattern-button" type="button">Native button</button>
+        </div>
+        <div class="pattern-code" data-pattern-code>
+          <div class="pattern-code__bar"><span>HTML</span><button type="button" data-copy-code>Copy</button></div>
+          <pre><code>&lt;a href="/about/"&gt;Editorial text link&lt;/a&gt;
+&lt;a class="button-link" href="/work/"&gt;Compact action&lt;/a&gt;
+&lt;button type="button"&gt;Native button&lt;/button&gt;</code></pre>
+        </div>
+      </article>
+
+      <article class="pattern-specimen">
+        <header class="pattern-specimen__header"><h3>Data table</h3></header>
+        <div class="pattern-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Role</th><th>Token</th><th>Use</th></tr></thead>
+            <tbody>
+              <tr><td>Body</td><td><code>--font-size-base</code></td><td>Descriptions and details</td></tr>
+              <tr><td>Utility</td><td><code>--font-size-sm</code></td><td>Labels and metadata</td></tr>
+              <tr><td>Divider</td><td><code>--color-divider</code></td><td>Quiet structural separation</td></tr>
+              <tr><td>Stage</td><td><code>--color-stage</code></td><td>Image and component surfaces</td></tr>
+              <tr><td>Focus</td><td><code>--color-focus</code></td><td>Keyboard focus indication</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pattern-code" data-pattern-code>
+          <div class="pattern-code__bar"><span>HTML</span><button type="button" data-copy-code>Copy</button></div>
+          <pre><code>&lt;div class="breakout"&gt;
+  &lt;table class="data-table"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;&lt;th&gt;Role&lt;/th&gt;&lt;th&gt;Token&lt;/th&gt;&lt;th&gt;Use&lt;/th&gt;&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;&lt;td&gt;Body&lt;/td&gt;&lt;td&gt;--font-size-base&lt;/td&gt;&lt;td&gt;Descriptions&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </article>
+
+      <article class="pattern-specimen">
+        <header class="pattern-specimen__header"><h3>Media</h3><p>Figures can follow the editorial rail or use the grid-width breakout, with captions kept close to their image. CSS controls the displayed dimensions; the responsive-image helper supplies suitable source files for that layout.</p></header>
+        <div class="pattern-media-grid prose">
+          <figure class="img pattern-media-contained">
+            <div class="bg">{% responsiveImage "/_/images/about/profile/featured.png", "Jack Osborne on Edinburgh's Royal Mile", "(min-width: 1140px) min(34vw, 494px), (min-width: 1024px) calc(100vw - 192px), calc(100vw - 64px)", "about" %}</div>
+            <figcaption>Editorial figure <span>Contained by the reading column.</span></figcaption>
+          </figure>
+          <div class="pattern-breakout-context">
+            <div class="breakout">
+              <figure class="img">
+                <div class="bg">{% responsiveImage "/_/images/about/profile/featured.png", "Jack Osborne on Edinburgh's Royal Mile", "(min-width: 1140px) min(68vw, 988px), (min-width: 1024px) calc(100vw - 192px), calc(100vw - 64px)", "about" %}</div>
+                <figcaption>Breakout figure <span>Expands into the surrounding grid.</span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="pattern-code" data-pattern-code>
+          <div class="pattern-code__bar"><span>Nunjucks</span><button type="button" data-copy-code>Copy</button></div>
+          <pre><code>&lt;figure class="img"&gt;
+  &lt;div class="bg"&gt;
+    {% raw %}{% responsiveImage
+      "/_/images/about/profile/featured.png",
+      "Jack Osborne on Edinburgh's Royal Mile",
+      "(min-width: 1140px) min(34vw, 494px), (min-width: 1024px) calc(100vw - 192px), calc(100vw - 64px)",
+      "about"
+    %}{% endraw %}
+  &lt;/div&gt;
+  &lt;figcaption&gt;
+    Figure title
+    &lt;span&gt;Supporting context.&lt;/span&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;div class="breakout"&gt;
+  &lt;figure class="img"&gt;
+    &lt;!-- Use a sizes value that describes the wider layout. --&gt;
+    …
+  &lt;/figure&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </article>
+    </section>
+
+    <section class="pattern-group" id="components" aria-labelledby="components-title">
+      <header class="pattern-group__header">
+        <h2 id="components-title">Components</h2>
+        <p>Small, composable patterns support the content without becoming a visual system of their own.</p>
+      </header>
+
+      <article class="pattern-specimen">
+        <header class="pattern-specimen__header">
+          <h3>Page introduction</h3>
+          <p>Eyebrow, title and optional description form one compact hierarchy.</p>
+        </header>
+        <div class="pattern-component-stage">
+          {{ pageIntro("Saved Places", "Selected work", "A focused explanation gives the page enough context without delaying the work.", "pattern-intro-demo") }}
+        </div>
+        <div class="pattern-code" data-pattern-code>
+          <div class="pattern-code__bar"><span>HTML</span><button type="button" data-copy-code>Copy</button></div>
+          <pre><code>&lt;header class="page-intro grid"&gt;
+  &lt;div class="page-intro__inner row-start-7 row-end-19"&gt;
+    &lt;p class="page-intro__eyebrow"&gt;Selected work&lt;/p&gt;
+    &lt;h1&gt;Saved Places&lt;/h1&gt;
+    &lt;p class="page-intro__description"&gt;A focused explanation gives the page enough context.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+        </div>
+      </article>
+
+      <article class="pattern-specimen">
+        <header class="pattern-specimen__header"><h3>Disclosure</h3><p>Supporting context remains available without competing with the primary narrative.</p></header>
+        <div class="pattern-component-stage pattern-component-stage--plain">
+          <div class="meta content-meta pattern-accordion-demo">
+            {% call accordion("pattern-context", "Context") %}
+              <ul>
+                <li><span class="heading">Role:</span> <span class="output">Product design</span></li>
+                <li><span class="heading">Year:</span> <span class="output mono">2026</span></li>
+              </ul>
+            {% endcall %}
+          </div>
+        </div>
+        <div class="pattern-code" data-pattern-code>
+          <div class="pattern-code__bar"><span>Nunjucks</span><button type="button" data-copy-code>Copy</button></div>
+          <pre><code>{% raw %}{% call accordion("project-context", "Context") %}
+  &lt;ul&gt;
+    &lt;li&gt;&lt;span class="heading"&gt;Role:&lt;/span&gt; Product design&lt;/li&gt;
+    &lt;li&gt;&lt;span class="heading"&gt;Year:&lt;/span&gt; 2026&lt;/li&gt;
+  &lt;/ul&gt;
+{% endcall %}{% endraw %}</code></pre>
+        </div>
+      </article>
+
+      <article class="pattern-specimen">
+        <header class="pattern-specimen__header"><h3>Callout</h3><p>A short contextual notice uses warmth sparingly.</p></header>
+        <div class="callout pattern-callout" role="note">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 8H20M4 8V16.8C4 18.92 5.08 20 7.2 20H16.8C18.92 20 20 18.92 20 16.8V8M4 8V7.2C4 5.08 5.08 4 7.2 4H8M20 8V7.2C20 5.08 18.92 4 16.8 4H16M16 2V4M16 4H8M8 2V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="callout__text">This is supporting information, not the main event.</div>
+        </div>
+        <div class="pattern-code" data-pattern-code>
+          <div class="pattern-code__bar"><span>HTML</span><button type="button" data-copy-code>Copy</button></div>
+          <pre><code>&lt;div class="callout" role="note"&gt;
+  &lt;svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"&gt;…&lt;/svg&gt;
+  &lt;div class="callout__text"&gt;
+    This is supporting information, not the main event.
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </article>
+
+      <article class="pattern-specimen">
+        <header class="pattern-specimen__header"><h3>Project stage</h3><p>Imagery sits on a neutral gallery-like surface with generous inset space.</p></header>
+        <fieldset class="pattern-switcher" data-pattern-stage-switcher>
+          <legend class="visually-hidden">Project stage composition</legend>
+          <button type="button" aria-pressed="true" data-pattern-stage="phone">Phone</button>
+          <button type="button" aria-pressed="false" data-pattern-stage="laptop">Laptop</button>
+          <button type="button" aria-pressed="false" data-pattern-stage="split">Split stage</button>
+        </fieldset>
+        <div class="pattern-project-stage work-card work-card--single-phone work-card--disabled" data-pattern-project-stage="phone" aria-label="Phone project stage example">
+          <div class="work-card__media" aria-hidden="true">
+            <div class="work-card__mock work-card__mock--placeholder laptop"></div>
+            <div class="work-card__mock work-card__mock--placeholder phone"></div>
+          </div>
+        </div>
+        <div class="pattern-code" data-pattern-code>
+          <div class="pattern-code__bar"><span>HTML</span><button type="button" data-copy-code>Copy</button></div>
+          <pre><code>&lt;div class="work-card__stage single-phone"&gt;…&lt;/div&gt;
+&lt;div class="work-card__stage wide-browser"&gt;…&lt;/div&gt;
+&lt;div class="work-card__stage split-stage"&gt;…&lt;/div&gt;</code></pre>
+        </div>
+      </article>
+    </section>
+
+    <section class="pattern-group" id="accessibility" aria-labelledby="accessibility-title">
+      <header class="pattern-group__header">
+        <h2 id="accessibility-title">Accessibility</h2>
+        <p>Interaction states, native semantics and user preferences are part of the component contract.</p>
+      </header>
+
+      <article class="pattern-specimen">
+        <header class="pattern-specimen__header"><h3>Interaction states</h3><p>Every interactive control should communicate availability, history and keyboard focus without relying on motion alone.</p></header>
+        <ul class="pattern-state-list" aria-label="Interaction state examples">
+          <li><span class="pattern-label">Default</span><a href="#accessibility">Text link</a></li>
+          <li><span class="pattern-label">Hover</span><a class="pattern-state-hover" href="#accessibility">Text link</a></li>
+          <li><span class="pattern-label">Focus visible</span><button class="button-link pattern-state-focus" type="button">Button</button></li>
+          <li><span class="pattern-label">Visited</span><a class="pattern-state-visited" href="/about/">Visited link</a></li>
+          <li><span class="pattern-label">Disabled</span><button class="button-link" type="button" disabled>Unavailable</button></li>
+        </ul>
+        <div class="pattern-code" data-pattern-code>
+          <div class="pattern-code__bar"><span>CSS</span><button type="button" data-copy-code>Copy</button></div>
+          <pre><code>a:link {
+  color: var(--color-link);
+  text-decoration-color: var(--color-ink);
+}
+
+a:visited {
+  color: var(--color-link-visited);
+  text-decoration-color: var(--color-link-visited);
+}
+a:hover,
+a:focus { color: var(--color-link-hover); }
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+:is(button, input, textarea, select):disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="pattern-specimen">
+        <header class="pattern-specimen__header"><h3>Keyboard operation</h3><p>These native controls work without custom keyboard scripting. Use Tab to move through them, then Enter or Space to activate the focused control.</p></header>
+        <div class="pattern-keyboard-demo">
+          <a href="#accessibility">Focusable link</a>
+          <button class="button-link" type="button">Native button</button>
+          <details>
+            <summary>Native disclosure</summary>
+            <p>Disclosure content remains available to keyboard and assistive-technology users.</p>
+          </details>
+        </div>
+        <div class="pattern-code" data-pattern-code>
+          <div class="pattern-code__bar"><span>HTML</span><button type="button" data-copy-code>Copy</button></div>
+          <pre><code>&lt;a href="/about/"&gt;Focusable link&lt;/a&gt;
+&lt;button type="button"&gt;Native button&lt;/button&gt;
+&lt;details&gt;
+  &lt;summary&gt;Native disclosure&lt;/summary&gt;
+  &lt;p&gt;Disclosure content.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+        </div>
+      </article>
+
+      <article class="pattern-specimen">
+        <header class="pattern-specimen__header"><h3>Reduced motion</h3><p>The site follows the operating-system preference and removes non-essential animation and transition duration globally.</p></header>
+        <div class="pattern-motion-demo">
+          <p>Your current preference: <strong data-motion-status>Checking…</strong></p>
+          <button type="button"><span aria-hidden="true"></span>Hover or focus to preview motion</button>
+        </div>
+        <div class="pattern-code" data-pattern-code>
+          <div class="pattern-code__bar"><span>CSS</span><button type="button" data-copy-code>Copy</button></div>
+          <pre><code>@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}</code></pre>
+        </div>
+      </article>
+    </section>
+
+  </div>
+</div>
+
+{% endblock %}

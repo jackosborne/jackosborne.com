@@ -1,0 +1,377 @@
+.records-page {
+  padding-top: var(--space-6);
+}
+
+.records-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: var(--space-4) var(--space-3);
+}
+
+.record-card {
+  position: relative;
+  z-index: 0;
+}
+
+.record-card:hover,
+.record-card:focus-within {
+  z-index: 10;
+}
+
+.record-card.is-picked {
+  z-index: 30;
+  animation: record-picked 420ms ease;
+}
+.records-grid.has-picked .record-card:not(.is-picked) {
+  opacity: 0.4;
+  transition: opacity 220ms ease;
+}
+
+.records-grid.has-picked .record-card.is-picked {
+  opacity: 1;
+}
+
+.record-card__figure {
+  margin: 0;
+}
+
+.record-card__link {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  isolation: isolate;
+}
+
+.record-card__sleeve,
+.record-card__vinyl {
+  display: block;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-small);
+  will-change: transform;
+}
+
+.record-card__sleeve {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  background: #111;
+  transform-origin: center bottom;
+  transition: transform 260ms ease;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 20px 40px rgba(0, 0, 0, 0.28);
+}
+
+.record-card__sleeve::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.05) 20%,
+    rgba(0, 0, 0, 0) 40%
+  );
+  pointer-events: none;
+}
+
+.record-card__sleeve img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.record-card__vinyl {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transform: translateX(0);
+  transition: transform 320ms cubic-bezier(.22, .61, .36, 1);
+  pointer-events: none;
+}
+
+.record-card__vinyl::before {
+  content: "";
+  position: absolute;
+  inset: 6%;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.14) 0 10%,
+      transparent 10.5% 12%
+    ),
+    radial-gradient(
+      circle at center,
+      color-mix(in srgb, var(--vinyl-colour) 82%, black 18%) 0%,
+      color-mix(in srgb, var(--vinyl-colour) 72%, black 28%) 45%,
+      color-mix(in srgb, var(--vinyl-colour) 58%, black 42%) 72%,
+      color-mix(in srgb, var(--vinyl-colour) 48%, black 52%) 100%
+    ),
+    repeating-radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.045) 0px,
+      rgba(255, 255, 255, 0.045) 1px,
+      rgba(0, 0, 0, 0.16) 1px,
+      rgba(0, 0, 0, 0.16) 3px
+    );
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.05),
+    inset 0 -10px 30px rgba(0, 0, 0, 0.35),
+    0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.record-card__vinyl::after {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 25%,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.05) 20%,
+    transparent 45%
+  );
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 0.7;
+  transition: opacity 220ms ease;
+}
+
+.record-card__vinyl--black { --vinyl-colour: #111111; }
+.record-card__vinyl--red { --vinyl-colour: #7c1c1c; }
+.record-card__vinyl--blue { --vinyl-colour: #1e3a7a; }
+.record-card__vinyl--green { --vinyl-colour: #1e6a3a; }
+.record-card__vinyl--yellow { --vinyl-colour: #c4a300; }
+.record-card__vinyl--white { --vinyl-colour: #d9d9d9; }
+.record-card__vinyl--purple { --vinyl-colour: #5c2a82; }
+.record-card__vinyl--orange { --vinyl-colour: #c4571b; }
+.record-card__vinyl--pink { --vinyl-colour: #c96a8b; }
+.record-card__vinyl--grey { --vinyl-colour: #7a7a7a; }
+.record-card__vinyl--gold { --vinyl-colour: #b08d2f; }
+.record-card__vinyl--clear { --vinyl-colour: rgba(230, 230, 230, 0.35); }
+
+.record-card__vinyl-label {
+  position: absolute;
+  inset: 36%;
+  border-radius: 50%;
+  background: #d8c39f;
+  z-index: 2;
+}
+
+.record-card__meta {
+  display: grid;
+  gap: 0.15rem;
+  margin-top: var(--space-2);
+}
+
+.record-card:hover .record-card__sleeve,
+.record-card:focus-within .record-card__sleeve,
+.record-card.is-picked .record-card__sleeve {
+  transform: perspective(900px) rotateX(4deg) rotateZ(-1.5deg) translateY(2px);
+}
+
+.record-card:hover .record-card__vinyl,
+.record-card:focus-within .record-card__vinyl,
+.record-card.is-picked .record-card__vinyl {
+  transform: translateX(14%);
+}
+
+.record-card:hover .record-card__vinyl::after,
+.record-card.is-picked .record-card__vinyl::after {
+  opacity: 1;
+}
+
+@keyframes record-picked {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* ---------------------------------------
+   Record picker
+--------------------------------------- */
+
+.records-picker-sticky {
+  position: sticky;
+  bottom: 32px;
+  z-index: 1000;
+}
+
+.records-picker__placeholder {
+  opacity: 0.55;
+}
+
+.records-picker__label {
+  letter-spacing: 0.01em;
+}
+
+.records-picker__btn,
+.records-picker__result {
+  font: inherit;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.records-picker__btn {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.records-picker__btn--primary {
+  flex: 0 0 205px;
+  color: #ffffff;
+  background: linear-gradient(#0077ed, #0071e3);
+  opacity: 1;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 1px 2px rgba(0, 0, 0, 0.12);
+
+  transition:
+    background 160ms ease,
+    transform 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.records-picker__btn--primary:hover {
+  background: linear-gradient(#0080ff, #0077ed);
+}
+
+.records-picker__btn--primary:active {
+  transform: scale(0.97);
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.records-picker__btn--primary:focus-visible {
+  outline: 2px solid rgba(0, 125, 250, 0.65);
+  outline-offset: 2px;
+}
+
+.records-picker__result {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.85rem 1rem 0.85rem 0.65rem;
+
+  color: var(--color-ink);
+  font-weight: 500;
+  cursor: default;
+
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.records-picker__result-text {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.records-picker__btn[hidden],
+.records-picker__result[hidden],
+.records-picker__clear[hidden] {
+  display: none;
+}
+
+.records-picker__clear {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 1.25rem;
+  line-height: 1;
+
+  padding: 0 0.9rem;
+  min-height: 2.75rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-left: 1px solid hsl(0 0% 100% / 0.08);
+
+  opacity: 0.65;
+  cursor: pointer;
+
+  transition: opacity 140ms ease, transform 120ms ease;
+}
+
+.records-picker__clear:hover {
+  opacity: 1;
+}
+
+.records-picker__clear:active {
+  transform: scale(0.9);
+}
+
+.music-toolbar-sticky>.floating-bar {
+  width: auto;
+}
+
+@media (max-width: 720px) {
+  .records-picker-sticky {
+    bottom: var(--space-2);
+  }
+
+  .records-picker {
+    max-width: calc(100vw - (2 * var(--space-4)));
+  }
+
+  .records-picker__inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    width: 100%;
+  }
+
+  .records-picker__btn--primary {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .records-picker__result {
+    justify-content: center;
+    min-height: 2.25rem;
+    padding: var(--space-1) var(--space-2);
+    text-align: center;
+  }
+
+  .records-picker__result:has(.records-picker__placeholder) {
+    grid-column: 1 / -1;
+  }
+
+  .records-picker__result-text {
+    font-size: var(--font-size-sm);
+    line-height: var(--leading-normal);
+    overflow: visible;
+    text-align: center;
+    text-overflow: clip;
+    white-space: normal;
+  }
+
+  .records-picker__clear {
+    border-left-color: var(--color-divider);
+    min-height: 2.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .record-card__sleeve,
+  .record-card__vinyl,
+  .records-picker,
+  .records-picker__btn--primary {
+    transition: none;
+  }
+}

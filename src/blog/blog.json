@@ -1,0 +1,12 @@
+{
+  "layout": "layouts/post.html",
+  "tags": "blog",
+  "css": [
+    "/_/css/narration.min.css"  ],
+  "js": [
+    "/_/js/narration.min.js"
+  ],
+  "sitemap": {
+    "ignore": true
+  }
+}

@@ -1,0 +1,44 @@
+/* ==========================================================================
+   BLOG
+   ========================================================================== */
+#blog .year {
+    border-top: 1px solid var(--color-divider);
+    display: grid;
+    gap: var(--space-2);
+    grid-template-columns: minmax(72px, 1fr) 5fr;
+    padding: var(--space-3) 0;
+  }
+
+  #blog .year:first-of-type {
+    border-top: 0;
+  }
+
+  #blog .year time {
+    margin: 0;
+  }
+  
+  #blog .year ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #blog .year ol a {
+    display: inline-block;
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-md);
+    letter-spacing: var(--tracking-base);
+    margin-bottom: var(--space-2);
+    padding: 0;
+  }
+  
+  #blog .year ol li:last-of-type a {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 539px) {
+    #blog .year {
+      grid-template-columns: 1fr;
+      gap: var(--space-1);
+    }
+  }

@@ -1,0 +1,184 @@
+/* Section structure */
+body#pechakucha .slider-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Breakout container (full-bleed only enabled ≥768px) */
+body#pechakucha .slider-breakout {
+  /* default (mobile): no breakout */
+  position: static;
+  left: auto;
+  margin-left: 0;
+  width: auto;
+  overflow: visible;
+}
+
+/* Viewport & (mobile defaults = vertical stack) */
+body#pechakucha .slider__viewport {
+  display: block;
+  overflow-x: visible; /* no horizontal scroll on small screens */
+  overflow-y: visible;
+  scroll-snap-type: none; /* kill snapping on small */
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+body#pechakucha .slider__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+/* Track (vertical flow on small) */
+body#pechakucha .slider__track {
+  display: block;
+  padding-right: 0;
+}
+
+/* Slides */
+body#pechakucha .slide {
+  color: var(--color-ink-muted);
+  width: 100%;
+  margin-bottom: 1rem; /* vertical rhythm */
+  scroll-snap-align: unset;
+}
+
+body#pechakucha .slide .media {
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-stage);
+  border-radius: var(--radius-card-mobile);
+  margin-bottom: var(--space-2);
+  overflow: hidden;
+}
+
+body#pechakucha .slide img {
+  aspect-ratio: 16 / 9;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body#pechakucha .slide picture {
+  display: block;
+}
+
+/* Controls (hidden on small, shown ≥768px) */
+body#pechakucha .slider__controls {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+  align-self: flex-end; /* when visible, float the group to the right */
+}
+
+body#pechakucha .slider-btn {
+  appearance: none;
+  background: var(--color-stage);
+  border: 0;
+  border-radius: 999px;
+  color: var(--color-ink);
+  cursor: pointer;
+  display: grid;
+  height: 2.25rem;
+  width: 2.25rem;
+  place-items: center;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    opacity 0.15s ease;
+}
+
+body#pechakucha .slider-btn:hover {
+  background: var(--color-stage-hover);
+  transform: translateY(-1px);
+}
+
+body#pechakucha .slider-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+@media screen and (min-width: 480px) {
+  /*body#case-study .banner-container { height: 299px; }*/
+  body#pechakucha .slide {
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  body#pechakucha .slider-btn {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  /* Full-bleed breakout */
+  body#pechakucha .slider-breakout {
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    width: 100vw;
+    overflow: visible;
+  }
+
+  /* Horizontal viewport with snap */
+  body#pechakucha .slider__viewport {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 2rem;
+    padding-left: var(--slider-left-pad);
+    padding-right: var(--padding-inline);
+    scroll-padding-left: var(--slider-left-pad);
+    scroll-snap-type: x mandatory;
+  }
+
+  /* Horizontal track */
+  body#pechakucha .slider__track {
+    display: flex;
+    gap: calc(5 * var(--spacing-unit));
+    padding-right: 1rem;
+  }
+
+  /* Slides become fixed-width cards */
+  body#pechakucha .slide {
+    flex: 0 0 clamp(280px, 60vw, 600px);
+    margin-bottom: 0;
+    scroll-snap-align: start;
+  }
+
+  body#pechakucha .slide .media {
+    border-radius: var(--radius-card);
+  }
+
+  /* Show controls and push to the right */
+  body#pechakucha .slider__controls {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  /*body#case-study .banner-container { height: 785px; }*/
+
+  body#pechakucha .slide {
+    flex-basis: clamp(320px, 48vw, 640px);
+  }
+
+  body#pechakucha .slider__track {
+    gap: calc(4 * var(--spacing-unit));
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1140px) {
+  /* tighten the card width ceiling on very wide screens */
+  body#pechakucha .slide {
+    flex-basis: clamp(360px, 40vw, 655px);
+  }
+}

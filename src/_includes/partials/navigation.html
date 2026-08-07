@@ -1,0 +1,15 @@
+<li class="site-nav__context">
+  <span class="site-header__current" aria-current="page">
+    {% if '/work/' in page.url %}
+      Work{% if shortcode %} / {{ shortcode }}{% elif product and product != 'Work' %} / {{ product }}{% endif %}{% if title %} / {{ title }}{% endif %}
+    {% elif '/blog/' in page.url %}
+      Blog{% if page.url != '/blog/' %} / {{ date | date('YYYY') }} / {{ date | date('MM') }} / {{ title }}{% endif %}
+    {% elif page.url.indexOf('/about/') === 0 %}
+      About{% if title and title != 'About' %} / {{ title }}{% endif %}
+    {% elif page.url.indexOf('/music/') === 0 %}
+      Music{% if title %} / {{ title }}{% endif %}
+    {% else %}
+      {{ title }}
+    {% endif %}
+  </span>
+</li>

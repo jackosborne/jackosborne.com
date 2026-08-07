@@ -1,0 +1,8 @@
+# robots.txt for jackosborne.com
+
+User-agent: *
+Allow: /
+
+Disallow: /404.html
+
+Sitemap: https://jackosborne.com/sitemap.xml

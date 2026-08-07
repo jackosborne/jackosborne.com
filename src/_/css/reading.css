@@ -1,0 +1,79 @@
+body#reading [role="main"] ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body#reading [role="main"] ul.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: calc(3 * var(--spacing-unit)) calc(2 * var(--spacing-unit));
+}
+
+body#reading [role="main"] ul li {
+  display: flex;
+  transition: transform 350ms var(--ease-expressive);
+}
+
+body#reading [role="main"] figure {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+body#reading [role="main"] figure picture {
+  align-self: end;
+  display: block;
+  width: 100%;
+}
+
+body#reading [role="main"] figure img {
+  background: var(--color-image-surface);
+  border-radius: var(--radius-small);
+  display: block;
+  width: 100%;
+  transition: transform 450ms var(--ease-media);
+}
+
+body#reading [role="main"] .collection-card:hover,
+body#reading [role="main"] .collection-card:focus-within {
+  transform: translateY(-4px);
+}
+
+body#reading [role="main"] .collection-card:hover img,
+body#reading [role="main"] .collection-card:focus-within img {
+  transform: scale(1.015);
+}
+
+body#reading [role="main"] figcaption {
+  color: var(--color-ink);
+  font-weight: var(--font-weight-medium);
+  min-block-size: 5lh;
+  padding-top: var(--space-2);
+}
+
+body#reading [role="main"] figcaption span {
+  margin-top: 2px;
+}
+
+@media screen and (min-width: 700px) {
+  body#reading [role="main"] ul.grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 900px) {
+  body#reading [role="main"] ul.grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: calc(4 * var(--spacing-unit)) calc(2 * var(--spacing-unit));
+  }
+}
+
+@media screen and (min-width: 1140px) {
+  body#reading [role="main"] ul.grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: calc(5 * var(--spacing-unit)) var(--layout-gap);
+  }
+}

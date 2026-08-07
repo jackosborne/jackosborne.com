@@ -1,0 +1,78 @@
+{% set vinylColor = "black" %}
+
+{% if record.formats and record.formats.length %}
+  {% for format in record.formats %}
+    {% if format.name == "Vinyl" and format.text %}
+      {% set text = format.text | lower %}
+
+      {% if "shark-infested-water" in text or "aquamarine" in text %}
+        {% set vinylColor = "blue" %}
+      {% elif "gold" in text %}
+        {% set vinylColor = "gold" %}
+      {% elif "clear" in text or "translucent" in text or "transparent" in text %}
+        {% set vinylColor = "clear" %}
+      {% elif "white" in text %}
+        {% set vinylColor = "white" %}
+      {% elif "gray" in text or "grey" in text or "smoke" in text %}
+        {% set vinylColor = "grey" %}
+      {% elif "pink" in text %}
+        {% set vinylColor = "pink" %}
+      {% elif "purple" in text or "violet" in text %}
+        {% set vinylColor = "purple" %}
+      {% elif "blue" in text %}
+        {% set vinylColor = "blue" %}
+      {% elif "green" in text %}
+        {% set vinylColor = "green" %}
+      {% elif "yellow" in text %}
+        {% set vinylColor = "yellow" %}
+      {% elif "orange" in text %}
+        {% set vinylColor = "orange" %}
+      {% elif "red" in text %}
+        {% set vinylColor = "red" %}
+      {% elif "black" in text %}
+        {% set vinylColor = "black" %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<li
+  class="record-card"
+  data-record-card
+  data-title="{{ record.title | escape }}"
+  data-artist="{{ record.artist | escape }}"
+  data-year="{{ record.year }}"
+>
+  <figure class="record-card__figure">
+    <a
+      class="record-card__link"
+      href="{{ record.discogs_url }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="{{ record.artist }} — {{ record.title }}"
+    >
+      <span class="record-card__vinyl record-card__vinyl--{{ vinylColor }}" aria-hidden="true">
+        <span class="record-card__vinyl-label"></span>
+      </span>
+
+      <span class="record-card__sleeve">
+        <img
+          src="{{ record.cover_image }}"
+          alt="{{ record.artist }} — {{ record.title }}"
+          loading="lazy"
+          decoding="async"
+          width="600"
+          height="600"
+          eleventy:ignore
+        />
+      </span>
+    </a>
+
+    <figcaption class="record-card__meta">
+      {{ record.title }}
+      <span>
+        {{ record.artist }}
+      </span>
+    </figcaption>
+  </figure>
+</li>

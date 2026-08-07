@@ -1,0 +1,39 @@
+body#about .bio p {
+  color: var(--color-ink);
+}
+
+body#about .bio > p:first-child {
+  color: var(--color-ink-muted);
+  font-size: clamp(1.125rem, 1.5vw, var(--font-size-md));
+  line-height: var(--leading-normal);
+}
+
+body#about .photo {
+  margin-bottom: var(--space-3);
+}
+
+body#about .photo .box {
+  position: relative;
+  background: var(--color-stage);
+  border-radius: var(--space-2);
+  overflow: hidden;
+}
+
+body#about .photo img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+body#about .photo picture {
+  display: block;
+}
+
+body#about .photo svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,22 @@
+{% extends "layouts/base.html" %}
+{% from "partials/page-intro.html" import pageIntro %}
+
+{% block content %}
+
+{{ pageIntro("Reading", "Recommended", "An ever growing list of design materials I've found memorable and often recommend to others.") }}
+
+<ul class="grid grid-cols-6">
+{% for book in books %}
+  <li class="collection-card">
+    <figure>
+      {% responsiveImage book.cover, book.title + " by " + book.author, "(min-width: 1140px) calc((100vw - 242px) / 6), (min-width: 900px) calc((100vw - 112px) / 4), (min-width: 700px) calc((100vw - 96px) / 3), calc((100vw - 80px) / 2)", "reading" %}
+      <figcaption>
+        {{book.title}}
+        <span>{{book.author}}</span>
+      </figcaption>
+    </figure>
+  </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

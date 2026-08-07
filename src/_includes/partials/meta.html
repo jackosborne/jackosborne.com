@@ -1,0 +1,69 @@
+{# --- Setup --- #}
+{% set siteTitle  = site.name %}
+{% set currentUrl = (page.url | url | absoluteUrl(site.url)) %}
+
+{# Page type detection #}
+{% set isHome      = page.url == '/' %}
+{% set isCaseStudy = ('/work/' in page.url) and (page.url != '/work/') %}
+{% set isBlogPost  = ('/blog/' in page.url) and (page.url != '/blog/') %}
+
+{# --- Title logic --- #}
+{% if isHome %}
+  {% set pageTitle = siteTitle ~ ' | Digital Product Designer' %}
+{% elif isCaseStudy and title and product %}
+  {% set pageTitle = title ~ ' – ' ~ product ~ ' | ' ~ siteTitle %}
+{% elif title %}
+  {% set pageTitle = title ~ ' | ' ~ siteTitle %}
+{% else %}
+  {% set pageTitle = siteTitle %}
+{% endif %}
+
+{# Manual override always wins #}
+{% if metaTitle %}
+  {% set pageTitle = metaTitle %}
+{% endif %}
+
+{# --- Description logic --- #}
+{% if not metaDesc and summary %}
+  {% set metaDesc = summary %}
+{% endif %}
+{% if not metaDesc %}
+  {% set metaDesc = site.description %}
+{% endif %}
+
+{# --- OG type --- #}
+{% set ogType = 'website' %}
+{% if isCaseStudy or isBlogPost %}
+  {% set ogType = 'article' %}
+{% endif %}
+
+{# --- Social image --- #}
+{% if not socialImage and banner and banner[0] and banner[0].url %}
+  {% set socialImage = banner[0].url %}
+{% endif %}
+{% if not socialImage %}
+  {% set socialImage = '/_/images/misc/social-share.png' %}
+{% endif %}
+{% set socialImage = socialImage | url | absoluteUrl(site.url) %}
+
+{# --- Tags --- #}
+<title>{{ pageTitle }}</title>
+<link rel="canonical" href="{{ currentUrl }}" />
+
+<meta property="og:site_name" content="{{ siteTitle }}" />
+<meta property="og:title" content="{{ pageTitle }}" />
+<meta property="og:type" content="{{ ogType }}" />
+<meta property="og:url" content="{{ currentUrl }}" />
+
+<meta property="og:image" content="{{ socialImage }}" />
+<meta property="og:image:alt" content="Page image for {{ siteTitle }}" />
+
+<meta name="description" content="{{ metaDesc }}" />
+<meta property="og:description" content="{{ metaDesc }}" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ pageTitle }}" />
+<meta name="twitter:description" content="{{ metaDesc }}" />
+<meta name="twitter:image" content="{{ socialImage }}" />
+
+<link rel="icon" href="/_/images/misc/favicon.svg" type="image/svg+xml" />

@@ -1,0 +1,38 @@
+{% extends "layouts/base.html" %}
+{% from "partials/page-intro.html" import pageIntro %}
+
+{% block content %}
+
+{{ pageIntro(title) }}
+
+<div class="grid content">
+  <div class="grid-content main content-main row-start-7 row-end-19">
+
+    {% set posts = collections.writing %}
+    {% set currentYear = "" %}
+
+      {% for post in posts %}
+        {% set postYear = post.date | date("YYYY") %}
+        {% if postYear != currentYear %}
+          {% if currentYear %}
+            </ol>
+          </section>
+          {% endif %}
+
+          {% set currentYear = postYear %}
+          <section class="year" aria-labelledby="year-{{ currentYear }}">
+            <time id="year-{{ currentYear }}" class="writing-year-title">{{ currentYear }}</time>
+            <ol>
+            {% endif %}
+              <li class="writing-item">
+                <a href="{{ post.url }}">{{ post.data.title }}</a>
+              </li>
+              {% if loop.last %}
+            </ol>
+          </section>
+        {% endif %}
+      {% endfor %}
+
+  </div>
+</div>
+{% endblock %}

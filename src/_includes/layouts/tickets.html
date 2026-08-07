@@ -1,0 +1,90 @@
+{% extends "layouts/base.html" %}
+{% from "partials/page-intro.html" import pageIntro %}
+
+{% block content %}
+
+{% call pageIntro("Tickets", "2002–2020", "", "tickets-header", "mono") %}
+    <p class="page-intro__description">
+      Inspired by my good friend
+      <a href="https://robbiemanson.com/tickets/" aria-label="Robbie Manson’s ticket page">Robbie Manson</a>,
+      this page celebrates the physical gig ticket. A personal archive of the concerts I attended, the designs I kept, and the memories slowly being added back in. {{ tickets.length }} tickets across 18 years, 13 cities and 35 venues.
+    </p>
+
+    <div class="tickets-filterbar-sticky music-toolbar-sticky" aria-label="Filter tickets by year">
+      <div class="tickets-filterbar floating-bar">
+        <div class="tickets-filterbar__inner floating-bar__inner music-toolbar-scroll" id="year-filters">
+        </div>
+      </div>
+    </div>
+{% endcall %}
+
+<section class="tickets-archive" aria-label="Ticket archive">
+  <ul id="ticket-list" class="tickets-list">
+    {% for ticket in tickets | reverse %}
+      <li
+        class="ticket{% if ticket.format %} ticket--{{ ticket.format }}{% endif %}"
+        data-year="{{ ticket.year }}"
+      >
+        <article class="ticket-card" data-ticket-card>
+          <button
+            type="button"
+            class="ticket-card__trigger"
+            data-ticket-toggle
+            aria-expanded="false"
+            aria-label="Open details for {{ ticket.band }}"
+          >
+            <div class="ticket-card__faces">
+              <figure class="ticket-card__face ticket-card__face--front">
+                <div class="ticket-card__media">
+                  {% responsiveImage ticket.stub, ticket.band + " ticket", "(min-width: 1201px) calc((100vw - 288px) / 4), (min-width: 1024px) calc((100vw - 256px) / 3), (min-width: 821px) calc((100vw - 128px) / 3), (min-width: 561px) calc((100vw - 88px) / 2), calc(100vw - 64px)", "tickets" %}
+                </div>
+              </figure>
+
+              <div class="ticket-card__face ticket-card__face--back">
+                <div class="ticket-card__detail-inner">
+                  <p class="ticket-card__band">{{ ticket.band }}</p>
+                  <p class="ticket-card__meta-line">{{ ticket.venue }}, {{ ticket.district }}</p>
+                  <p class="ticket-card__meta-line">{{ ticket.date }} {{ ticket.year }}</p>
+
+                  {% if ticket.note_title %}
+                    <p class="ticket-card__note-title">{{ ticket.note_title }}</p>
+                  {% endif %}
+
+                  {% if ticket.story %}
+                    <p class="ticket-card__story">{{ ticket.story }}</p>
+                  {% endif %}
+
+                  {% if ticket.support or ticket.with %}
+                    <dl class="ticket-card__facts">
+                      {% if ticket.support %}
+                        <div class="ticket-card__fact">
+                          <dt>Support</dt>
+                          <dd>{{ ticket.support }}</dd>
+                        </div>
+                      {% endif %}
+
+                      {% if ticket.with %}
+                        <div class="ticket-card__fact">
+                          <dt>With</dt>
+                          <dd>{{ ticket.with }}</dd>
+                        </div>
+                      {% endif %}
+                    </dl>
+                  {% endif %}
+
+                  <p class="ticket-card__actions">
+                    <a class="button-link" href="{{ ticket.stub | imageSrc }}" target="_blank" rel="noopener noreferrer">
+                      View full scan
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </button>
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+{% endblock %}

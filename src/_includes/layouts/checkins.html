@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="A self-hosted map visualizing 5,610 Foursquare and Swarm check-ins across 2,335 places. Built as a personal archive to preserve long-term access to my location history."/>
+  <meta name="author" content="Jack Osborne"/>
+  <meta name="robots" content="noindex,follow">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="{{ '/_/css/tokens.css' | url }}">
+  <link rel="stylesheet" href="{{ '/_/css/checkins.css' | url }}">
+</head>
+<body>
+  <div class="grid" id="layout">
+    <div id="meta">
+      <div class="module intro">
+        <div class="apps">
+            <div class="icons icons--city-guide">
+                <img src="{{ foursquare.image | imageSrc }}" width="24" height="24" alt="{{ foursquare.alt }}" />
+            </div>
+            <div class="icons icons--swarm">
+              <img src="{{ swarm.image | imageSrc }}" width="24" height="24" alt="{{ swarm.alt }}" />
+            </div>
+            <h2>
+                2011–2024
+            </h2>
+        </div>
+        <p>
+            This self-hosted map visualizes <code id="checkinCount"><!--5,610--></code> check-ins across <code id="venueCount"><!--2,335--></code> places, recorded using Foursquare and Swarm. This is a personal archive, built to ensure long-term access to my own data.
+        </p>
+      </div>
+      <div class="module cat">
+        <h2>Top Five Categories</h2>
+        <ul>
+            <li>
+                <span class="cat--icon" aria-hidden="true">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.666 21.773C20.402 21.773 21 22.445 21 23.274C21 24.102 20.402 24.773 19.666 24.773H8.33301C7.59701 24.773 7 24.102 7 23.274C7.00001 22.445 7.59701 21.773 8.33301 21.773H19.666ZM13.666 4.773C15.064 4.77301 16.3071 5.31391 17.1631 6.15191C17.3281 6.12891 17.494 6.10601 17.666 6.10601C19.504 6.10602 21 7.45201 21 9.10601C21 10.012 20.5409 10.8158 19.833 11.3668V11.773H21.9521C22.0991 11.773 22.2371 11.8294 22.332 11.9253C23.2229 12.8303 23.666 14.236 23.666 15.7837C23.666 17.3317 23.223 18.7381 22.332 19.6431C22.2371 19.7401 22.0991 19.773 21.9521 19.773H19.833V20.773H7.83301V11.7359C7.32104 11.2089 7 10.527 7 9.773C7 9.01903 7.32104 8.3371 7.83301 7.81011V7.773H7.86719C8.32009 7.32113 8.91584 6.99114 9.59863 6.8521C10.3936 5.6191 11.909 4.773 13.666 4.773ZM19.833 13.0113V18.5552H21.4453C21.7393 18.1512 22.166 17.1997 22.166 15.7837C22.166 14.3703 21.7403 13.4184 21.4463 13.0113H19.833ZM13.666 5.773C11.939 5.773 10.5362 6.82837 10.3672 8.17437C10.1962 8.13437 10.019 8.10601 9.83301 8.10601C8.72901 8.10601 7.83301 8.852 7.83301 9.773C7.83301 10.694 8.72901 11.44 9.83301 11.44C10.611 11.44 11.2794 11.065 11.6094 10.524C11.6842 10.5709 11.7532 10.6227 11.833 10.6646V12.273C11.833 13.101 12.505 13.773 13.333 13.773C14.161 13.773 14.833 13.101 14.833 12.273V10.9302C15.394 10.7612 15.8751 10.4759 16.2461 10.1099C16.6111 10.5099 17.183 10.773 17.833 10.773C18.937 10.773 19.833 10.027 19.833 9.10601C19.833 8.18601 18.937 7.44 17.833 7.43999C17.47 7.43999 17.1338 7.52656 16.8408 7.66656C16.4246 6.57379 15.1688 5.77301 13.666 5.773Z" fill="white"/>
+                    </svg>                        
+                </span>
+                <span class="name">
+                Bar
+                <span class="number">1,540 check-ins</span>
+                </span>
+                <span class="disclosure--icon" aria-hidden="true">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.593 14.592C17.806 15.377 17.811 16.656 18.591 17.433L25.181 24.001L18.591 30.571C18.198 30.963 18 31.476 18 31.99C18 32.504 18.197 33.019 18.593 33.413C19.381 34.198 20.663 34.193 21.444 33.415L29.407 25.476C29.836 25.049 30.033 24.478 29.996 23.92C29.988 23.415 29.791 22.911 29.407 22.528L21.444 14.591C21.05 14.198 20.535 14 20.019 14C19.505 14 18.99 14.197 18.593 14.592Z" fill="var(--color-muted)" />
+                    </svg>
+                </span>
+            </li>
+            <li>
+                <span class="cat--icon" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24.2861 20.143C24.681 20.1431 24.9999 20.462 25 20.8569C25 21.2518 24.6811 21.5707 24.2861 21.5707H22.0117C21.7167 22.4017 20.932 23.0004 20 23.0004H10C9.068 23.0004 8.28326 22.4017 7.98926 21.5707H5.71387C5.31893 21.5707 5 21.2518 5 20.8569C5.00007 20.462 5.31897 20.1431 5.71387 20.143H24.2861ZM22 10.061C22.162 10.021 22.329 10.0004 22.5 10.0004C23.88 10.0004 25 11.3434 25 13.0004C24.9998 14.6572 23.8799 16.0004 22.5 16.0004C22.259 16.0004 22.0305 15.9456 21.8105 15.8696C21.3125 17.6756 19.805 19.0004 18.001 19.0004H12C9.79101 19.0004 8.00002 17.03 8 14.6V8.00043H22V10.061ZM22 11.02V14.6C22 14.729 21.9758 14.849 21.9658 14.975C22.0247 14.985 22.0817 15.0004 22.1426 15.0004C22.9315 15.0004 23.5711 14.1052 23.5713 13.0004C23.5713 11.8954 22.9316 11.0004 22.1426 11.0004C22.0937 11.0005 22.0479 11.013 22 11.02Z" fill="white"/>
+                    </svg>                            
+                </span>
+                <span class="name">
+                    Coffee Shop
+                    <span class="number">339 check-ins</span>
+                </span>
+                <span class="disclosure--icon" aria-hidden="true">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.593 14.592C17.806 15.377 17.811 16.656 18.591 17.433L25.181 24.001L18.591 30.571C18.198 30.963 18 31.476 18 31.99C18 32.504 18.197 33.019 18.593 33.413C19.381 34.198 20.663 34.193 21.444 33.415L29.407 25.476C29.836 25.049 30.033 24.478 29.996 23.92C29.988 23.415 29.791 22.911 29.407 22.528L21.444 14.591C21.05 14.198 20.535 14 20.019 14C19.505 14 18.99 14.197 18.593 14.592Z" fill="var(--color-muted)" />
+                    </svg>
+                </span>
+            </li>
+            <li>
+                <span class="cat--icon" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.7111 5C12.0081 5.00008 12.2502 5.29805 12.2502 5.66699V7L16.133 11L14.8391 25H6.42596L5.133 11L9.01483 7V5.66699C9.01483 5.29803 9.25596 5.00005 9.55292 5H11.7111ZM26.299 15L22.133 19.7617V23.667H22.4943C22.9945 23.6672 24.0805 24.2252 24.2394 25H19.0275C19.1855 24.2252 20.2716 23.6672 20.7707 23.667H21.133V19.7617L16.967 15H26.299ZM6.52362 12L7.60272 24H9.01483L8.38495 12H6.52362ZM10.3088 12V24H13.6613L14.7414 12H10.3088ZM10.1984 7.66699L6.96307 11H8.36737L10.3088 8.33398V11H14.3019L11.0666 7.66699H10.1984Z" fill="white"/>
+                    </svg>                            
+                </span>
+                <span class="name">
+                    Cocktail Bar
+                    <span class="number">254 check-ins</span>
+                </span>
+                <span class="disclosure--icon" aria-hidden="true">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.593 14.592C17.806 15.377 17.811 16.656 18.591 17.433L25.181 24.001L18.591 30.571C18.198 30.963 18 31.476 18 31.99C18 32.504 18.197 33.019 18.593 33.413C19.381 34.198 20.663 34.193 21.444 33.415L29.407 25.476C29.836 25.049 30.033 24.478 29.996 23.92C29.988 23.415 29.791 22.911 29.407 22.528L21.444 14.591C21.05 14.198 20.535 14 20.019 14C19.505 14 18.99 14.197 18.593 14.592Z" fill="var(--color-muted)" />
+                    </svg>
+                </span>
+            </li>
+            <li>
+                <span class="cat--icon" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.666 19.667V18.333L16.821 12.73C16.827 12.371 16.833 12.012 16.833 11.667C16.833 6.512 16.161 5 15.333 5C14.504 5 13.833 6.512 13.833 11.667C13.833 12.012 13.839 12.371 13.845 12.73L6 18.333V19.667L14.062 17.363C14.15 18.504 14.262 19.572 14.391 20.504L10.833 23.667V25L15.333 23L19.833 25V23.667L16.276 20.505C16.404 19.572 16.516 18.504 16.604 17.363L24.666 19.667" fill="white"/>
+                    </svg>                            
+                </span>
+                <span class="name">
+                    Airport
+                    <span class="number">244 check-ins</span>
+                </span>
+                <span class="disclosure--icon" aria-hidden="true">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.593 14.592C17.806 15.377 17.811 16.656 18.591 17.433L25.181 24.001L18.591 30.571C18.198 30.963 18 31.476 18 31.99C18 32.504 18.197 33.019 18.593 33.413C19.381 34.198 20.663 34.193 21.444 33.415L29.407 25.476C29.836 25.049 30.033 24.478 29.996 23.92C29.988 23.415 29.791 22.911 29.407 22.528L21.444 14.591C21.05 14.198 20.535 14 20.019 14C19.505 14 18.99 14.197 18.593 14.592Z" fill="var(--color-muted)" />
+                    </svg>
+                </span>
+            </li>
+            <li>
+                <span class="cat--icon" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.4387 13.2158L22.9641 24.2266C22.9921 24.4215 22.9338 24.6186 22.8059 24.7666C22.6769 24.9146 22.4911 24.9999 22.2942 25H8.76782C8.57189 24.9999 8.38604 24.9146 8.25708 24.7666C8.1282 24.6186 8.07091 24.4215 8.0979 24.2266L8.71509 19.7734L5.00024 16.8838L6.06177 9H25.0002L21.4387 13.2158ZM7.43579 10L6.64966 16.1982L8.93286 18.1992L10.0686 10H7.43579ZM15.5315 5C17.4113 5.00021 19.0481 6.20816 19.927 8H11.135C12.014 6.208 13.6525 5 15.5315 5Z" fill="white"/>
+                    </svg>                            
+                </span>
+                <span class="name">
+                    Cafe
+                    <span class="number">233 check-ins</span>
+                </span>
+                <span class="disclosure--icon" aria-hidden="true">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.593 14.592C17.806 15.377 17.811 16.656 18.591 17.433L25.181 24.001L18.591 30.571C18.198 30.963 18 31.476 18 31.99C18 32.504 18.197 33.019 18.593 33.413C19.381 34.198 20.663 34.193 21.444 33.415L29.407 25.476C29.836 25.049 30.033 24.478 29.996 23.92C29.988 23.415 29.791 22.911 29.407 22.528L21.444 14.591C21.05 14.198 20.535 14 20.019 14C19.505 14 18.99 14.197 18.593 14.592Z" fill="var(--color-muted)" />
+                    </svg>
+                </span>
+            </li>
+        </ul>
+      </div>
+      <div class="module places">
+        <h2>Top Five Places</h2>
+        <ul>
+            <li>
+                <span class="cat--icon" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.917 20H5V21H6.905C6.522 20.693 6.194 20.357 5.917 20M25 21V20H24.083C23.806 20.357 23.478 20.693 23.095 21H25ZM16.667 8H13.333C9.841 8 7 10.916 7 14.5C7 18.084 9.841 21 13.333 21H16.667C20.159 21 23 18.084 23 14.5C23 10.916 20.159 8 16.667 8V8ZM16.75 20H13.25C10.355 20 8 17.533 8 14.5C8 11.467 10.355 9 13.25 9H16.75C19.645 9 22 11.467 22 14.5C22 17.533 19.645 20 16.75 20V20ZM16.667 10H13.333C10.944 10 9 12.019 9 14.5C9 16.981 10.944 19 13.333 19H16.667C19.056 19 21 16.981 21 14.5C21 12.019 19.056 10 16.667 10V10ZM16.786 18H13.214C11.441 18 10 16.43 10 14.5C10 12.57 11.441 11 13.214 11H16.786C18.559 11 20 12.57 20 14.5C20 16.43 18.559 18 16.786 18V18ZM25 14.5C25 9.806 21.269 6 16.667 6H13.333C8.731 6 5 9.806 5 14.5C5 17.748 6.788 20.569 9.414 22H5V23H25V22H20.586C23.212 20.569 25 17.748 25 14.5V14.5ZM13.269 22C9.262 22 6 18.636 6 14.5C6 10.364 9.262 7 13.269 7H16.73C20.738 7 24 10.364 24 14.5C24 18.636 20.738 22 16.73 22H13.269V22ZM24.962 18H25V19H24.678C24.816 18.677 24.915 18.344 24.962 18M5.038 18H5V19H5.322C5.184 18.677 5.085 18.344 5.038 18" fill="white"/>
+                    </svg>                                                        
+                </span>
+                <span class="name">
+                    Red Hook Track
+                    <span class="number">108 check-ins</span>
+                </span>
+                <span class="disclosure--icon" aria-hidden="true">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.593 14.592C17.806 15.377 17.811 16.656 18.591 17.433L25.181 24.001L18.591 30.571C18.198 30.963 18 31.476 18 31.99C18 32.504 18.197 33.019 18.593 33.413C19.381 34.198 20.663 34.193 21.444 33.415L29.407 25.476C29.836 25.049 30.033 24.478 29.996 23.92C29.988 23.415 29.791 22.911 29.407 22.528L21.444 14.591C21.05 14.198 20.535 14 20.019 14C19.505 14 18.99 14.197 18.593 14.592Z" fill="var(--color-muted)" />
+                    </svg>
+                </span>
+            </li>
+            <li>
+                <span class="cat--icon" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24.6447 23.5811V24.9795H4.64474V23.5811L7.31076 17.2871H21.9778L24.6447 23.5811ZM5.2092 23.4414L5.14474 23.6582V24.4668H24.1447V23.6582L24.0803 23.4414H5.2092ZM12.1447 22.9277H17.1447L16.8322 21.3896H12.4563L12.1447 22.9277ZM6.33517 20.877H22.9533L21.6506 17.7998H7.63889L6.33517 20.877ZM22.1447 16.7744H7.14474V4.97949H22.1447V16.7744ZM8.64474 15.2363H20.6447V6.51758H8.64474V15.2363Z" fill="white"/>
+                    </svg>                            
+                </span>
+                <span class="name">
+                    Foursquare HQ
+                    <span class="number">108 check-ins</span>
+                </span>
+                <span class="disclosure--icon" aria-hidden="true">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.593 14.592C17.806 15.377 17.811 16.656 18.591 17.433L25.181 24.001L18.591 30.571C18.198 30.963 18 31.476 18 31.99C18 32.504 18.197 33.019 18.593 33.413C19.381 34.198 20.663 34.193 21.444 33.415L29.407 25.476C29.836 25.049 30.033 24.478 29.996 23.92C29.988 23.415 29.791 22.911 29.407 22.528L21.444 14.591C21.05 14.198 20.535 14 20.019 14C19.505 14 18.99 14.197 18.593 14.592Z" fill="var(--color-muted)" />
+                    </svg>
+                </span>
+            </li>
+            <li>
+                <span class="cat--icon" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15 5C9.477 5 5 9.477 5 15C5 20.523 9.477 25 15 25C20.522 25 25 20.523 25 15C25 9.477 20.522 5 15 5V5ZM12.75 6.639C13.469 6.446 14.22 6.333 15 6.333C15.782 6.333 16.536 6.447 17.257 6.641L17.933 8.138L15 10.333L12.067 8.138L12.75 6.639V6.639ZM7.567 15.668L6.352 14.556C6.392 13.813 6.517 13.064 6.758 12.322C6.999 11.578 7.34 10.896 7.747 10.27L9.38 10.09L10.561 13.558L7.567 15.668V15.668ZM11.905 23.086C11.211 22.82 10.537 22.47 9.905 22.011C9.273 21.551 8.729 21.017 8.261 20.436L8.595 18.828L12.257 18.775L13.339 22.276L11.905 23.086V23.086ZM13.067 17.614L11.873 13.938L15 11.666L18.127 13.938L16.933 17.614H13.067V17.614ZM20.094 22.012C19.461 22.471 18.785 22.823 18.087 23.09L16.661 22.275L17.743 18.775L21.406 18.828L21.734 20.442C21.267 21.02 20.726 21.553 20.094 22.012V22.012ZM19.438 13.558L20.62 10.09L22.257 10.277C22.662 10.9 23.001 11.58 23.243 12.322C23.483 13.066 23.609 13.818 23.648 14.564L22.432 15.668L19.438 13.558V13.558Z" fill="white"/>
+                    </svg>                            
+                </span>
+                <span class="name">
+                    Pier 5 Soccer Fields
+                    <span class="number">70 check-ins</span>
+                </span>
+                <span class="disclosure--icon" aria-hidden="true">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.593 14.592C17.806 15.377 17.811 16.656 18.591 17.433L25.181 24.001L18.591 30.571C18.198 30.963 18 31.476 18 31.99C18 32.504 18.197 33.019 18.593 33.413C19.381 34.198 20.663 34.193 21.444 33.415L29.407 25.476C29.836 25.049 30.033 24.478 29.996 23.92C29.988 23.415 29.791 22.911 29.407 22.528L21.444 14.591C21.05 14.198 20.535 14 20.019 14C19.505 14 18.99 14.197 18.593 14.592Z" fill="var(--color-muted)" />
+                    </svg>
+                </span>
+            </li>
+            <li>
+                <span class="cat--icon" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.666 19.667V18.333L16.821 12.73C16.827 12.371 16.833 12.012 16.833 11.667C16.833 6.512 16.161 5 15.333 5C14.504 5 13.833 6.512 13.833 11.667C13.833 12.012 13.839 12.371 13.845 12.73L6 18.333V19.667L14.062 17.363C14.15 18.504 14.262 19.572 14.391 20.504L10.833 23.667V25L15.333 23L19.833 25V23.667L16.276 20.505C16.404 19.572 16.516 18.504 16.604 17.363L24.666 19.667" fill="white"/>
+                    </svg>
+                </span>
+                <span class="name">
+                    Glasgow Airport
+                    <span class="number">64 check-ins</span>
+                </span>
+                <span class="disclosure--icon" aria-hidden="true">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.593 14.592C17.806 15.377 17.811 16.656 18.591 17.433L25.181 24.001L18.591 30.571C18.198 30.963 18 31.476 18 31.99C18 32.504 18.197 33.019 18.593 33.413C19.381 34.198 20.663 34.193 21.444 33.415L29.407 25.476C29.836 25.049 30.033 24.478 29.996 23.92C29.988 23.415 29.791 22.911 29.407 22.528L21.444 14.591C21.05 14.198 20.535 14 20.019 14C19.505 14 18.99 14.197 18.593 14.592Z" fill="var(--color-muted)" />
+                    </svg>
+                </span>
+            </li>
+            <li>
+                <span class="cat--icon" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 25H5.05957V19H7V25ZM10 25H8V19H10V25ZM13 25H11V19H13V25ZM16 25H14V19H16V25ZM19 25H17V19H19V25ZM22 25H20V19H22V25ZM25 25H23V19H25V25ZM19.4746 5C20.4226 7.23791 21 9.61781 21 10.7139C21 13.2769 18.836 14.6872 16 14.9512V16.7236L17.7588 17.3096L18.4482 18H11.5518L12.2412 17.3096L14 16.7236V14.9512C11.164 14.6872 9 13.2769 9 10.7139C9.00005 9.61781 9.57745 7.23791 10.5244 5H19.4746Z" fill="white"/>
+                    </svg>                            
+                </span>
+                <span class="name">
+                    Cafe Continental
+                    <span class="number">57 check-ins</span>
+                </span>
+                <span class="disclosure--icon" aria-hidden="true">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.593 14.592C17.806 15.377 17.811 16.656 18.591 17.433L25.181 24.001L18.591 30.571C18.198 30.963 18 31.476 18 31.99C18 32.504 18.197 33.019 18.593 33.413C19.381 34.198 20.663 34.193 21.444 33.415L29.407 25.476C29.836 25.049 30.033 24.478 29.996 23.92C29.988 23.415 29.791 22.911 29.407 22.528L21.444 14.591C21.05 14.198 20.535 14 20.019 14C19.505 14 18.99 14.197 18.593 14.592Z" fill="var(--color-muted)" />
+                    </svg>
+                </span>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="map-container">
+      <div id="map" class="module"></div>
+    </div>
+
+    <div id="sidebar">
+        <div id="sidebar-content" class="">
+            <div class="checkins">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block content %}{% endblock %}
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script type="module" src="{{ '/_/js/checkins/main.js' | url }}"></script>
+</body>
+</html>

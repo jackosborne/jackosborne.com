@@ -1,0 +1,17 @@
+body#error {
+  position: relative;
+}
+
+body#error #error-strip {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 4;
+}
+
+body#error #error-strip .grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0;
+  height: 8px;
+  padding-inline: 0;
+}

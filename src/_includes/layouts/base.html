@@ -1,0 +1,95 @@
+{% set assetHash = global.assetHash %}
+<!DOCTYPE html>
+<html lang="en" id="top">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="{{ eleventy.generator }}">
+    {% if noindex or page.url == '/404.html' %}
+    <meta name="robots" content="noindex,follow">
+    {% endif %}
+    {% include "partials/meta.html" %}
+    <link rel="stylesheet" href="{{ '/_/css/tokens.min.css' | assetPath | url }}?hash={{ assetHash }}">
+    <link rel="stylesheet" href="{{ '/_/css/style.min.css' | assetPath | url }}?hash={{ assetHash }}">
+    {% if css %}
+    {% for href in css %}
+        <link rel="stylesheet" href="{{ href | assetPath | url }}?hash={{ assetHash }}">
+    {% endfor %}
+    {% endif %}
+    <link type="text/plain" rel="author" href="{{ '/humans.txt' | url }}">
+    {% if page.url == '/blog/' or page.url.indexOf('/blog/') === 0 %}
+    <link rel="alternate" type="application/atom+xml" href="{{ '/feed.xml' | url }}" />
+    {% endif %}
+</head>
+
+{% set bodyId %}
+  {% if page.url == '/' %}home
+  {% elif page.url == '/blog/' %}blog
+  {% elif page.url.indexOf('/blog/') === 0 %}blog-post
+  {% elif page.url == '/reading/' %}reading
+  {% elif page.url == '/music/tickets/' %}tickets
+  {% elif page.url == '/music/records/' %}records
+  {% elif page.url == '/pattern-library/' %}pattern
+  {% elif page.url.indexOf('/work/') === 0 %}case-study
+  {% elif page.url == '/about/' %}about
+  {% elif page.url == '/about/pechakucha/' %}pechakucha
+  {% elif page.url == '/404.html' %}error
+  {% endif %}
+{% endset %}
+
+<body id="{{ bodyId | trim }}">
+
+    {% if page.url == '/' %}
+    <img class="topography-map" src="/_/images/home/topography.svg" alt="" aria-hidden="true">
+    {% endif %}
+
+    {% if page.url == '/404.html' %}
+    <div id="error-strip">
+        <div class="grid">
+            <div style="background:#D8D8D6;"></div>
+            <div style="background:#EFEF2D;"></div>
+            <div style="background:#26EEEC;"></div>
+            <div style="background:#18E818;"></div>
+            <div style="background:#EC1FEA;"></div>
+            <div style="background:#EB1F20;"></div>
+            <div style="background:#2A29EF;"></div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% include "partials/header.html" %}
+    <main role="main" tabindex="-1" id="main">
+        <div class="wrapper">
+            {% block content %}{% endblock %}
+        </div>
+
+        {% if audio %}
+        <div class="post-audio-sticky" aria-live="polite">
+        <div class="post-audio" data-audio-src="{{ audio | url }}">
+            <div class="post-audio__progress" aria-hidden="true"></div>
+
+            <div class="post-audio__inner">
+            <button type="button" class="post-audio__btn">
+                <span class="post-audio__icon" aria-hidden="true">▶︎</span>
+                <span class="post-audio__text">Loading…</span>
+            </button>
+            </div>
+
+            <audio class="post-audio__audio" preload="metadata">
+            <source src="{{ (page.url ~ audio) | url }}" type="audio/mpeg">
+            </audio>
+        </div>
+        </div>
+        {% endif %}
+        
+    </main>
+    {% include "partials/footer.html" %}
+
+    {% if js %}
+      {% for src in js %}
+        <script src="{{ (src | assetPath) | url }}?hash={{ assetHash }}"></script>
+      {% endfor %}
+    {% endif %}
+    </body>
+</html>

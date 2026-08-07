@@ -1,0 +1,39 @@
+{
+  "url": "https://jackosborne.com/",
+  "version": "1.0.0",
+  "description": "Jack Osborne is a Digital Product Designer with over fifteen years of experience, based in Brooklyn, New York, via Greenock, Scotland.",
+  "author": {
+    "name": "Jack Osborne",
+    "email": "jack@jackosborne.com",
+    "url": "https://jackosborne.com/"
+  },
+  "scripts": {
+    "clean": "rimraf _site",
+    "build": "npm run tokens:check && npm run patterns:check && npm run clean && npm run css && npm run js && NODE_ENV=production npx @11ty/eleventy && npm run site:size",
+    "audit:images": "node src/scripts/audit-image-tags.js",
+    "css": "gulp minifyCSS",
+    "js": "gulp minifyJS",
+    "start": "npm run css && npm run js && npx @11ty/eleventy --serve",
+    "fetch:records": "node src/scripts/fetch-discogs-records.js",
+    "tokens:docs": "node src/scripts/sync-design-tokens.js",
+    "tokens:check": "node src/scripts/sync-design-tokens.js --check",
+    "patterns:check": "node src/scripts/check-pattern-library-contracts.js",
+    "site:size": "node src/scripts/check-site-size.js"
+  },
+  "dependencies": {
+    "@11ty/eleventy-plugin-rss": "^2.0.3",
+    "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
+    "dayjs": "^1.11.13",
+    "html-minifier-terser": "^7.2.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.0",
+    "@11ty/eleventy-img": "^6.0.4",
+    "gulp": "^5.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-terser": "^2.1.0",
+    "htmlparser2": "^7.2.0",
+    "rimraf": "^6.1.3"
+  }
+}

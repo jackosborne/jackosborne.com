@@ -1,0 +1,46 @@
+{% extends "layouts/base.html" %}
+{% from "partials/page-intro.html" import pageIntro %}
+
+{% block content %}
+
+{{ pageIntro("Records", "Vinyl", "A living archive of my record collection, sourced from Discogs. A simple way to explore what I own and decide what to play next.") }}
+
+<section class="records-page">
+  <ul class="records-grid" aria-label="Record collection">
+    {% for record in records %}
+      {% include "partials/record-grid-item.html" %}
+    {% endfor %}
+  </ul>
+</section>
+
+<div class="records-picker-sticky music-toolbar-sticky" aria-live="polite">
+  <div class="records-picker floating-bar" data-record-picker>
+    <div class="records-picker__inner floating-bar__inner music-toolbar-scroll">
+      <button
+        type="button"
+        class="records-picker__btn records-picker__btn--primary floating-bar__chip"
+        data-random-record
+      >
+        <span class="records-picker__label">Pick a record</span>
+      </button>
+
+      <span class="records-picker__result" data-random-result>
+        <span class="records-picker__result-text records-picker__placeholder" data-random-output>
+          <span data-record-count></span> chances to pick something good
+        </span>
+      </span>
+
+      <button
+        type="button"
+        class="records-picker__clear"
+        data-clear-record
+        hidden
+        aria-label="Clear selection"
+      >
+        ×
+      </button>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

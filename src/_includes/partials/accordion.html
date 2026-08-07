@@ -1,0 +1,11 @@
+{% macro accordion(id, label) %}
+<details class="acc" aria-labelledby="{{ id }}">
+  <summary class="acc__summary">
+    <span id="{{ id }}">{{ label }}</span>
+    <svg class="acc__chev" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M5 16L12 9L19 16" stroke="var(--color-ink-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </summary>
+  <div class="acc__panel">
+    {{ caller() }}
+  </div>
+</details>
+{% endmacro %}

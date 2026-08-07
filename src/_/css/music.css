@@ -1,0 +1,36 @@
+/* ---------------------------------------
+   Shared music archive primitives
+--------------------------------------- */
+
+.music-toolbar-sticky {
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  margin-top: calc(2 * var(--spacing-unit));
+}
+
+.music-toolbar-sticky > .floating-bar {
+  width: 100%;
+}
+
+.music-toolbar-scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-inline: 0.5rem;
+  scroll-padding-left: 1rem;
+  scroll-padding-right: 1rem;
+}
+
+.music-toolbar-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.music-toolbar-chip {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 720px) {
+  .music-toolbar-sticky {
+    margin-top: 1rem;
+  }
+}

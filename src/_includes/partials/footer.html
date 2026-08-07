@@ -1,0 +1,83 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="wrapper">
+    <nav class="site-footer-nav footer-nav" aria-label="Footer">
+      <div class="grid">
+        <section class="footer-col" aria-labelledby="footer-site">
+          <h2 id="footer-site" class="visually-hidden">Site</h2>
+          <ul class="footer-links">
+            <li><a href="/"{% if page.url == '/' %} class="active" aria-current="page"{% endif %}>Home</a></li>
+          </ul>
+        </section>
+
+        <section class="footer-col" aria-labelledby="footer-explore">
+          <h2 id="footer-explore" class="visually-hidden">Explore</h2>
+          <ul class="footer-links">
+            <li>
+              <a href="/about/"{% if page.url.indexOf('/about/') === 0 %} class="active" aria-current="page"{% endif %}>About</a>
+            </li>
+            <li>
+              <a href="/blog/"{% if page.url.indexOf('/blog/') === 0 %} class="active" aria-current="page"{% endif %}>Blog</a>
+            </li>
+            <li><a href="/feed.xml">RSS</a></li>
+            <li><a href="/sitemap.xml">Sitemap</a></li>
+            <li>
+              <a href="/pattern-library/"{% if page.url == '/pattern-library/' %} class="active" aria-current="page"{% endif %}>Pattern Library</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="footer-col" aria-labelledby="footer-social">
+          <h2 id="footer-social" class="visually-hidden">Social</h2>
+          <ul class="footer-links">
+            <li>
+              <a href="https://www.linkedin.com/in/jackosborne/" rel="me noopener" target="_blank">LinkedIn</a>
+            </li>
+            <li>
+              <a href="https://twitter.com/jackosborne" rel="me noopener" target="_blank">Twitter</a>
+            </li>
+            <li><a href="mailto:{{ site.email }}">Email</a></li>
+          </ul>
+        </section>
+
+        <div class="footer-col footer-top">
+          <a href="#top" class="back-to-top" aria-label="Back to top">
+            Back to top
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 22 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M11 18V4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              ></path>
+              <path
+                d="M4 11L11 4L18 11"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="copyright grid">
+      <p>
+        &copy; <span class="mono">2005–{% year %}</span> Jack Osborne. All rights
+        reserved. All content on this website, including images, text, and
+        designs, is the copyright of Jack Osborne and its clients. No part of
+        this website may be reproduced, downloaded, transmitted, or stored in
+        any form or by any means, electronic or mechanical, without prior
+        written permission from the copyright owner.
+      </p>
+    </div>
+  </div>
+</footer>

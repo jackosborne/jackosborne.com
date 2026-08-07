@@ -1,0 +1,105 @@
+{% extends "layouts/base.html" %}
+{% from "partials/accordion.html" import accordion %}
+
+{% block content %}
+
+<header class="page-intro grid">
+    <div class="page-intro__inner row-start-7 row-end-19">
+      <div class="post-meta">
+        {% if '/blog/' in page.url %}
+          <a href="/blog/">Blog</a>
+        {% endif %}
+        {% if '/blog/' in page.url %}
+          {% if page.url != '/blog/' %}
+          <time datetime="{{ date | date('YYYY-MM-DD') }}" class="output">/
+            &nbsp;{{ date | date('Do MMMM YYYY') }}
+          </time>
+          {% endif %}
+        {% endif %}
+    </div>
+
+    {%- if product %}
+      <h5>{{ product }}</h5>
+    {%- endif %}
+    <h1>{{ title }}</h1>
+    </div>
+  </header>
+
+  <div class="grid content">
+    <div class="grid-content main content-main prose article-prose row-start-7 row-end-19">
+
+      {% set age = page.date | yearsOld %}
+
+      {% if age >= 5 %}
+        <div class="post-age-warning callout" role="note" aria-label="Article age notice">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 8H20M4 8V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H16.8031C17.921 20 18.48 20 18.9074 19.7822C19.2837 19.5905 19.5905 19.2842 19.7822 18.9079C20 18.4805 20 17.9215 20 16.8036V8M4 8V7.2002C4 6.08009 4 5.51962 4.21799 5.0918C4.40973 4.71547 4.71547 4.40973 5.0918 4.21799C5.51962 4 6.08009 4 7.2002 4H8M20 8V7.19691C20 6.07899 20 5.5192 19.7822 5.0918C19.5905 4.71547 19.2837 4.40973 18.9074 4.21799C18.4796 4 17.9203 4 16.8002 4H16M16 2V4M16 4H8M8 2V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="callout__text"> 
+            This article is <strong>{{ age }} years old</strong>, so some links or images may no longer work.
+          </div> 
+        </div>
+      {% endif %}
+
+      {{ content | safe }}
+
+      {% if '/blog/' in page.url %}
+        {% if page.url != '/blog/' %}
+          <div class="meta content-meta post-details">
+            {% call accordion("post-context", "Supplement") %}
+              <ul id="footnotes">
+                {%- if location %}
+                <li>
+                  <span class="heading">Location:</span>
+                  <span class="output">{{ location }}</span>
+                </li>
+                {%- endif %}
+
+                {%- if mood %}
+                <li>
+                  <span class="heading">Mood:</span>
+                  <span class="output">{{ mood }}</span>
+                </li>
+                {%- endif %}
+
+                {%- if song %}
+                <li>
+                  <span class="heading">Song:</span>
+                  <span class="output">{{ song }}</span>
+                </li>
+                {%- endif %}
+
+                <li>
+                  <span class="heading">Read time:</span>
+                  <span class="output">{{ content | readingTime }} min</span>
+                </li>
+              </ul>
+            {% endcall %}
+          </div>
+        {% endif %}
+      {% endif %}
+
+      {% if '/blog/' in page.url and page.url != '/blog/' %}
+        {% set newerPost = collections.writing | newerWriting(page.url) %}
+        {% set olderPost = collections.writing | olderWriting(page.url) %}
+        {% if newerPost or olderPost %}
+          <nav class="post-pagination" aria-label="More writing">
+            {% if olderPost %}
+              <div class="post-pagination__item post-pagination__item--older">
+                <span>Older</span>
+                <a href="{{ olderPost.url }}">{{ olderPost.data.title }}</a>
+              </div>
+            {% endif %}
+            {% if newerPost %}
+              <div class="post-pagination__item post-pagination__item--newer">
+                <span>Newer</span>
+                <a href="{{ newerPost.url }}">{{ newerPost.data.title }}</a>
+              </div>
+            {% endif %}
+          </nav>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock %}

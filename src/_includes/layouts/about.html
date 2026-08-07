@@ -1,0 +1,16 @@
+{% extends "layouts/base.html" %}
+{% from "partials/page-intro.html" import pageIntro %}
+
+{% block content %}
+
+{{ pageIntro(title) }}
+
+{% if content | trim %}
+<div class="grid content">
+  <div class="grid-content main content-main prose bio row-start-7 row-end-19">
+    {{ content | safe }}
+  </div>
+</div>
+{% endif %}
+
+{% endblock %}

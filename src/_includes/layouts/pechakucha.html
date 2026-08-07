@@ -1,0 +1,36 @@
+{% extends "layouts/base.html" %}
+{% from "partials/page-intro.html" import pageIntro %}
+
+{% block content %}
+
+  {{ pageIntro(title, product, overview) }}
+
+  <div class="content grid">
+    <div class="main content-main row-start-7 row-end-19">
+      <div class="slider__controls" aria-hidden="true">
+        <button class="slider-btn prev" id="slider-prev" aria-label="Previous slide" disabled aria-disabled="true">◀</button>
+        <button class="slider-btn next" id="slider-next" aria-label="Next slide">▶</button>
+      </div>
+      
+      <section class="slider-section">
+        <div class="slider-breakout">
+          <div class="slider__viewport" id="slider-viewport">
+            <div class="slider__track" id="slider-track">
+              {% for s in pechakucha %}
+                <article class="slide" aria-label="{{ s.title }}">
+                  <div class="media">
+                    {% if s.image %}
+                      {% responsiveImage s.image, s.title, "(min-width: 1140px) min(40vw, 655px), (min-width: 992px) min(48vw, 640px), (min-width: 768px) min(60vw, 600px), calc(100vw - 64px)", "pechakucha" %}
+                    {% endif %}
+                  </div>
+                  <p>{{ s.overview }}</p>
+                </article>
+              {% endfor %}
+            </div>  
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+{% endblock %}

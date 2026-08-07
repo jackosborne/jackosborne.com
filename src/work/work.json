@@ -1,0 +1,8 @@
+{
+  "layout": "layouts/project.html",
+  "tags": "casestudy",
+  "css": [
+    "/_/css/project.min.css"  ],
+  "js": [
+    "/_/js/project.min.js"  ]
+}

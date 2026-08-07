@@ -1,0 +1,10 @@
+{% macro pageIntro(title, eyebrow = "", description = "", className = "", eyebrowClass = "") %}
+<header class="page-intro{% if className %} {{ className }}{% endif %} grid">
+  <div class="page-intro__inner row-start-7 row-end-19">
+    {% if eyebrow %}<p class="page-intro__eyebrow{% if eyebrowClass %} {{ eyebrowClass }}{% endif %}">{{ eyebrow }}</p>{% endif %}
+    <h1>{{ title }}</h1>
+    {% if description %}<p class="page-intro__description">{{ description }}</p>{% endif %}
+    {% if caller %}{{ caller() }}{% endif %}
+  </div>
+</header>
+{% endmacro %}

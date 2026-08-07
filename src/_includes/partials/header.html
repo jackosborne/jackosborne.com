@@ -1,0 +1,21 @@
+<a class="skip-link" href="#main">Skip to Content</a>
+
+<header class="site-header" role="banner">
+  <div class="wrapper site-header__grid">
+    {% if page.url == '/' %}
+    <span class="site-header__home" aria-current="page">Home</span>
+    {% else %}
+    <a class="site-header__home" href="/">Home</a>
+    {% endif %}
+
+    {% if page.url != '/' %}
+    <nav class="site-nav" aria-label="Current page">
+      <ul>
+        {% include "partials/navigation.html" %}
+      </ul>
+    </nav>
+    {% endif %}
+
+    <a class="email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+  </div>
+</header>

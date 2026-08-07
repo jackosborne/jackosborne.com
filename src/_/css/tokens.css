@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+/*
+ * Canonical design tokens
+ *
+ * Exact values live here. docs/design-system.md documents how and why to use
+ * them. Component-specific custom properties should remain with components.
+ */
+
+:root {
+  color-scheme: light dark;
+
+  /* Typography: families */
+  --font-base:
+    -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-base);
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+
+  /* Typography: general scale */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.25rem;
+  --font-size-lg: 1.875rem;
+  --font-size-hero: clamp(2.125rem, 5vw, 3rem);
+
+  /* Typography: role-based scale */
+  --font-size-product-title: clamp(1.375rem, 2.4vw, 1.75rem);
+  --font-size-card-label: 1rem;
+  --font-size-utility: 0.875rem;
+
+  /* Typography: line height, weight, and tracking */
+  --line-height-xs: 1.45;
+  --line-height-base: 1.5;
+  --line-height-md: 1.25;
+  --line-height-xl: 1.1;
+  --line-height-display: 0.98;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --leading-snug: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --tracking-sm: 0.01em;
+  --tracking-base: 0;
+  --tracking-lg: -0.02em;
+  --tracking-xl: -0.025em;
+  --tracking-2xl: -0.035em;
+
+  /* Semantic color */
+  --color-canvas: #ffffff;
+  --color-ink: #111111;
+  --color-ink-muted: #6e6e73;
+  --color-stage: #f5f5f7;
+  --color-stage-hover: #ebebed;
+  --color-divider: rgba(17, 17, 17, 0.08);
+  --color-image-surface: #fafafa;
+  --color-focus: #333333;
+  --color-white-glass: rgba(255, 255, 255, 0.92);
+  --color-subtle-fill: rgba(0, 0, 0, 0.06);
+  --color-subtle-fill-hover: rgba(0, 0, 0, 0.1);
+
+  /* Interaction geometry */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 3px;
+  --link-decoration-thickness: 1px;
+  --link-underline-offset: 0.14em;
+
+  /* Link states */
+  --color-link: var(--color-ink-muted);
+  --color-link-visited: var(--color-ink-muted);
+  --color-link-hover: var(--color-ink);
+  --color-link-active: var(--color-ink);
+
+  /* Callouts */
+  --color-callout-bg: #fff7e5;
+  --color-callout-text: #513e10;
+  --color-callout-icon: #ffa000;
+
+  /* Project-owned colors; do not use as global interface accents */
+  --color-brand-fsqcityguide: #f94877;
+  --color-brand-fsqswarm: #ffa633;
+
+  /* Spacing: 8px foundation */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-7: 56px;
+  --space-9: 72px;
+  --space-12: 96px;
+  --space-16: 128px;
+  --space-20: 160px;
+  --spacing-unit: var(--space-1);
+  --layout-gap: 0.625rem;
+
+  /* Shape */
+  --radius-small: 12px;
+  --radius-card-mobile: 24px;
+  --radius-card: 32px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease-expressive: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-media: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Specialized effects retained from the existing site */
+  --audio-blur: 12px;
+  --audio-sat: 1.35;
+  --audio-bright: 1.05;
+  --audio-fill: color-mix(in oklab, canvas 24%, transparent);
+  --audio-milk: color-mix(in oklab, canvas 16%, transparent);
+  --audio-stroke: color-mix(in oklab, canvasText 8%, transparent);
+  --surface-darken: 4%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-canvas: #24262a;
+    --color-ink: #ffffff;
+    --color-ink-muted: #abb0bb;
+    --color-stage: #3e4045;
+    --color-stage-hover: #494c52;
+    --color-divider: rgba(255, 255, 255, 0.12);
+    --color-image-surface: #2b2d32;
+    --color-focus: #ffffff;
+    --color-white-glass: rgba(36, 38, 42, 0.92);
+    --color-subtle-fill: rgba(255, 255, 255, 0.1);
+    --color-subtle-fill-hover: rgba(255, 255, 255, 0.16);
+    --color-link: var(--color-ink-muted);
+    --color-link-visited: var(--color-ink-muted);
+    --color-link-hover: var(--color-ink);
+    --color-link-active: var(--color-ink);
+    --color-callout-bg: #3a3424;
+    --color-callout-text: #e8d9b0;
+    --color-callout-icon: #ffb703;
+    --surface-darken: 16%;
+    --audio-sat: 1.2;
+    --audio-bright: 0.95;
+    --audio-fill: color-mix(in oklab, canvasText 14%, transparent);
+    --audio-milk: color-mix(in oklab, canvasText 10%, transparent);
+    --audio-stroke: color-mix(in oklab, canvasText 40%, transparent);
+  }
+}
