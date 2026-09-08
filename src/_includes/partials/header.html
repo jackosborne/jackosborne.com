@@ -16,6 +16,12 @@
     </nav>
     {% endif %}
 
-    <a class="email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+    <div class="site-header__email">
+      <button class="email" type="button" data-copy-email="{{ site.email }}" aria-label="Copy {{ site.email }}">
+        <span class="email__address" aria-hidden="true">{{ site.email }}</span>
+        <span class="email__feedback" aria-hidden="true">Email copied</span>
+      </button>
+      <span class="visually-hidden copy-status" role="status" aria-live="polite" aria-atomic="true"></span>
+    </div>
   </div>
 </header>

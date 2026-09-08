@@ -112,7 +112,9 @@ a.hero__cta:visited {
   letter-spacing: -0.01em;
   line-height: 1;
   text-decoration: none;
-  transition: background 220ms ease;
+  transition:
+    transform 150ms var(--ease-expressive),
+    background-color 160ms ease;
 }
 
 a.hero__cta:hover,
@@ -120,6 +122,10 @@ a.hero__cta:focus-visible {
   color: var(--color-ink);
   background: var(--color-subtle-fill-hover);
   text-decoration: none;
+}
+
+a.hero__cta:hover {
+  transform: scale(0.98);
 }
 
 .work-grid {

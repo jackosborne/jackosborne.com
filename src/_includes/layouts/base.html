@@ -86,6 +86,7 @@
     </main>
     {% include "partials/footer.html" %}
 
+    <script src="{{ '/_/js/header.min.js' | assetPath | url }}?hash={{ assetHash }}"></script>
     {% if js %}
       {% for src in js %}
         <script src="{{ (src | assetPath) | url }}?hash={{ assetHash }}"></script>

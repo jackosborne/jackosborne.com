@@ -342,7 +342,8 @@ header[role="banner"] > .wrapper {
   padding: 0;
 }
 
-.site-header a {
+.site-header a,
+.site-header button {
   color: var(--color-ink-muted);
   text-decoration: none;
 }
@@ -358,11 +359,59 @@ header[role="banner"] > .wrapper {
   text-underline-offset: 0.14em;
 }
 
-.email {
-  color: var(--color-ink-muted);
+.site-header__email {
+  position: relative;
   grid-column: 19 / -1;
   justify-self: end;
+}
+
+.email {
+  appearance: none;
+  background: none;
+  border: 0;
+  color: var(--color-ink-muted);
+  cursor: pointer;
+  display: grid;
+  height: 1.5em;
+  justify-items: end;
+  line-height: var(--line-height-base);
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
   white-space: nowrap;
+}
+
+.email__address,
+.email__feedback {
+  grid-area: 1 / 1;
+  transition:
+    color 180ms var(--ease-expressive),
+    transform 260ms var(--ease-expressive);
+}
+
+.email__feedback {
+  color: var(--color-ink);
+  transform: translateY(100%);
+}
+
+.email:hover .email__address,
+.email:focus-visible .email__address {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+.email.is-copied .email__address {
+  transform: translateY(-100%);
+  transition-duration: 180ms, 380ms;
+  transition-timing-function: var(--ease-expressive), cubic-bezier(0.34, 1.35, 0.64, 1);
+}
+
+.email.is-copied .email__feedback {
+  transform: translateY(0);
+  transition-delay: 0ms, 35ms;
+  transition-duration: 180ms, 420ms;
+  transition-timing-function: var(--ease-expressive), cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 @keyframes page-fade-in {
@@ -398,18 +447,21 @@ header[role="banner"] > .wrapper {
 
 @media screen and (max-width: 1139px) {
   .site-header__grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto;
     row-gap: var(--space-1);
   }
 
-  .site-header__home,
-  .site-nav,
-  .email {
+  .site-header__home {
     grid-column: 1;
   }
 
-  .email {
-    display: none;
+  .site-nav {
+    grid-column: 1 / -1;
+  }
+
+  .site-header__email {
+    grid-column: 2;
+    grid-row: 1;
   }
 }
 
@@ -1175,6 +1227,11 @@ ul#footnotes {
    REDUCED MOTION
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
+  .email__address,
+  .email__feedback {
+    transition: none;
+  }
+
   * {
     -webkit-animation-duration: 0s !important;
     animation-duration: 0s !important;

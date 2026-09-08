@@ -286,14 +286,15 @@ The header is a low-chrome four-column composition mapped onto the shared 24-tra
 - The email address occupies tracks 19–24.
 - The homepage omits the current-page context.
 - At 1140px and above, email/contact sits right-aligned on the final rail.
+- The header email is a copy action contained in a clipped, single-line reel. After activation, the address slides upward and “Email copied” follows from below with a short delay and restrained spring overshoot; the return is quicker and calmer after a brief pause. Keep the button width stable, retain a fixed accessible name, announce the result separately to screen readers, and replace the transition with an immediate state change when reduced motion is requested.
 - Links inherit the surrounding type and use color rather than containers for hierarchy.
-- Below 1140px, Home and the current-page context stack, align left, and use an 8px row gap. Hide the header email; contact remains available in the footer.
+- Below 1140px, Home and the email action share the top row, aligned left and right respectively. The current-page context spans the row beneath with an 8px row gap.
 
 ### Homepage hero
 
 The hero is a centered personal statement, not a product-marketing masthead. It spans the grid, caps its line length at roughly `32ch`, and uses regular-weight display type.
 
-The only primary action is a neutral pill beneath the statement. Its current specification uses a 44px minimum height, 16px text, 16px horizontal padding, and the shared subtle-fill tokens. It darkens slightly on hover.
+The only primary action is a neutral pill beneath the statement. Its current specification uses a 44px minimum height, 16px text, 16px horizontal padding, and the shared subtle-fill tokens. It darkens and scales to `0.98` over 150ms on hover, using the shared expressive easing. Keep the control flat; it does not need elevation or a shadow.
 
 On mobile, the hero becomes left-aligned. This is intentional: the smaller viewport benefits from a more direct editorial reading pattern.
 
@@ -429,7 +430,7 @@ Cards may scale subtly as part of a scroll-linked effect, provided the motion re
 ### Mobile: 0–640px
 
 - Page gutter remains 32px.
-- Header uses the stacked Home/context composition; header email is hidden.
+- Header places Home and the email action on the top row; the current-page context spans a second row when present.
 - Hero and product headings become left-aligned.
 - Hero type follows the global H1 scale: `clamp(34px, 5vw, 48px)`.
 - Project cards become portrait `4 / 5` stages with 24px radius.
@@ -514,10 +515,11 @@ The new homepage is the target visual direction. The Eleventy project is the mig
 | Editorial table | `.prose table`, `.data-table` | `style.css` | Implemented and reusable; Markdown tables inherit the prose contract, while standalone tables opt in with `.data-table`. Includes quiet borders, generous cells, and alternating row surfaces. |
 | Editorial figure | `.prose figure.img` | `style.css` | Implemented and reusable; use the `.bg` wrapper for the shared stage surface and pair captions with an optional muted secondary `<span>`. Combine with `.breakout` for grid-width media. |
 | Site header and navigation | `.site-header`, `.site-nav`, `header[role="banner"]` | `style.css` | Implemented; uses the 24-track Home/context/email composition with a dynamic current-page hierarchy. |
+| Copy confirmation | `.email__feedback`, `.copy-status` | `style.css`, `partials/header.html`, `header.js` | Implemented as a vertical text transition within the header email action, paired with a polite visually hidden live region. |
 | Site footer | `.site-footer`, `footer[role="contentinfo"]` | `style.css` | Implemented. |
 | Interior page introduction | `.page-intro` | `style.css`, `partials/page-intro.html` | Implemented; use the macro for the standard structure and its caller block for local additions. |
 | Homepage introduction | `.hero` | `home.css` | Implemented from the new homepage prototype. |
-| Neutral homepage action | `.hero__cta` | `home.css` | Implemented with a minimum 44px hit area. |
+| Neutral homepage action | `.hero__cta` | `home.css` | Implemented with a minimum 44px hit area and a subtle hover scale; keep it flat without a shadow. |
 | Topographic reveal | `.topography-trigger`, `.topography-map` | New homepage prototype | Deferred with the homepage imagery; do not generalize it into a site-wide pattern. |
 | Career/product group | `.product`, `.product__header` | `home.css` | Implemented; homepage-specific until another page demonstrates reuse. |
 | Homepage project grid | `.product__projects` | `home.css` | Implemented as a responsive one/two-column composition within the 1320px homepage container. |
