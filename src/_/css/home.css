@@ -4,6 +4,13 @@ body#home {
   --home-section-space-lg: calc(16 * var(--space-1));
   --home-card-space: clamp(var(--space-3), 5vw, var(--space-9));
   --home-card-label-space: clamp(var(--space-3), 4vw, var(--space-7));
+  --home-topography-opacity: 0.28;
+}
+
+@media (prefers-color-scheme: dark) {
+  body#home {
+    --home-topography-opacity: 0.4;
+  }
 }
 
 body#home main[role="main"] {
@@ -71,7 +78,7 @@ body#home main[role="main"] > .wrapper {
 
 body#home:has(.topography-trigger:hover) > .topography-map,
 body#home:has(.topography-trigger:focus-visible) > .topography-map {
-  opacity: 0.4;
+  opacity: var(--home-topography-opacity);
 }
 
 body#home:has(.topography-trigger:hover) .topography-coordinates,

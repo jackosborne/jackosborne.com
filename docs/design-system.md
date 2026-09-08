@@ -305,7 +305,7 @@ On mobile, the hero becomes left-aligned. This is intentional: the smaller viewp
 
 - The map is decorative and must remain hidden from assistive technology.
 - It fades in over 900ms with an ease-out curve.
-- It sits behind content at low opacity (currently 0.4).
+- It sits behind content at low opacity: `0.28` in light mode so the denser contours do not compete with the hero, and `0.4` in dark mode.
 - Disable the visual entirely on mobile, where hover is unavailable and the overlay would compete with content.
 - Do not add other background illustrations that dilute this single personal motif.
 
