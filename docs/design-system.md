@@ -84,6 +84,7 @@ This section is generated from `src/_/css/tokens.css`. Do not edit it manually. 
 | `--space-20` | `160px` | — |
 | `--spacing-unit` | `var(--space-1)` | — |
 | `--layout-gap` | `0.625rem` | — |
+| `--radius-xsmall` | `4px` | — |
 | `--radius-small` | `12px` | — |
 | `--radius-card-mobile` | `24px` | — |
 | `--radius-card` | `32px` | — |

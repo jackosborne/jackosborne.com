@@ -99,6 +99,7 @@
   --layout-gap: 0.625rem;
 
   /* Shape */
+  --radius-xsmall: 4px;
   --radius-small: 12px;
   --radius-card-mobile: 24px;
   --radius-card: 32px;
