@@ -47,11 +47,15 @@ This section is generated from `src/_/css/tokens.css`. Do not edit it manually. 
 | `--tracking-lg` | `-0.02em` | — |
 | `--tracking-xl` | `-0.025em` | — |
 | `--tracking-2xl` | `-0.035em` | — |
+| `--color-dark-ink` | `#ffffff` | — |
+| `--color-dark-ink-muted` | `#abb0bb` | — |
+| `--color-dark-stage` | `#3e4045` | — |
+| `--color-dark-stage-hover` | `#494c52` | — |
 | `--color-canvas` | `#ffffff` | `#24262a` |
-| `--color-ink` | `#111111` | `#ffffff` |
-| `--color-ink-muted` | `#6e6e73` | `#abb0bb` |
-| `--color-stage` | `#f5f5f7` | `#3e4045` |
-| `--color-stage-hover` | `#ebebed` | `#494c52` |
+| `--color-ink` | `#111111` | `var(--color-dark-ink)` |
+| `--color-ink-muted` | `#6e6e73` | `var(--color-dark-ink-muted)` |
+| `--color-stage` | `#f5f5f7` | `var(--color-dark-stage)` |
+| `--color-stage-hover` | `#ebebed` | `var(--color-dark-stage-hover)` |
 | `--color-divider` | `rgba(17, 17, 17, 0.08)` | `rgba(255, 255, 255, 0.12)` |
 | `--color-image-surface` | `#fafafa` | `#2b2d32` |
 | `--color-focus` | `#333333` | `#ffffff` |
@@ -590,6 +594,8 @@ Status: Provisional. Use only for a small group of mutually related controls suc
 ### Scoped visual systems
 
 Record sleeves and vinyl motion, ticket flipping and paper treatments, frosted audio controls, the records picker, PechaKucha scrolling, and the check-in map are content-specific visual systems. Keep their selectors and implementation in their existing page stylesheets. They may depart from the quiet global shell when that behavior serves their content, but they must not redefine shared typography, navigation, page surfaces, or default controls.
+
+PechaKucha presentation mode uses a local black viewing surface and the same slide content as the browsing view. Fill a stable 16:9 stage with proportionally scaled images (`object-fit: cover`); slight edge cropping is intentional to avoid letterboxing with the shared 32px desktop / 24px mobile card radii. Reserve a consistent footer height so asset proportions and caption length never shift the stage or caption baseline between slides. Keep a 24px gap below the stage; captions align to its left edge in regular system body type with a maximum 60ch measure. Place the compact, fixed-width slide count between the previous and next arrows at the right of the caption row. Presentation mode is available from 768px upward; smaller viewports use the original vertical slide list. Crossing below that breakpoint closes an open presentation and focuses its current slide in the list. Keep the close button top-right, aligned with the stage’s right edge. Controls and muted copy use the fixed dark palette tokens regardless of the operating-system theme; retain the black backdrop. Use consistent stroke icons in 44px circular controls. Opening and image changes may fade over 180ms, only when reduced motion is not requested; decode replacement images before displaying them. Show loading feedback while pending; failed or timed-out loads offer a keyboard-accessible retry action while keeping the caption and navigation available. Keep Escape dismissal, dialog focus containment, and focus restoration to the originating slide. Announce each loaded slide number and caption through one polite status region without moving navigation focus. Make the caption keyboard-focusable and scrollable, preserving native caption scrolling keys. Browsing arrows use 44px targets and move instantly when reduced motion is requested. Slide triggers use a two-tone inset focus indicator so keyboard focus remains visible over varied imagery.
 
 ### CSS architecture
 

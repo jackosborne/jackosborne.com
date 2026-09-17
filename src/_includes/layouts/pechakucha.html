@@ -7,7 +7,7 @@
 
   <div class="content grid">
     <div class="main content-main row-start-7 row-end-19">
-      <div class="slider__controls" aria-hidden="true">
+      <div class="slider__controls">
         <button class="slider-btn prev" id="slider-prev" aria-label="Previous slide" disabled aria-disabled="true">◀</button>
         <button class="slider-btn next" id="slider-next" aria-label="Next slide">▶</button>
       </div>
@@ -20,8 +20,9 @@
                 <article class="slide" aria-label="{{ s.title }}">
                   <div class="media">
                     {% if s.image %}
-                      {% responsiveImage s.image, s.title, "(min-width: 1140px) min(40vw, 655px), (min-width: 992px) min(48vw, 640px), (min-width: 768px) min(60vw, 600px), calc(100vw - 64px)", "pechakucha" %}
+                      {% responsiveImage s.image, s.alt, "(min-width: 1140px) min(40vw, 655px), (min-width: 992px) min(48vw, 640px), (min-width: 768px) min(60vw, 600px), calc(100vw - 64px)", "pechakucha" %}
                     {% endif %}
+                    <button class="slide__open" type="button" aria-label="Open slide {{ loop.index }} in presentation view" aria-haspopup="dialog" hidden></button>
                   </div>
                   <p>{{ s.overview }}</p>
                 </article>
@@ -32,5 +33,25 @@
       </section>
     </div>
   </div>
+
+  <dialog class="presentation" id="presentation" aria-label="PechaKucha presentation">
+    <div class="visually-hidden" id="presentation-announcement" role="status" aria-live="polite" aria-atomic="true"></div>
+    <div class="presentation__shell">
+      <div class="presentation__toolbar">
+        <button class="presentation__button" id="presentation-close" type="button" aria-label="Close presentation" autofocus><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <figure class="presentation__figure">
+        <div class="presentation__media" id="presentation-media"></div>
+        <figcaption class="presentation__footer">
+          <p class="presentation__caption" id="presentation-caption" tabindex="0" role="region" aria-label="Slide caption"></p>
+          <div class="presentation__controls">
+        <button class="presentation__button" id="presentation-prev" type="button" aria-label="Previous slide"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+        <span class="presentation__count" id="presentation-count"></span>
+        <button class="presentation__button" id="presentation-next" type="button" aria-label="Next slide"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></button>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </dialog>
 
 {% endblock %}

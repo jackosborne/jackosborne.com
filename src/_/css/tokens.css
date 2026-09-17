@@ -49,6 +49,12 @@
   --tracking-xl: -0.025em;
   --tracking-2xl: -0.035em;
 
+  /* Fixed dark palette for intentionally dark viewing surfaces. */
+  --color-dark-ink: #ffffff;
+  --color-dark-ink-muted: #abb0bb;
+  --color-dark-stage: #3e4045;
+  --color-dark-stage-hover: #494c52;
+
   /* Semantic color */
   --color-canvas: #ffffff;
   --color-ink: #111111;
@@ -122,10 +128,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-canvas: #24262a;
-    --color-ink: #ffffff;
-    --color-ink-muted: #abb0bb;
-    --color-stage: #3e4045;
-    --color-stage-hover: #494c52;
+    --color-ink: var(--color-dark-ink);
+    --color-ink-muted: var(--color-dark-ink-muted);
+    --color-stage: var(--color-dark-stage);
+    --color-stage-hover: var(--color-dark-stage-hover);
     --color-divider: rgba(255, 255, 255, 0.12);
     --color-image-surface: #2b2d32;
     --color-focus: #ffffff;
