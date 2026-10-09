@@ -8,6 +8,10 @@ mood: ["Apprehensive"]
 song: ["Robert Palmer - Simply Irresistible"]
 era: ["new"]
 excerpt: ""
+artwork:
+  src: /blog/2026/09/the-deforestation-of-our-mind/artwork.png
+  alt: "Description of the artwork"
+  caption: "Optional caption or credit"
 #audio: "audio.mp3"
 #modified: 2026-09-13
 ---
