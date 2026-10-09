@@ -288,6 +288,8 @@ The header is a low-chrome four-column composition mapped onto the shared 24-tra
 
 - Home occupies tracks 1–6.
 - The current-page context occupies tracks 7–18 and is generated from page metadata; case studies retain their full `Work / Company / Product / Project` hierarchy.
+- On blog posts, “Blog” links to `/blog/` using the shared muted header-link styling and ink-colored underline on hover or keyboard focus. The following year, month, and post title remain non-interactive current-page text in the ink color. On the blog index, “Blog” remains non-interactive current-page text.
+- Blog post metadata above the title shows only the publication date; the header’s “Blog” link provides navigation back to the index.
 - The email address occupies tracks 19–24.
 - The homepage omits the current-page context.
 - At 1140px and above, email/contact sits right-aligned on the final rail.
@@ -348,6 +350,17 @@ Standalone prose blockquotes use the larger `--font-size-md` editorial treatment
 Collection grids align comparable objects to a common baseline when practical. Reading covers align to the bottom edge of each grid row while captions flow below; natural cover proportions are preserved.
 
 ### Responsive imagery
+
+Blog posts may opt into artwork with an `artwork.src` front-matter field. Render it as a separate figure inside the main landmark, between the page intro and article content, spanning the full wrapper width. Reuse the case-study banner treatment: a relatively positioned, clipped stage with `--color-stage` background and 24px (`--radius-card-mobile`) corners. Its height is `clamp(240px, 36vw, 480px)`, with centered `object-fit: cover` imagery; choose artwork that tolerates cropping. Optional captions sit below the stage. Leave 40px (`--space-5`) before the article. Omit the entire figure and its spacing when no source is supplied. Use the shared `responsiveImage` shortcode with the `wide` profile and wrapper-width sizes; `artwork.src` is a site-root path to a local asset under `src/`.
+
+```yaml
+artwork:
+  src: /_/images/blog/example.jpg
+  alt: "Describe the artwork when it conveys meaning"
+  caption: "Optional plain-text caption or credit"
+```
+
+Use empty alt text (`alt: ""`) for purely decorative artwork. Omit `caption` when it is unnecessary. Existing posts remain artwork-free until they explicitly opt in.
 
 Meaningful local raster images use the shared `responsiveImage` Nunjucks shortcode. The shortcode generates intrinsic dimensions, responsive source candidates, modern formats, fallback formats, lazy loading, and asynchronous decoding. Do not reference generated filenames directly; they are build output rather than authored assets.
 
@@ -552,6 +565,7 @@ Status: Implemented and reusable. Use `.callout` for a short contextual notice i
 - Consume the `--color-callout-*` tokens and inherit link color.
 - An icon is optional and should be decorative unless it communicates information not present in the text.
 - Keep the message brief; do not use callouts as generic cards or stack several consecutively.
+- Blog post age warnings use a 24px (`--space-3`) bottom margin to group the notice with the opening paragraph, while preserving the spacing from the title above.
 
 #### Homepage work card
 

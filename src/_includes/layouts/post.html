@@ -6,15 +6,8 @@
 <header class="page-intro grid">
     <div class="page-intro__inner row-start-7 row-end-19">
       <div class="post-meta">
-        {% if '/blog/' in page.url %}
-          <a href="/blog/">Blog</a>
-        {% endif %}
-        {% if '/blog/' in page.url %}
-          {% if page.url != '/blog/' %}
-          <time datetime="{{ date | date('YYYY-MM-DD') }}" class="output">/
-            &nbsp;{{ date | date('Do MMMM YYYY') }}
-          </time>
-          {% endif %}
+        {% if '/blog/' in page.url and page.url != '/blog/' %}
+          <time datetime="{{ date | date('YYYY-MM-DD') }}" class="output">{{ date | date('Do MMMM YYYY') }}</time>
         {% endif %}
     </div>
 
@@ -24,6 +17,17 @@
     <h1>{{ title }}</h1>
     </div>
   </header>
+
+  {% if artwork and artwork.src %}
+      <figure class="post-artwork">
+        <div class="post-artwork__stage">
+          {% responsiveImage artwork.src, artwork.alt | default(''), "(min-width: 1024px) min(calc(100vw - 192px), 1320px), calc(100vw - 64px)", "wide" %}
+        </div>
+        {% if artwork.caption %}
+          <figcaption>{{ artwork.caption | escape }}</figcaption>
+        {% endif %}
+      </figure>
+  {% endif %}
 
   <div class="grid content">
     <div class="grid-content main content-main prose article-prose row-start-7 row-end-19">
