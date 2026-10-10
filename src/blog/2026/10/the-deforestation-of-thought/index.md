@@ -166,11 +166,9 @@ Perhaps that's the distinction I've been missing. The question isn't simply whet
 
 I'm not sure where those boundaries should be. I'm not even particularly confident I'll always respect them. Still, I need to start paying attention to the moments when reaching for the machine has become easier than trusting myself.
 
-Perhaps that's what the feeling in the morning really is. Not guilt, exactly. Something closer to the suspicion that you've given something away, before the day has even started, without quite realising it.
+Perhaps that's what the feeling in the morning really is. Not guilt, exactly. Something closer to the suspicion that you've given something away, before the day has even started, without quite realising it. You still have your ideas, your memories, your judgment, your creativity. Of course you do. There's still plenty of forest left. At least, that's what you tell yourself.
 
-You still have your ideas, your memories, your judgment, your creativity. Of course you do. There's still plenty of forest left. At least, that's what you tell yourself.
-
-The internet is changing. How we work, create, learn and relate to one another is changing with it. Apparently, we have to change, too. I wish we'd spent a little more time asking what we wanted to keep.
+The internet is changing. How we work, create, learn and relate to one another is changing with it. Apparently, we have to change, too. I just wish we'd spent a little more time asking what we wanted to keep.
 
 Tomorrow morning, the light will cut through the curtains. I'll open my eyes, put my feet on the floor and probably, before I've had the chance to form a thought entirely on my own, I'll ask a machine what it thinks.
 
