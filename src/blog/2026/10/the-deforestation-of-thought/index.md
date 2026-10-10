@@ -5,7 +5,7 @@ title: "The Deforestation of Thought"
 tags: ["blog", "life", "tech"]
 location: ["Carroll Gardens, Brooklyn"]
 mood: ["Apprehensive"]
-song: ["Robert Palmer - Simply Irresistible"]
+song: ["Robert Palmer - Simply Irresistible", "https://www.youtube.com/watch?v=SoHpSY3IoAI"]
 era: ["new"]
 excerpt: ""
 #artwork:

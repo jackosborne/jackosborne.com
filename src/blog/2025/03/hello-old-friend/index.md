@@ -5,7 +5,7 @@ title: "Hello, Old Friend"
 tags: ["blog", "life"]
 location: ["Carroll Gardens, Brooklyn"]
 mood: ["Melancholic"]
-song: ["The Horrors - Ariel"]
+song: ["The Horrors - Ariel", "https://www.youtube.com/watch?v=-G1KBwajm1g"]
 era: ["new"]
 excerpt: "It has been over a decade since I published anything significant on this website. Much has changed, yet so much remains the same. Opportunities to capture, critique, and discuss have slipped by, leaving my little corner of the internet to quietly decay."
 audio: "audio.mp3"

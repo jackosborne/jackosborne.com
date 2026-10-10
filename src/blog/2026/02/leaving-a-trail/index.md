@@ -5,7 +5,7 @@ title: "Leaving a Trail"
 tags: ["blog", "life"]
 location: ["Carroll Gardens, Brooklyn"]
 mood: ["Anxious"]
-song: ["Death in Vegas - Scorpio Rising"]
+song: ["Death in Vegas - Scorpio Rising", "https://www.youtube.com/watch?v=5K0QkM84sD4"]
 era: ["new"]
 excerpt: ""
 #audio: "audio.mp3"
