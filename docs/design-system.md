@@ -235,7 +235,7 @@ Guidance:
 - Use negative tracking only where it is already specified at display sizes.
 - Aim for 45–65 characters per line in reading copy. Product descriptions currently cap at `56ch`.
 - Preserve `text-wrap: pretty` as progressive enhancement.
-- Interior pages use one compact intro lockup: a 14px muted eyebrow directly above the H1 with no layout gap, followed by an optional 18–20px muted description separated by 16px. About’s opening paragraph uses the same description role when no description appears in the header.
+- Interior pages use one compact intro lockup: a 14px muted eyebrow directly above the H1 with no layout gap, followed by an optional 18–20px muted description separated by 16px. Blog metadata is the mobile exception: below 768px, leave 12px (`calc(var(--space-1) * 1.5)`) between the date/reading time and title. About’s opening paragraph uses the same description role when no description appears in the header.
 - Long-form pages may use the introduction size for their first paragraph, but subsequent body copy returns to the 16px body role.
 - Dense, short-paragraph documents such as Work With Me use 20px medium-weight H2s so headings remain proportional to the surrounding copy.
 - Case-study figure captions use the 12px monospaced utility treatment at medium weight with normal tracking, echoing numbered section labels without competing with the imagery. A caption's muted secondary line remains normal weight.
@@ -333,6 +333,8 @@ Product groups are separated by large whitespace rather than rules. Preserve the
 ### Interior page introductions
 
 About, archives, articles, and case studies share the `.page-intro` contract. Use `partials/page-intro.html` for the standard eyebrow, title, and optional description structure; its caller block supports local additions such as the ticket filter. Eyebrow and H1 form a tight lockup with no artificial gap. Optional descriptive copy uses the page-introduction typography role and sits 16px below the title. Keep the description concise and use muted ink so the title remains primary.
+
+Blog post metadata uses a 12px bottom margin below 768px to separate it from wrapping titles; desktop retains the tight lockup. This local spacing exception leaves the title-to-body spacing unchanged.
 
 ### Editorial links and archives
 

@@ -632,6 +632,12 @@ main[role="main"] header {
   margin: 0;
 }
 
+@media screen and (max-width: 767px) {
+  .page-intro .post-meta {
+    margin-bottom: calc(var(--space-1) * 1.5);
+  }
+}
+
 .page-intro__description {
   color: var(--color-ink-muted);
   font-size: clamp(1.125rem, 1.5vw, var(--font-size-md));
