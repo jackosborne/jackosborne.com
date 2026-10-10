@@ -1,5 +1,4 @@
 {% extends "layouts/base.html" %}
-{% from "partials/accordion.html" import accordion %}
 
 {% block content %}
 
@@ -8,6 +7,7 @@
       <div class="post-meta">
         {% if '/blog/' in page.url and page.url != '/blog/' %}
           <time datetime="{{ date | date('YYYY-MM-DD') }}" class="output">{{ date | date('Do MMMM YYYY') }}</time>
+          <span class="post-meta__reading-time"><span aria-hidden="true">·</span><span>{{ content | readingTime }} min read</span></span>
         {% endif %}
     </div>
 
@@ -49,8 +49,8 @@
 
       {% if '/blog/' in page.url %}
         {% if page.url != '/blog/' %}
-          <div class="meta content-meta post-details">
-            {% call accordion("post-context", "Supplement") %}
+          <section class="meta content-meta post-details" aria-labelledby="post-context">
+            <h2 class="post-details__heading" id="post-context">Supplement</h2>
               <ul id="footnotes">
                 {%- if location %}
                 <li>
@@ -69,17 +69,18 @@
                 {%- if song %}
                 <li>
                   <span class="heading">Song:</span>
-                  <span class="output">{{ song }}</span>
+                  <span class="output">
+                    {% if song is not string and song[1] %}
+                      <a href="{{ song[1] | escape }}">{{ song[0] | escape }}</a>
+                    {% else %}
+                      {{ song | escape }}
+                    {% endif %}
+                  </span>
                 </li>
                 {%- endif %}
 
-                <li>
-                  <span class="heading">Read time:</span>
-                  <span class="output">{{ content | readingTime }} min</span>
-                </li>
               </ul>
-            {% endcall %}
-          </div>
+            </section>
         {% endif %}
       {% endif %}
 

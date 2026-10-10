@@ -1,6 +1,7 @@
 # Jack Osborne Portfolio Design System
 
 > Status: baseline derived from the homepage and About page on August 6, 2026.
+> Blog patterns reviewed against the October 9–10, 2026 changes, including navigation, optional artwork, age notices, metadata, supplement, pagination, and editorial links.
 > This document records the design language already present in the site and turns it into guidance for future pages. Where the implementation is still exploratory, that is called out explicitly.
 
 ## Source of truth
@@ -289,7 +290,7 @@ The header is a low-chrome four-column composition mapped onto the shared 24-tra
 - Home occupies tracks 1–6.
 - The current-page context occupies tracks 7–18 and is generated from page metadata; case studies retain their full `Work / Company / Product / Project` hierarchy.
 - On blog posts, “Blog” links to `/blog/` using the shared muted header-link styling and ink-colored underline on hover or keyboard focus. The following year, month, and post title remain non-interactive current-page text in the ink color. On the blog index, “Blog” remains non-interactive current-page text.
-- Blog post metadata above the title shows only the publication date; the header’s “Blog” link provides navigation back to the index.
+- Blog post metadata above the title shows the publication date followed by a middle dot and the estimated reading time (for example, “10th October 2026 · 19 min read”); use equal 8px (`--space-1`) gaps on either side of the dot and keep the dot with the reading time when wrapping. The header’s “Blog” link provides navigation back to the index.
 - The email address occupies tracks 19–24.
 - The homepage omits the current-page context.
 - At 1140px and above, email/contact sits right-aligned on the final rail.
@@ -335,13 +336,19 @@ About, archives, articles, and case studies share the `.page-intro` contract. Us
 
 ### Editorial links and archives
 
-Text links use the global neutral link treatment: an understated underline that strengthens on hover or focus. Blog archive titles use this default treatment without full-row dividers, movement, or external-link icons. Reserve the north-east arrow convention for links that actually communicate an external or new-context destination.
+Text links use the global neutral link treatment: muted text and an understated underline, with ink-colored text and underline on hover or focus. Blog archive titles use this default treatment without full-row dividers, movement, or external-link icons. Do not automatically append a north-east arrow or external-link icon to blog body or supplement links; an external destination alone does not require extra visual chrome.
 
-Default text links pair muted ink with a solid ink underline. Hover and focus bring both text and underline to ink; visited links retain muted text and shift the underline to muted ink. Navigation, cards, and button-style links may retain their established local treatments.
+Default text links pair muted ink with a solid ink underline. Hover and focus bring both text and underline to ink; visited links retain muted text and shift the underline to muted ink. Blog body links, supplement song links, and post-pagination titles all inherit this shared treatment, including visited, hover, focus, and active states. Keep the underline at the token-defined 1px thickness across these states. Footer navigation, cards, and button-style links retain their established local treatments.
 
-Blog post reading time belongs as the final item in a collapsed “Context” disclosure at the end of the article, following optional location, mood, and song context. This disclosure reuses the case-study accordion component: contextual information stays available without competing with the article, and its collapsed default adds a small moment of discovery. Newer/older navigation follows it directly so it closes the complete reading experience; Older occupies the left/back position and Newer occupies the right/forward position. Treat Older and Newer as non-interactive directional labels; only the destination post title is linked.
+Blog posts end with an always-visible “Supplement” section, separated from the article by a subtle horizontal divider. Use a semantic heading followed by optional location, mood, and song rows; do not add a disclosure, chevron, or interactive heading. Reading time appears beside the publication date above the title. Newer/older navigation follows the supplement directly; Older occupies the left/back position and Newer occupies the right/forward position. Treat Older and Newer as non-interactive directional labels; only the destination post title is linked.
 
-Within the blog Context disclosure, labels remain muted while output values use primary ink, providing differentiation without introducing another accent color.
+Blog body and supplement links open in the same tab by default, including external destinations such as YouTube. Let readers choose a new tab through their browser controls; do not add a blanket external-link script or `target="_blank"` rule. External destinations and new-tab behavior are separate concepts. If a future interaction specifically requires a new tab, communicate that behavior visibly and accessibly rather than relying on an arrow icon alone.
+
+Within the supplement, labels remain muted while unlinked output values use primary ink. Linked song values use the global editorial link treatment, including its muted default text; do not override them to match unlinked values. Existing single-value song arrays remain plain text; add an optional second value to link the artist and song name:
+
+```yaml
+song: ["Robert Palmer - Simply Irresistible", "https://example.com/song"]
+```
 
 Numbered section labels use an H5 followed by their associated H2 or list. On case studies, an H2 immediately following an H5 uses a single 16px top margin and drops its usual section `padding-top`, keeping the pair related without collapsing it into the tight page-introduction treatment. Lists and all other headings retain their standard spacing. The page-introduction eyebrow and H1 remain unchanged.
 
@@ -547,7 +554,8 @@ The new homepage is the target visual direction. The Eleventy project is the mig
 | Availability status | `.product__status` | `home.css` | Implemented as quiet metadata beside the timeline for unavailable work such as the Savewise case study; do not style it as an action or overlay it on project imagery. |
 | Existing case-study banner | `#case-study .banner` | `project.css` | Legacy/implemented; preserve separately until a deliberate case-study migration. |
 | Callout | `.callout` | `style.css` | Implemented and reusable for short contextual notices. |
-| Metadata accordion | `.content-meta .acc` | `style.css` | Implemented for editorial and case-study metadata. |
+| Blog supplement | `.post-details` | `style.css` | Always-visible editorial metadata with a divider, heading, and optional location, mood, and song rows. |
+| Metadata accordion | `.content-meta .acc` | `style.css` | Implemented for case-study metadata. |
 | Floating segmented bar | `.floating-bar`, `.floating-bar__chip` | `style.css` | Provisional shared control; glass, shadow, and blue active treatments are scoped exceptions. |
 | Audio player | `.post-audio` | `narration.css` | Local. |
 | Record cards and picker | `.record-card`, `.records-picker__*` | `records.css` | Local to the records experience. |

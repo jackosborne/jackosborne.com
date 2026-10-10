@@ -60,7 +60,7 @@ a:visited {
 a:hover,
 a:focus {
   color: var(--color-link-hover);
-  text-decoration: underline;
+  text-decoration-line: underline;
   text-decoration-color: currentColor;
 }
 a:active {
@@ -885,10 +885,6 @@ body#case-study .article-prose h2 {
   font-size: var(--font-size-sm);
 }
 
-.post-pagination__item a {
-  color: var(--color-ink);
-}
-
 .post-pagination__item--newer {
   grid-column: 2;
   text-align: right;
@@ -1030,6 +1026,28 @@ body#case-study .article-prose h2 {
   align-items: baseline;
   gap: var(--spacing-unit);
   flex-wrap: wrap; /* allows nice wrapping on smaller widths */
+}
+
+.post-meta__reading-time {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  white-space: nowrap;
+}
+
+.post-details {
+  border-top: 1px solid var(--color-divider);
+  padding-bottom: var(--space-3);
+}
+
+.post-details .post-details__heading {
+  color: var(--color-ink-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-sm);
+  margin: 0;
+  padding: var(--space-3) 0;
 }
 
 #footnotes {
