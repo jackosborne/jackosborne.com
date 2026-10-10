@@ -9,7 +9,7 @@ song: ["Robert Palmer - Simply Irresistible"]
 era: ["new"]
 excerpt: ""
 #artwork:
-  #src: /blog/2026/09/the-deforestation-of-thought/artwork.png
+  #src: /blog/2026/10/the-deforestation-of-thought/artwork.png
   #alt: "Description of the artwork"
   #caption: "Optional caption or credit"
 #audio: "audio.mp3"
