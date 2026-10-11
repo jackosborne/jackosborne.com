@@ -66,7 +66,7 @@ I've started thinking of it as the deforestation of thought.
 
 A forest doesn't disappear overnight. One tree comes down because someone needs timber. Another for a road. Another because somebody needs somewhere to live. Each decision makes sense, and for a long time there's still plenty of forest left. Then one day you notice how much has gone.
 
-The email I didn't bother writing. The problem I didn't attempt. The idea I didn't give time to develop. The uncertainty I couldn't tolerate long enough to find out what I actually thought. Each time I gained something: an answer, a finished piece of work, relief from whatever was troubling me. And each time I skipped an experience that wasn't always incidental to the result. Sometimes it was how I learned, how I came to trust my judgement, how I became capable of something new.
+The email I didn't bother writing. The problem I didn't attempt. The idea I didn't give time to develop. The uncertainty I couldn't tolerate long enough to find out what I actually thought. Each time, I've gained something. An answer, a finished piece of work, a little relief from whatever was troubling me. But I've also lost something by skipping an experience I might once have had, and those experiences weren't always incidental to the result. Sometimes they were how I learned, trusted my judgement or became capable of something new.
 
 I can't tell you whether I'm losing the ability or just the inclination. I know my habits are changing. What worries me isn't waking up one day unable to think for myself. It's becoming so used to not having to that I stop exercising the parts of my mind I used to rely on.
 
@@ -112,19 +112,17 @@ And here I am, approaching forty, having spent my adult life in technology, writ
 
 I can see the potential. Children could learn at their own pace and ask the questions they'd be embarrassed to ask in class. But there's a difference between a tool that helps someone learn and one that makes learning unnecessary. A child who receives an answer hasn't necessarily learned to find one. A child who can generate an essay hasn't necessarily learned to write. And a child who can turn to a chatbot whenever something feels uncomfortable hasn't necessarily learned to navigate that feeling, or when to turn to another person.
 
-We know very little about the long-term effects of growing up with these systems, yet we're bringing them into classrooms, homes and relationships while we work out the consequences. I keep wondering why we're in such a hurry to find out.
+We know very little about the long-term effects of growing up with these systems, yet we're bringing them into classrooms, homes and relationships while we work out the consequences. I keep wondering why we're in such an extraordinary hurry to find out.
 
 <div class="dinkus" aria-hidden="true">* * *</div>
 
-The thing I keep coming back to is Antarctica.
-
-In 1959, twelve countries signed a treaty to preserve it for peaceful purposes and scientific research. Decades later they went further and agreed to protections that prohibit mining. Nations with competing interests, and enormous incentives to exploit the place, agreed that something was worth protecting.
+Recently, the thing I keep coming back to is Antarctica. In 1959, twelve countries signed a treaty to preserve it for peaceful purposes and scientific research. Decades later they went further and agreed to protections that prohibit mining. Nations with competing interests, and enormous incentives to exploit the place, agreed that something was worth protecting.
 
 I find that remarkable. The idea that we don't have to pursue every possibility simply because it's available, that sometimes the sensible thing is a little restraint, particularly when we don't fully understand what's at stake. I'm not suggesting a treaty over a frozen continent is a blueprint for governing something this complicated, and I'm not suggesting we stop building AI. But I wonder whether we've become so preoccupied with what the technology makes possible that we've forgotten to ask what we want from it. It's proof, at least, that restraint is something people have managed before.
 
 A treaty is a lot to ask of the world. It's a smaller thing to ask of myself.
 
-I'm not about to delete these tools. I'm going to keep using them, which is part of what makes writing this so uncomfortable. But I think I need to start drawing some boundaries. Not around where I'm allowed to use AI, but around what I'm willing to let it do for me.
+Now, I'm not about to delete these tools. I'm going to keep using them, which is part of what makes writing this so uncomfortable. But I think I need to start drawing some boundaries. Not around where I'm allowed to use AI, but around what I'm willing to let it do for me.
 
 There's a difference between asking a machine to help me understand something and letting it decide what I should think. Between using it to make something possible and removing every chance to learn how to make it myself. Between talking through a difficult situation and asking, again and again, for reassurance about something neither of us can know.
 
