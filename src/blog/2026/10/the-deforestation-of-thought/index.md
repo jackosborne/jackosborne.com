@@ -82,7 +82,7 @@ And I loved it. Well, not necessarily every minute of it. There were plenty of m
 
 Sadly, AI now removes an extraordinary amount of that. An idea that might once have occupied an entire weekend can exist before I've finished my morning tea. Code I don't understand can be running minutes later. I can ask for a design, criticise it, and repeat until something resembling what's in my head appears.
 
-Lately, I've seen a phrase floating around online, "you can just prompt things", but I often find myself questioning whether that's a good thing. In the moment, it can feel fantastic. But the longer I've spent with AI, the more I've noticed that the elation doesn't last. I've rarely felt proud of something made with AI days later. Not the way I have about things I spent weeks wrangling with.
+Lately, I've seen a phrase floating around online, "you can just build things", but I often find myself questioning whether that's a good thing. In the moment, it can feel fantastic. But the longer I've spent with AI, the more I've noticed that the elation doesn't last. I've rarely felt proud of something made with AI days later. Not the way I have about things I spent weeks wrangling with.
 
 The kicker is that a lot of the things I'm producing now are objectively better, but I don't remember making them. I do, vaguely, remember asking for them. Compare that to things I built fifteen years ago that are terrible by almost any reasonable contemporary standard. Bad code. Questionable design decisions. Things held together by the digital equivalent of duct tape. But I remember them, and I still feel good about them.
 
