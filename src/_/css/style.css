@@ -318,14 +318,14 @@ header[role="banner"] > .wrapper {
 
 .site-header__grid {
   display: grid;
-  grid-template-columns: repeat(24, minmax(0, 1fr));
-  gap: var(--layout-gap);
+  grid-template-columns: minmax(0, 1fr) min(100%, var(--reading-width)) minmax(0, 1fr);
+  column-gap: 0;
   align-items: start;
 }
 
 .site-header__home {
   color: var(--color-ink-muted);
-  grid-column: 1 / span 6;
+  grid-column: 1;
 }
 
 .site-header__home[aria-current="page"] {
@@ -333,7 +333,11 @@ header[role="banner"] > .wrapper {
 }
 
 .site-nav {
-  grid-column: 7 / span 12;
+  grid-column: 2;
+  width: min(100%, var(--reading-width));
+  justify-self: center;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .site-nav ul {
@@ -361,7 +365,7 @@ header[role="banner"] > .wrapper {
 
 .site-header__email {
   position: relative;
-  grid-column: 19 / -1;
+  grid-column: 3;
   justify-self: end;
 }
 
@@ -429,7 +433,7 @@ header[role="banner"] > .wrapper {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   .site-header,
   header[role="banner"] {
     padding-right: var(--space-12);
@@ -445,7 +449,7 @@ header[role="banner"] > .wrapper {
   }
 }
 
-@media screen and (max-width: 1139px) {
+@media screen and (max-width: 1279px) {
   .site-header__grid {
     grid-template-columns: minmax(0, 1fr) auto;
     row-gap: var(--space-1);
@@ -457,6 +461,8 @@ header[role="banner"] > .wrapper {
 
   .site-nav {
     grid-column: 1 / -1;
+    justify-self: start;
+    width: 100%;
   }
 
   .site-header__email {
@@ -501,7 +507,7 @@ footer[role="contentinfo"] {
   border-top: 1px solid var(--color-stage);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   .site-footer,
   footer[role="contentinfo"] {
     padding-right: var(--space-12);
@@ -623,7 +629,7 @@ main[role="main"] {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   main[role="main"] {
     padding-right: var(--space-12);
     padding-top: var(--space-16);
@@ -1326,8 +1332,12 @@ ul#footnotes {
 }
 
 /* Editorial reading width: let the outer rails yield before prose narrows. */
+.site-header__grid,
 .grid.reading-layout {
   --reading-width: 40rem;
+}
+
+.grid.reading-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) min(100%, var(--reading-width)) minmax(0, 1fr);
   column-gap: 0;

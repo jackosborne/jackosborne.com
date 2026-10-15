@@ -258,10 +258,10 @@ Use fluid spacing for large canvases:
 - Maximum content width: `1320px`.
 - Shared implementation grid: 24 equal tracks. Four-column compositions map onto it in six-track spans (`1–6`, `7–12`, `13–18`, `19–24`). This preserves quarter-width alignment while allowing six-column archives, asymmetric editorial layouts, and finer placement.
 - New homepage compositions may be designed as four conceptual columns, but their Eleventy implementation should align to the 24-track grid rather than introducing a competing grid foundation.
-- Desktop page gutter at 1024px and above: `96px`.
+- Desktop page gutter at 1280px and above: `96px`.
 - Default/tablet page gutter: `32px`.
 - Mobile grid at 640px and below: two conceptual columns for the header; content and footer collapse to one column.
-- Use `.wrapper` as the shared 1320px width constraint. Header, main, and footer own the shared horizontal gutters: 32px by default and 96px from 1024px.
+- Use `.wrapper` as the shared 1320px width constraint. Header, main, and footer own the shared horizontal gutters: 32px by default and 96px from 1280px. The header switches from its stacked layout to its three-column layout at the same 1280px boundary; main top spacing changes from 96px to 128px there as well. This replaces the separate 1024px shell-spacing transition, avoiding an extra snap during resizing. Homepage component compositions retain their own 1024px breakpoint.
 - Use the shared grid rather than introducing page-specific maximum widths without a clear editorial need.
 
 Editorial reading width: shared page introductions, blog posts, case studies, About, the blog archive, the 404 message, and the PechaKucha content anchor share a centered `40rem` maximum reading width at every viewport size. Outer space yields before the reading column narrows; these text areas no longer switch between a half-grid column and full-width prose at 1140px. Introductions and bodies use `.grid.reading-layout`, with their text placed in its middle track. Artwork and case-study banners retain the wider page frame; inline `.breakout` media spans its containing reading layout using container-relative width. Collection grids, the homepage, the check-in application, and the presentation carousel retain their own compositions.
@@ -287,18 +287,18 @@ The shared interface is mostly flat. Avoid shadows on buttons, navigation, text,
 
 ### Header
 
-The header is a low-chrome four-column composition mapped onto the shared 24-track grid, with 32px vertical padding on larger screens and 24px on mobile.
+The header uses the same centered `40rem` reading column as editorial content, with flexible outer columns, 32px vertical padding on larger screens, and 24px on mobile. In the wide header, breadcrumbs and body text share one left edge. In the compact header, navigation forms a left-aligned group at the page gutter while the body retains its centered reading column.
 
-- Home occupies tracks 1–6.
-- The current-page context occupies tracks 7–18 and is generated from page metadata; case studies retain their full `Work / Company / Product / Project` hierarchy.
+- Home occupies the left outer column.
+- The current-page context occupies the central reading column and is generated from page metadata; case studies retain their full `Work / Company / Product / Project` hierarchy.
 - On blog posts, “Blog” links to `/blog/` using the shared muted header-link styling and ink-colored underline on hover or keyboard focus. The following year, month, and post title remain non-interactive current-page text in the ink color. On the blog index, “Blog” remains non-interactive current-page text.
 - Blog post metadata above the title shows the publication date followed by a middle dot and the estimated reading time (for example, “10th October 2026 · 19 min read”); use equal 8px (`--space-1`) gaps on either side of the dot and keep the dot with the reading time when wrapping. The header’s “Blog” link provides navigation back to the index.
-- The email address occupies tracks 19–24.
+- The email address occupies the right outer column.
 - The homepage omits the current-page context.
-- At 1140px and above, email/contact sits right-aligned on the final rail.
+- At 1280px and above, email/contact sits right-aligned on the final rail. The three-column header needs this width to fit the email beside the reading column.
 - The header email is a copy action contained in a clipped, single-line reel. After activation, the address slides upward and “Email copied” follows from below with a short delay and restrained spring overshoot; the return is quicker and calmer after a brief pause. Keep the button width stable, retain a fixed accessible name, announce the result separately to screen readers, and replace the transition with an immediate state change when reduced motion is requested.
 - Links inherit the surrounding type and use color rather than containers for hierarchy.
-- From 641px through 1139px, Home and the email action share the top row, aligned left and right respectively. The current-page context spans the row beneath with an 8px row gap.
+- From 641px through 1279px, Home and the email action share the top row, aligned left and right respectively. The current-page context sits in the row beneath with an 8px row gap, left-aligned directly beneath Home at the page gutter and using the available row width. This deliberately releases breadcrumb-to-body alignment in the compact layout; the body reading width is unchanged.
 - At 640px and below, the header becomes a single left-aligned column on every page, including the homepage: email first, then a 24px (`--space-3`) gap before Home, then the current-page context when present with an 8px (`--space-1`) gap. Give the context the full available width and allow long titles to wrap, including unbroken words when necessary. Left-align the email copy confirmation as well as the address. Preserve the larger existing gap between navigation and page content; whitespace separates these groups without a divider.
 
 ### Homepage hero
