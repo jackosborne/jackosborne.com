@@ -465,6 +465,32 @@ header[role="banner"] > .wrapper {
   }
 }
 
+@media screen and (max-width: 640px) {
+  .site-header__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .site-header__email {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    margin-bottom: var(--space-2);
+  }
+
+  .site-header__email .email {
+    justify-items: start;
+  }
+
+  .site-header__home {
+    grid-row: 2;
+  }
+
+  .site-nav {
+    grid-row: 3;
+    overflow-wrap: anywhere;
+  }
+}
+
 .site-footer,
 footer[role="contentinfo"] {
   position: relative;

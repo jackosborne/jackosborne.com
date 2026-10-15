@@ -296,7 +296,8 @@ The header is a low-chrome four-column composition mapped onto the shared 24-tra
 - At 1140px and above, email/contact sits right-aligned on the final rail.
 - The header email is a copy action contained in a clipped, single-line reel. After activation, the address slides upward and “Email copied” follows from below with a short delay and restrained spring overshoot; the return is quicker and calmer after a brief pause. Keep the button width stable, retain a fixed accessible name, announce the result separately to screen readers, and replace the transition with an immediate state change when reduced motion is requested.
 - Links inherit the surrounding type and use color rather than containers for hierarchy.
-- Below 1140px, Home and the email action share the top row, aligned left and right respectively. The current-page context spans the row beneath with an 8px row gap.
+- From 641px through 1139px, Home and the email action share the top row, aligned left and right respectively. The current-page context spans the row beneath with an 8px row gap.
+- At 640px and below, the header becomes a single left-aligned column on every page, including the homepage: email first, then a 24px (`--space-3`) gap before Home, then the current-page context when present with an 8px (`--space-1`) gap. Give the context the full available width and allow long titles to wrap, including unbroken words when necessary. Left-align the email copy confirmation as well as the address. Preserve the larger existing gap between navigation and page content; whitespace separates these groups without a divider.
 
 ### Homepage hero
 
@@ -457,7 +458,7 @@ Cards may scale subtly as part of a scroll-linked effect, provided the motion re
 ### Mobile: 0–640px
 
 - Page gutter remains 32px.
-- Header places Home and the email action on the top row; the current-page context spans a second row when present.
+- Header stacks email, Home, and optional current-page context, all left-aligned. Separate email from Home by 24px and Home from context by 8px; preserve the larger navigation-to-content gap. Use the same order on the homepage.
 - Hero and product headings become left-aligned.
 - Hero type follows the global H1 scale: `clamp(34px, 5vw, 48px)`.
 - Project cards become portrait `4 / 5` stages with 24px radius.
