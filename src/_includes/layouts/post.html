@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<header class="page-intro grid">
+<header class="page-intro grid reading-layout">
     <div class="page-intro__inner row-start-7 row-end-19">
       <div class="post-meta">
         {% if '/blog/' in page.url and page.url != '/blog/' %}
@@ -29,7 +29,7 @@
       </figure>
   {% endif %}
 
-  <div class="grid content">
+  <div class="grid content reading-layout">
     <div class="grid-content main content-main prose article-prose row-start-7 row-end-19">
 
       {% set age = page.date | yearsOld %}

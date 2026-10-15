@@ -264,6 +264,8 @@ Use fluid spacing for large canvases:
 - Use `.wrapper` as the shared 1320px width constraint. Header, main, and footer own the shared horizontal gutters: 32px by default and 96px from 1024px.
 - Use the shared grid rather than introducing page-specific maximum widths without a clear editorial need.
 
+Editorial reading width: shared page introductions, blog posts, case studies, About, the blog archive, the 404 message, and the PechaKucha content anchor share a centered `40rem` maximum reading width at every viewport size. Outer space yields before the reading column narrows; these text areas no longer switch between a half-grid column and full-width prose at 1140px. Introductions and bodies use `.grid.reading-layout`, with their text placed in its middle track. Artwork and case-study banners retain the wider page frame; inline `.breakout` media spans its containing reading layout using container-relative width. Collection grids, the homepage, the check-in application, and the presentation carousel retain their own compositions.
+
 The four-column composition governs alignment more than density; the 24-track implementation provides the placement resolution. Full-width hero and project content span all 24 tracks. A conceptual half-width spans 12 tracks, a quarter-width spans six, and archive layouts may use four-track spans to produce six columns.
 
 ### Shape and depth

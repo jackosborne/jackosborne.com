@@ -114,13 +114,13 @@ Initially, each location was displayed as a small dot. However, as more categori
  <div class="multi col bg padding">
  <div>
  <div style="display: flex; padding: calc(2 * var(--spacing-unit)) 0;">
- <div style="margin: 0 auto; display: flex; align-items: center;">
- <div style="display: inline-block; vertical-align: middle; border-radius: 100%; height: 4px; width: 4px; background-color: #9446ED; margin-right: 32px;"></div>
- <div style="display: inline-block; vertical-align: middle; border-radius: 100%; height: 8px; width: 8px; background-color: #40C3F7; margin-right: 32px;"></div>
- <div style="display: inline-block; vertical-align: middle; border-radius: 100%; height: 16px; width: 16px; background-color: #8DED2D; margin-right: 32px;"></div>
- <div style="display: inline-block; vertical-align: middle; border-radius: 100%; height: 24px; width: 24px; background-color: #F9703E; margin-right: 32px"></div>
- <div style="display: inline-block; vertical-align: middle; border-radius: 100%; height: 32px; width: 32px; background-color: #F7C948; margin-right: 32px"></div>
- <div style="display: inline-block; vertical-align: middle; border-radius: var(--spacing-unit); height: 32px; width: 2px; background-color: var(--border); margin-right: 32px"></div>
+ <div style="margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--space-4);">
+ <div style="display: inline-block; vertical-align: middle; border-radius: 100%; height: 4px; width: 4px; background-color: #9446ED;"></div>
+ <div style="display: inline-block; vertical-align: middle; border-radius: 100%; height: 8px; width: 8px; background-color: #40C3F7;"></div>
+ <div style="display: inline-block; vertical-align: middle; border-radius: 100%; height: 16px; width: 16px; background-color: #8DED2D;"></div>
+ <div style="display: inline-block; vertical-align: middle; border-radius: 100%; height: 24px; width: 24px; background-color: #F9703E"></div>
+ <div style="display: inline-block; vertical-align: middle; border-radius: 100%; height: 32px; width: 32px; background-color: #F7C948"></div>
+ <div style="display: inline-block; vertical-align: middle; border-radius: var(--spacing-unit); height: 32px; width: 2px; background-color: var(--border)"></div>
  <div style="display: inline-block; vertical-align: middle; position: relative;">
  <style>
  @-webkit-keyframes pulsate {
