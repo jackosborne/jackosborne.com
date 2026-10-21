@@ -38,4 +38,4 @@ Give it a go and see what T in the park related things people are tweeting about
 
 Late last month the Scottish Sun got in contact with me asking if I would be interested in doing a small interview. If you managed to pick up a copy of todays paper make sure you flick through to their music pull-out.
 
-If you wish to download a pdf version of the page then feel free to do so — [Tweet In The Park pdf](http://www.jackosborne.com/_/images/about/press/2010/titp/tweet-in-the-park.pdf).
+If you wish to download a pdf version of the page then feel free to do so — [Tweet In The Park pdf](/_/images/about/press/2010/titp/tweet-in-the-park.pdf).

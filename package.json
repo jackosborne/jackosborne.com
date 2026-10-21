@@ -9,7 +9,10 @@
   },
   "scripts": {
     "clean": "rimraf _site",
-    "build": "npm run tokens:check && npm run patterns:check && npm run clean && npm run css && npm run js && NODE_ENV=production npx @11ty/eleventy && npm run site:size",
+    "build": "npm run tokens:check && npm run patterns:check && npm run clean && npm run css && npm run js && NODE_ENV=production npx @11ty/eleventy && npm run assets:prepare && npm run site:size",
+    "assets:prepare": "node scripts/prepare-assets.js",
+    "assets:verify": "node scripts/verify-assets.js",
+    "test:assets": "node --test scripts/prepare-assets.test.js",
     "audit:images": "node src/scripts/audit-image-tags.js",
     "css": "gulp minifyCSS",
     "js": "gulp minifyJS",

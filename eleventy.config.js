@@ -252,8 +252,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/_/images/");
   eleventyConfig.addPassthroughCopy("./src/_/js/");
   eleventyConfig.addPassthroughCopy("src/**/*.mp3");
+  eleventyConfig.addPassthroughCopy("src/**/*.{pdf,mp4,m4v,mov,webm,ogv,m4a,aac,ogg,wav,flac}");
   eleventyConfig.addPassthroughCopy(
-    "src/blog/**/*.{gif,jpg,jpeg,png,svg,webp}",
+    "src/blog/**/*.{avif,gif,ico,jpg,jpeg,png,svg,webp}",
   );
   eleventyConfig.addPassthroughCopy({
     "src/_data/checkins/enriched_checkins.json": "data/enriched_checkins.json",

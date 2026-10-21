@@ -15,4 +15,4 @@ In February I wrote up an article on my first foray into the world of web apps, 
 
 The site is a Twitter feed aggregator which will pull in any instance of the festival being mentioned, so that people who, like myself, are not in attendance this year will not miss out on a thing.
 
-Late last month the Scottish Sun got in contact with me asking if I would be interested in doing a small interview to talk about the site and why I decided to create it. If you wish to download a pdf version of the page then feel free to do so — [Tweet In The Park pdf](http://jackosborne.com/downloads/press/2010/tweet-in-the-park.pdf).
+Late last month the Scottish Sun got in contact with me asking if I would be interested in doing a small interview to talk about the site and why I decided to create it. If you wish to download a pdf version of the page then feel free to do so — [Tweet In The Park pdf](/_/images/about/press/2010/titp/tweet-in-the-park.pdf).

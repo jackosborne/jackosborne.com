@@ -1,4 +1,5 @@
 _site/
+_assets/
 node_modules/
 .cache
 /python/

@@ -33,6 +33,28 @@ jobs:
 
       - name: Build site
         run: npm run build
+        env:
+          ASSET_ORIGIN: https://assets.jackosborne.com
+
+      - name: Verify asset package
+        run: npm run test:assets && npm run assets:verify
+
+      - name: Upload media to R2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: auto
+          AWS_EC2_METADATA_DISABLED: "true"
+          R2_ENDPOINT: ${{ secrets.R2_ENDPOINT }}
+        run: |
+          test -n "$AWS_ACCESS_KEY_ID" && test -n "$AWS_SECRET_ACCESS_KEY" && test -n "$R2_ENDPOINT"
+          aws s3 sync _assets/media/ s3://jackosborne-assets/media/ \
+            --endpoint-url "$R2_ENDPOINT" \
+            --cache-control "public, max-age=31536000, immutable" \
+            --size-only --no-progress --only-show-errors
+
+      - name: Verify public media before deploying pages
+        run: npm run assets:verify -- --remote
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

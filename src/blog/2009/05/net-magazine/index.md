@@ -12,4 +12,4 @@ The article focused on the transition people face leaving higher education and t
 
 {% responsiveImage "/_/images/about/press/2009/NET189/montage.jpg", "", "(min-width: 1140px) calc((100vw - 202px) / 2), (min-width: 1024px) calc(100vw - 192px), calc(100vw - 64px)", "blog" %}
 
-The good folks at .net have also allowed me to distribute my article so I hope some of you will find it useful. Feel free to [download the article](http://www.jackosborne.com/_/images/about/press/2009/NET189/NET189.pdf)
+The good folks at .net have also allowed me to distribute my article so I hope some of you will find it useful. Feel free to [download the article](/_/images/about/press/2009/NET189/NET189.pdf)

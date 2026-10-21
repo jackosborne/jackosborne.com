@@ -32,6 +32,8 @@ All project commands are run from the repository root.
 | `npm run css` | Minifies every file in `src/_/css` into `_site/_/css` with a `.min.css` suffix. | When working only on styles or troubleshooting CSS output. Usually called by `start` and `build`. |
 | `npm run js` | Minifies every file in `src/_/js` into `_site/_/js` with a `.min.js` suffix. | When working only on scripts or troubleshooting JavaScript output. Usually called by `start` and `build`. |
 | `npm run site:size` | Reports the built site and generated-image sizes, warns at 800 MiB, and fails at 900 MiB. | After investigating build growth or when checking the Pages storage budget independently. |
+| `npm run test:assets` | Tests media URL rewriting and packaging. | When changing the asset deployment pipeline. |
+| `npm run assets:verify` | Checks the R2 asset package and built references. Add `-- --remote` to check representative public files. | After building with `ASSET_ORIGIN`. |
 
 ### Design tokens
 
@@ -65,6 +67,22 @@ being deployed.
 Keep authored images in `src`; files under `_site/_/images/generated` are build
 output and must not be edited or referenced directly. The canonical responsive
 profiles and format settings live in `eleventy.config.js`.
+
+Local development and ordinary `npm run build` keep media in `_site` with local
+URLs. For deployment, the workflow sets `ASSET_ORIGIN=https://assets.jackosborne.com`.
+After Eleventy finishes, `scripts/prepare-assets.js` moves images, PDFs, audio, and video
+out of `_site` into the ignored `_assets/media` directory. It rewrites references
+in generated HTML (including `srcset` and social metadata), CSS, JS, JSON, and XML.
+Source templates and original files stay local and remain committed to Git.
+New PDF/audio/video files anywhere under `src` are copied into the build automatically.
+
+Each published object uses its SHA-256 content hash as its filename. Changes get
+new URLs, allowing immutable caching without serving stale media. Identical files
+share an object. `_assets/manifest.json` records the source-to-object mapping for
+verification; it is not uploaded. Keep private files outside public asset folders.
+Author media as complete URLs, using existing image helpers or ordinary relative
+or root-relative paths; dynamically assembled JavaScript media paths need explicit
+support in the build step.
 
 - Case-study body images inside `.content-main.prose` are processed
   automatically. Opaque sources generate WebP with progressive JPEG fallback,
@@ -101,7 +119,39 @@ entries; their `<lastmod>` element is simply omitted.
 ## Deployment
 
 Pushes to `main` trigger [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
-The workflow installs dependencies with `npm ci`, runs `npm run build`, and deploys
-the generated `_site` directory to GitHub Pages. A stale design-token reference
+The workflow installs dependencies with `npm ci` and runs `npm run build` with
+`ASSET_ORIGIN=https://assets.jackosborne.com`. It verifies the asset package, syncs
+`_assets/media` to the `jackosborne-assets` R2 bucket using the S3-compatible API,
+then checks representative public assets over HTTPS before uploading the Pages
+artifact. A failed upload or public check prevents the new Pages deployment.
+Existing R2 objects are retained so previous pages and deployments keep working.
+The sync skips matching objects and sets a one-year immutable cache policy.
+
+Required GitHub **repository Actions secrets**:
+
+| Name | Value |
+|---|---|
+| `R2_ACCESS_KEY_ID` | R2 Access Key ID, scoped to Object Read & Write on `jackosborne-assets` only. |
+| `R2_SECRET_ACCESS_KEY` | Matching R2 Secret Access Key. |
+| `R2_ENDPOINT` | Full S3 API endpoint from the bucket settings, including `https://`. |
+
+Credentials belong in GitHub secrets and a password manager, never in source files.
+The R2 custom domain must be active before deploying. Cloudflare manages DNS;
+the apex and `www` GitHub Pages records use DNS-only mode.
+
+To inspect a deployment build locally:
+
+```bash
+ASSET_ORIGIN=https://assets.jackosborne.com npm run build
+npm run assets:verify
+```
+
+For a self-contained build/rollback, remove `ASSET_ORIGIN` from the workflow's
+build step and omit the R2 verification/upload steps. `npm run build` then includes
+all media in `_site` again (subject to the Pages size limit). After inspecting an
+R2 build locally, run `npm run build` without `ASSET_ORIGIN` before `npm start` to
+restore local files and URLs.
+
+A stale design-token reference
 or a site at or above the 900 MiB deployment budget will stop the build before
 deployment; builds at or above 800 MiB emit a warning.
