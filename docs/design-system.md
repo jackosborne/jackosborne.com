@@ -250,8 +250,8 @@ Use fluid spacing for large canvases:
 
 - Card inset: `clamp(24px, 5vw, 72px)`
 - Card label inset: `clamp(24px, 4vw, 56px)`
-- Project gap: `clamp(32px, 5vw, 56px)`
-- Product-group gap: `clamp(96px, 12vw, 160px)`
+- Homepage project gap: 32px on tablet and desktop, 24px on mobile
+- Homepage product-group gap: `clamp(64px, calc(12vw - 32px), 128px)` on tablet and desktop; 96px on mobile.
 
 ### Grid and page shell
 
@@ -307,7 +307,9 @@ The hero is a centered personal statement, not a product-marketing masthead. It 
 
 The only primary action is a neutral pill beneath the statement. Its current specification uses a 44px minimum height, 16px text, 16px horizontal padding, and the shared subtle-fill tokens. It darkens and scales to `0.98` over 150ms on hover, using the shared expressive easing. Keep the control flat; it does not need elevation or a shadow.
 
-On mobile, the hero becomes left-aligned. This is intentional: the smaller viewport benefits from a more direct editorial reading pattern.
+The hero’s bottom spacing uses the homepage section spacing (96px, increasing to 128px on desktop), followed by the product header’s existing inset; avoid adding a second decorative spacer. Mobile retains its 112px hero bottom spacing.
+
+On mobile, the hero becomes left-aligned and uses a 24px grid row gap between the introduction and action after the coordinate row is hidden. This is intentional: the smaller viewport benefits from a more direct editorial reading pattern.
 
 ### Topographic signature
 
@@ -396,19 +398,18 @@ The project stage is the principal reusable visual component.
 Base behavior:
 
 - Soft gray background, clipped overflow, and no visible border.
-- `4 / 5` aspect ratio on mobile.
-- `4 / 3` at tablet sizes.
-- Approximately `1320 / 888` for full-width desktop cards.
-- Full-width cards span both project columns; `.work-card--half` cards form square pairs on desktop.
+- Stage height is fluid across viewport widths: use the minimum of the mobile `4 / 5` proportional height, `calc(35vw + 316px)`, 888px, and `82svh`. This preserves phone-sized mobile proportions and avoids a portrait-to-landscape snap at 641px.
+- Full-width cards span both project columns; paired cards become half-width at 1024px and retain square proportions capped at `82svh`. This is an intentional structural reflow. Full-width single-phone sizing tapers from the available padded height toward the desktop target between 1024px and 1280px.
+- Gallery rows use 32px gaps on tablet and desktop and 24px on mobile; product groups use 64–128px separation on tablet and desktop and 96px on mobile.
 - Images use `object-fit: contain` unless a browser or intentionally bleeding artwork requires a crop.
 
 Supported compositions:
 
-- `single-phone`: one centered, oversized phone.
+- `single-phone`: one horizontally and vertically centered phone. Desktop paired single-phone and device-row compositions share a phone height derived from the half-width stage minus its vertical padding. Full-width single phones settle at 12% taller on desktop, capped at the padded stage height, to balance their wider canvas.
 - `device-row`: three phones on desktop, simplified to the center phone on smaller screens.
-- `wide-browser`: browser or laptop artwork aligned toward the bottom edge.
+- `wide-browser`: complete browser or laptop artwork centered within equal stage padding.
 - `browser-preview`: cropped browser content filling the available stage.
-- `split-stage`: a large desktop view with a phone layered at the lower-right.
+- `split-stage`: browser and phone share a centered `.work-card__composition` wrapper with a 1.65 aspect ratio at every viewport width. The browser occupies 85.23% of the group width; the phone sits bottom-right at 85% of the group height. Scale the complete group to fit the padded stage, preserving overlap and both images without cropping. Mobile keeps both devices visible with the same relative sizes and overlap.
 - `image-bleed`: artwork fills the stage without internal padding.
 - `half`: square desktop card paired with a sibling.
 
@@ -425,6 +426,8 @@ The About page uses the same shell but shifts to a more editorial typographic co
 On mobile, all About content becomes a single reading column. The visual system remains quiet so personality comes from the writing.
 
 ### Footer
+
+Keep the copyright concise: “© 2005–[current year] Jack Osborne. All rights reserved.” Place it in a separate full-width row aligned with Home, retaining the muted 14px treatment, a 24px gap below navigation, and 32px footer bottom padding at every viewport width.
 
 The footer is separated by a single soft-gray hairline. It uses the same four-column grid for site, elsewhere, social, and back-to-top links. Muted text is the default; hover moves links to primary ink and adds an underline.
 
@@ -445,11 +448,11 @@ Motion should be calm and focused.
 
 - Darken the neutral project stage by about 4%.
 - Scale media to `1.04` over 550ms using `cubic-bezier(.22, 1, .36, 1)`.
-- If a reveal label is enabled, fade it in and translate it upward by 8px.
+- Hover-capable pointers and keyboard focus reveal the bottom-left project label with a 4px upward entrance. Touch cards retain native single-tap navigation and use background darkening plus a subtle 0.99 artwork scale while pressed; do not require a first tap to reveal a label.
 - Keyboard focus uses a 3px dark outline with a 6px offset.
 - Disabled/coming-soon projects do not scale or reveal a project label; they may show a persistent muted status pill.
 
-The current project-label UI is implemented but hidden by default. Treat it as provisional until the portfolio decides whether card titles belong on the image stage or remain implicit from surrounding content.
+Project labels are hidden at rest and reveal only on pointer hover or keyboard focus. Under reduced motion, reveal labels immediately without translating them, suppress artwork zoom and pressed scaling, and preserve focus and color feedback. Keep responsive image hints synchronized with the rendered device size, including the central image retained when multi-phone rows collapse.
 
 ### Scroll response
 
@@ -463,23 +466,23 @@ Cards may scale subtly as part of a scroll-linked effect, provided the motion re
 - Header stacks email, Home, and optional current-page context, all left-aligned. Separate email from Home by 24px and Home from context by 8px; preserve the larger navigation-to-content gap. Use the same order on the homepage.
 - Hero and product headings become left-aligned.
 - Hero type follows the global H1 scale: `clamp(34px, 5vw, 48px)`.
-- Project cards become portrait `4 / 5` stages with 24px radius.
+- Project cards follow the fluid stage-height rule above, beginning with portrait `4 / 5` proportions and a 24px radius.
 - Project gap tightens to 24px.
-- Multi-device compositions simplify to the most informative central asset.
+- Three-phone rows simplify to the central phone. Savewise retains its shared browser-and-phone composition.
 - Topography is hidden.
 - Footer becomes one column.
 
 ### Tablet: 641–1023px
 
-- Project cards use landscape `4 / 3` stages and 32px radius.
+- Project cards use the fluid stage-height rule and 32px radius.
 - Projects remain in a single column.
 - Device rows simplify where the full composition would become illegible.
 - Preserve generous card padding via the fluid card inset token.
 
 ### Desktop: 1024px and above
 
-- Page gutters expand to 96px.
-- Full-width stages use the wide portfolio ratio.
+- Page gutters expand to 96px at 1280px; the 1024–1279px range retains 32px gutters.
+- Full-width stages follow the fluid height rule with an 888px / 82svh cap.
 - The project grid supports two square half-width stages.
 - Device rows may show three phones.
 - Major section spacing grows to the large rhythm values.
@@ -555,7 +558,7 @@ The new homepage is the target visual direction. The Eleventy project is the mig
 | Homepage project grid | `.product__projects` | `home.css` | Implemented as a responsive one/two-column composition within the 1320px homepage container. |
 | Homepage project stage | `.work-card` | `home.css` | Implemented without imagery; distinct from existing case-study banners. |
 | Stage compositions | `.work-card--*` | `home.css` | Implemented structurally; retain only modifiers used by future artwork. |
-| Project label | `.work-card__text` | `home.css` | Implemented structurally but intentionally hidden while placeholder artwork is in use; linked cards retain descriptive accessible names. |
+| Project label | `.work-card__text` | `home.css` | Implemented structurally but intentionally hidden while placeholder artwork is in use; linked cards retain descriptive accessible names. Project labels reveal on hover-capable pointers and keyboard focus, while remaining hidden at rest. Position them at the bottom-left with a fluid 24–32px inset, separate from centered artwork, and use a subtle 4px entrance. |
 | Availability status | `.product__status` | `home.css` | Implemented as quiet metadata beside the timeline for unavailable work such as the Savewise case study; do not style it as an action or overlay it on project imagery. |
 | Existing case-study banner | `#case-study .banner` | `project.css` | Legacy/implemented; preserve separately until a deliberate case-study migration. |
 | Callout | `.callout` | `style.css` | Implemented and reusable for short contextual notices. |
