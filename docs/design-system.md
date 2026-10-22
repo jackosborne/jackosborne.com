@@ -268,6 +268,10 @@ Editorial reading width: shared page introductions, blog posts, case studies, Ab
 
 The four-column composition governs alignment more than density; the 24-track implementation provides the placement resolution. Full-width hero and project content span all 24 tracks. A conceptual half-width spans 12 tracks, a quarter-width spans six, and archive layouts may use four-track spans to produce six columns.
 
+### Case-study highlights
+
+Case studies may supply an optional `highlights` front-matter collection between the banner and written article. Each item accepts `image`, `alt`, `title`, `caption`, and `span` (`half` or `full`). Half-width figures span 12 of the shared 24 tracks; full-width figures span all tracks. At 640px and below, all figures stack. Use equal 24px gaps between columns and rows, the banner's neutral stage background, and 24px corners. Images preserve their natural proportions and determine stage height without cropping. For drafting, empty image fields display labeled 4:3 half-width or 16:9 full-width placeholders on desktop, with all placeholders using 4:3 at 640px and below; these ratios do not constrain final artwork. Optional captions use regular system typography with primary titles and muted supporting copy. Omit the banner completely when its collection is empty.
+
 ### Shape and depth
 
 | Token | Value | Use |

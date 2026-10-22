@@ -6,6 +6,7 @@
 
   {{ pageIntro(title, product, overview) }}
 
+  {% if banner and banner.length %}
     <div class="banner{% if banner.length > 1 %} has-controls{% endif %}">
     <div class="banner-container">
       <span class="loader"></span>
@@ -32,6 +33,34 @@
     {% endif %}
 
   </div>
+
+  {% endif %}
+
+  {% if highlights and highlights.length %}
+  <section class="highlights grid" aria-label="Project highlights">
+    {% for item in highlights %}
+    <figure class="highlight{% if item.span == 'full' %} highlight--full{% endif %}">
+      <div class="highlight__stage{% if not item.image %} highlight__stage--placeholder{% endif %}">
+        {% if item.image %}
+          {% if item.span == 'full' %}
+            {% responsiveImage item.image, item.alt, "(min-width: 1512px) 1320px, (min-width: 1280px) calc(100vw - 192px), calc(100vw - 64px)", "wide" %}
+          {% else %}
+            {% responsiveImage item.image, item.alt, "(max-width: 640px) calc(100vw - 64px), (min-width: 1512px) 648px, (min-width: 1280px) calc((100vw - 216px) / 2), calc((100vw - 88px) / 2)", "wide" %}
+          {% endif %}
+        {% else %}
+          <span class="highlight__placeholder">{% if item.span == 'full' %}Full-width highlight{% else %}Half-width highlight{% endif %}</span>
+        {% endif %}
+      </div>
+      {% if item.title or item.caption %}
+      <figcaption class="highlight__caption">
+        {% if item.title %}<p class="highlight__title">{{ item.title }}</p>{% endif %}
+        {% if item.caption %}<p>{{ item.caption }}</p>{% endif %}
+      </figcaption>
+      {% endif %}
+    </figure>
+    {% endfor %}
+  </section>
+  {% endif %}
 
   <div class="content grid reading-layout">
       <div class="main content-main prose row-start-7 row-end-19">
