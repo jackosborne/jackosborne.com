@@ -504,6 +504,7 @@ footer[role="contentinfo"] {
   background: transparent;
   color: var(--color-ink-muted);
   padding: calc(8 * var(--space-1)) var(--space-4);
+  padding-bottom: var(--space-4);
   border-top: 1px solid var(--color-stage);
 }
 
@@ -573,7 +574,7 @@ footer[role="contentinfo"] a.active {
 
 .site-footer .copyright,
 footer[role="contentinfo"] .copyright {
-  margin-top: var(--space-4);
+  margin-top: var(--space-3);
 }
 
 .site-footer .copyright p,
@@ -582,14 +583,14 @@ footer[role="contentinfo"] .copyright p {
   line-height: var(--leading-normal);
   letter-spacing: var(--tracking-sm);
   margin-bottom: 0;
-  grid-column: 7 / -1;
+  grid-column: 1 / -1;
 }
 
 @media screen and (max-width: 640px) {
   .site-footer,
   footer[role="contentinfo"] {
     padding-top: var(--space-6);
-    padding-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
   }
 
   .site-footer .grid,
