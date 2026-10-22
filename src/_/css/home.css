@@ -397,11 +397,6 @@ body#home .work-card__text h3 {
     width: 100%;
   }
 
-  .work-card--wide-browser .work-card__media {
-    align-items: stretch;
-    padding: var(--home-card-space) var(--home-card-space) 0;
-  }
-
   .work-card--split-stage .work-card__media {
     padding: var(--home-card-space) var(--home-card-space) 0;
   }
