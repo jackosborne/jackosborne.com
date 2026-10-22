@@ -88,7 +88,7 @@ I began by venturing to the app stores to gain an understanding of the needs and
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div class="padding bg">
+      <div class="padding bg media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/marsbot-audio/content/sticky-notes.png' | url }}" 
         width="1252" 
@@ -133,7 +133,7 @@ For days, I looked for inspiration: books, design references, anything. Nothing 
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div class="bg">
+      <div class="bg media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/marsbot-audio/content/new-perspective-screenshot.png' | url }}" 
         width="1252" 
@@ -141,7 +141,7 @@ For days, I looked for inspiration: books, design references, anything. Nothing 
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/marsbot-audio/content/new-perspective-sketch.png' | url }}" 
         width="1252" 
@@ -149,7 +149,7 @@ For days, I looked for inspiration: books, design references, anything. Nothing 
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/marsbot-audio/content/new-perspective-wireframe.png' | url }}" 
         width="1252" 
@@ -176,7 +176,7 @@ Fast forward a few days later, when I noticed the two massive columns of light e
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/marsbot-audio/content/tribute-in-light-photo.jpg' | url }}" 
         width="1252" 
@@ -184,13 +184,13 @@ Fast forward a few days later, when I noticed the two massive columns of light e
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/marsbot-audio/content/tribute-in-light-sketch.png' | url }}" 
         width="746" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/marsbot-audio/content/tribute-in-light-wireframe-two.png' | url }}" 
         width="746" 
@@ -215,7 +215,7 @@ As you moved through the world, the landscape responded. The horizon stayed fixe
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/marsbot-audio/content/step-into-the-light-sketch-one.png' | url }}" 
         width="1252" 
@@ -223,19 +223,19 @@ As you moved through the world, the landscape responded. The horizon stayed fixe
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/marsbot-audio/content/step-into-the-light-wire-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/marsbot-audio/content/step-into-the-light-wire-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/marsbot-audio/content/step-into-the-light-wire-three.png' | url }}" 
         width="486" 
@@ -295,19 +295,19 @@ A traditional compass felt too heavy-handed<sup><a href="#fn-4" id="fnref-4" cla
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/marsbot-audio/content/a-sense-of-direction-wire-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/marsbot-audio/content/a-sense-of-direction-wire-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/marsbot-audio/content/a-sense-of-direction-wire-three.png' | url }}" 
         width="486" 

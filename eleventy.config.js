@@ -137,7 +137,23 @@ async function projectContentImages(content = "") {
 
   const replacements = await Promise.all(
     images.map(async (node) => {
-      const profile = projectContentProfile(node);
+      let profile = projectContentProfile(node);
+      let ancestor = node.parent;
+      let isBreakout = false;
+      while (ancestor) {
+        if (hasClass(ancestor, "breakout")) isBreakout = true;
+        ancestor = ancestor.parent;
+      }
+      if (isBreakout) {
+        const columns = Number(Object.keys(projectContentImageProfiles).find(
+          (key) => projectContentImageProfiles[key] === profile
+        )) || 1;
+        const gaps = (columns - 1) * 10;
+        profile = {
+          widths: columns === 1 ? [480, 960, 1440, 2160] : [320, 640, 960],
+          sizes: `(min-width: 1512px) ${(1320 - gaps) / columns}px, (min-width: 1280px) calc((100vw - ${192 + gaps}px) / ${columns}), calc((100vw - ${64 + gaps}px) / ${columns})`,
+        };
+      }
       const metadata = await Image(localImagePath(node.attribs.src), {
         widths: profile.widths,
         // Case-study body images do not need lossless PNG fallbacks. WebP is
@@ -436,7 +452,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("personasvg", function (filename) {
     const filePath = path.join("src/_includes/personas", filename);
     try {
-      return fs.readFileSync(filePath, "utf8");
+      return fs.readFileSync(filePath, "utf8").replace(
+        "<svg ", '<svg aria-hidden="true" focusable="false" '
+      );
     } catch (err) {
       console.warn(`SVG not found: ${filePath}`);
       return `<svg><!-- missing: ${filename} --></svg>`;

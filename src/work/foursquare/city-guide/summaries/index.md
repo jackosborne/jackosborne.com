@@ -82,7 +82,7 @@ This format prioritised scannability, giving users an overview of multiple venue
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/summaries/content/high-density-sketch-one.png' | url }}" 
         width="1252" 
@@ -90,19 +90,19 @@ This format prioritised scannability, giving users an overview of multiple venue
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/summaries/content/high-density-wireframe-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/summaries/content/high-density-wireframe-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/summaries/content/high-density-wireframe-three.png' | url }}" 
         width="486" 
@@ -127,7 +127,7 @@ The following exploration moved away from manual selection into a structured sto
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/summaries/content/scroll-based-sketch-one.png' | url }}" 
         width="1252" 
@@ -135,19 +135,19 @@ The following exploration moved away from manual selection into a structured sto
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/summaries/content/scroll-based-wireframe-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/summaries/content/scroll-based-wireframe-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/summaries/content/scroll-based-wireframe-three.png' | url }}" 
         width="486" 
@@ -176,7 +176,7 @@ This format made discovery feel instant and effortless. Users could quickly expl
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/summaries/content/card-hybrid-sketch-one.png' | url }}" 
         width="1252" 
@@ -184,19 +184,19 @@ This format made discovery feel instant and effortless. Users could quickly expl
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/summaries/content/card-hybrid-wireframe-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/summaries/content/card-hybrid-wireframe-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/summaries/content/card-hybrid-wireframe-three.png' | url }}" 
         width="486" 
@@ -244,13 +244,13 @@ We identified several areas where improvements were needed throughout internal a
 <figure class="img">
   <div class="multi col padding bg">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/summaries/content/design-revisions-mock-one.png' | url }}" 
         width="746" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/summaries/content/design-revisions-mock-two.png' | url }}" 
         width="746" 

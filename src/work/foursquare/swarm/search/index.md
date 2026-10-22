@@ -54,19 +54,19 @@ The screenshots below illustrate the three distinct search flows in Swarm 4.0. T
 
 <figure class="img">
   <div class="bg padding multi row">
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/swarm/search/content/old1.png' | url }}" 
       width="486" 
       alt="photo" />
     </div>
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/swarm/search/content/old2.png' | url }}" 
       width="486" 
       alt="photo" />
     </div>
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/swarm/search/content/old3.png' | url }}" 
       width="486" 
@@ -95,7 +95,7 @@ Feedback revealed a clear opportunity to bridge functionality gaps and meet user
 
 <figure class="img breakout">
 <div>
-<ul class="quotes grid grid-cols-4">
+<ul class="quotes">
 <li>
 <div class="card">
 <blockquote>
@@ -157,7 +157,7 @@ Ultimately, the decision to place the search in the header preserved the balance
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <div>
           <img 
           src="{{ '/_/images/work/foursquare/swarm/search/content/identifying-an-entry-point-sketch.png' | url }}" 
@@ -167,19 +167,19 @@ Ultimately, the decision to place the search in the header preserved the balance
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/identifying-an-entry-point-wireframe-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/identifying-an-entry-point-wireframe-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/identifying-an-entry-point-wireframe-three.png' | url }}" 
         width="486" 
@@ -213,13 +213,13 @@ If you were a new user, we would be able to highlight popular, busy, or trending
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/ideas.png' | url }}" 
         width="746" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/landing-page-experiences-sketch.png' | url }}" 
         width="746" 
@@ -227,19 +227,19 @@ If you were a new user, we would be able to highlight popular, busy, or trending
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/landing-page-experiences-wireframe-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/landing-page-experiences-wireframe-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/landing-page-experiences-wireframe-three.png' | url }}" 
         width="486" 
@@ -273,7 +273,7 @@ To determine the best way to organise search results, we explored multiple appro
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <div>
           <img 
           src="{{ '/_/images/work/foursquare/swarm/search/content/searching-for-results-sketch.png' | url }}" 
@@ -283,19 +283,19 @@ To determine the best way to organise search results, we explored multiple appro
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/searching-for-results-wireframe-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/searching-for-results-wireframe-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/searching-for-results-wireframe-three.png' | url }}" 
         width="486" 
@@ -327,25 +327,25 @@ The navigation is updated dynamically within detailed views, replacing the close
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/diving-deeper-into-search-wireframe-one.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/diving-deeper-into-search-wireframe-two.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/diving-deeper-into-search-wireframe-three.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/diving-deeper-into-search-wireframe-four.png' | url }}" 
         width="358" 
@@ -370,25 +370,25 @@ Users accessed a tertiary view featuring a time-filtering bar below the primary 
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/searching-through-time-wireframe-one.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/searching-through-time-wireframe-two.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/searching-through-time-wireframe-three.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/searching-through-time-wireframe-four.png' | url }}" 
         width="358" 
@@ -396,19 +396,19 @@ Users accessed a tertiary view featuring a time-filtering bar below the primary 
       </div>
     </div>
     <div class="multi row">
-      <div style="background:var(--border);">
+      <div style="background:var(--border);" class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/searching-through-time-icon-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div style="background:var(--border);">
+      <div style="background:var(--border);" class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/searching-through-time-icon-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div style="background:var(--border);">
+      <div style="background:var(--border);" class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/searching-through-time-icon-three.png' | url }}" 
         width="486" 
@@ -460,13 +460,13 @@ As the weeks passed, we conducted A/B testing to compare the performance and eng
 <figure class="img">
   <div class="multi col bg padding">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/design-revisions-mock-one.png' | url }}" 
         width="746" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/search/content/design-revisions-mock-two.png' | url }}" 
         width="746" 

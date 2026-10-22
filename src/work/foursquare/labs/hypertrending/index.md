@@ -120,7 +120,7 @@ Initially, each location was displayed as a small dot. However, as more categori
  <div style="display: inline-block; vertical-align: middle; border-radius: 100%; height: 16px; width: 16px; background-color: #8DED2D;"></div>
  <div style="display: inline-block; vertical-align: middle; border-radius: 100%; height: 24px; width: 24px; background-color: #F9703E"></div>
  <div style="display: inline-block; vertical-align: middle; border-radius: 100%; height: 32px; width: 32px; background-color: #F7C948"></div>
- <div style="display: inline-block; vertical-align: middle; border-radius: var(--spacing-unit); height: 32px; width: 2px; background-color: var(--border)"></div>
+ <div style="display: inline-block; vertical-align: middle; border-radius: var(--spacing-unit); height: 32px; width: 2px; background-color: var(--color-divider)"></div>
  <div style="display: inline-block; vertical-align: middle; position: relative;">
  <style>
  @-webkit-keyframes pulsate {
@@ -129,8 +129,8 @@ Initially, each location was displayed as a small dot. However, as more categori
  100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
  }
  </style>
- <div style="border: 2px solid var(--text); -webkit-border-radius: 100%; height: 32px; width: 32px; position: absolute; left: -8px; top: -8px; -webkit-animation: pulsate 1.5s ease-out; -webkit-animation-iteration-count: infinite; opacity: 0.0;"></div>
- <div style="border-radius: 100%; height: 16px; width: 16px; background-color: var(--text);"></div>
+ <div style="border: 2px solid var(--color-ink); -webkit-border-radius: 100%; height: 32px; width: 32px; position: absolute; left: -8px; top: -8px; -webkit-animation: pulsate 1.5s ease-out; -webkit-animation-iteration-count: infinite; opacity: 0.0;"></div>
+ <div style="border-radius: 100%; height: 16px; width: 16px; background-color: var(--color-ink);"></div>
  </div>
  </div>
  </div>
@@ -153,7 +153,7 @@ To address this, I began sketching modals that would add value to each visualisa
 <figure class="img">
  <div class="multi col">
  <div class="multi row">
- <div>
+ <div class="media-surface">
   <img 
   src="{{ '/_/images/work/foursquare/labs/hypertrending/content/accessing-venue-information-sketch-one.png' | url }}" 
   width="1252" 
@@ -161,13 +161,13 @@ To address this, I began sketching modals that would add value to each visualisa
  </div>
  </div>
  <div class="multi row">
- <div>
+ <div class="media-surface">
   <img 
   src="{{ '/_/images/work/foursquare/labs/hypertrending/content/accessing-venue-information-wireframe-one.png' | url }}" 
   width="746" 
   alt="photo" />
  </div>
- <div>
+ <div class="media-surface">
   <img 
   src="{{ '/_/images/work/foursquare/labs/hypertrending/content/accessing-venue-information-wireframe-two.png' | url }}" 
   width="746" 
@@ -199,19 +199,19 @@ The next day, I couldn't stop thinking about that tactile experience. It wasn't 
 <figure class="img">
  <div class="multi col">
  <div class="multi row">
- <div>
+ <div class="media-surface">
  <img 
   src="{{ '/_/images/work/foursquare/labs/hypertrending/content/crafting-a-nav-screenshot.png' | url }}" 
   width="486" 
   alt="photo" />
  </div>
- <div>
+ <div class="media-surface">
  <img 
   src="{{ '/_/images/work/foursquare/labs/hypertrending/content/crafting-a-nav-whiteboard.png' | url }}" 
   width="486" 
   alt="photo" />
  </div>
- <div>
+ <div class="media-surface">
  <img 
   src="{{ '/_/images/work/foursquare/labs/hypertrending/content/crafting-a-nav-sketch.png' | url }}" 
   width="486" 
@@ -244,7 +244,7 @@ With most design elements in place, I created a prototype in Figma and tested it
 <figure class="img">
 <div class="multi col">
 <div class="multi row">
-<div class="bg padding">
+<div class="bg padding media-surface">
 <img src="{{ '/_/images/work/foursquare/labs/hypertrending/content/prototype-mock.png' | url }}" width="1252" alt="photo" />
 </div>
 </div>
@@ -262,7 +262,7 @@ Testing in person provided valuable real-time feedback, helping us better unders
 
 <figure class="img breakout">
 <div>
-<ul class="quotes grid grid-cols-4">
+<ul class="quotes">
 <li>
 <div class="card">
 <blockquote>
@@ -331,13 +331,13 @@ After reviewing feedback from our internal testers, it became clear that certain
 <figure class="img">
  <div class="multi col bg padding">
  <div class="multi row">
- <div>
+ <div class="media-surface">
   <img 
   src="{{ '/_/images/work/foursquare/labs/hypertrending/content/design-revisions-mock-one.png' | url }}" 
   width="746" 
   alt="photo" />
  </div>
- <div>
+ <div class="media-surface">
  <img 
   src="{{ '/_/images/work/foursquare/labs/hypertrending/content/design-revisions-mock-two.png' | url }}" 
   width="746" 
@@ -345,13 +345,13 @@ After reviewing feedback from our internal testers, it became clear that certain
  </div>
  </div>
  <div class="multi row">
- <div>
+ <div class="media-surface">
  <img 
   src="{{ '/_/images/work/foursquare/labs/hypertrending/content/design-revisions-mock-three.png' | url }}" 
   width="746" 
   alt="photo" />
  </div>
- <div>
+ <div class="media-surface">
  <img 
   src="{{ '/_/images/work/foursquare/labs/hypertrending/content/design-revisions-mock-four.png' | url }}" 
   width="746" 

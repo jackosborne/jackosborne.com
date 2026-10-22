@@ -93,7 +93,7 @@ We needed a simple and effective solution since this was a quick hack project. R
 <figure class="img">
   <div class="multi col">
     <div class="multi row bg">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/room-finder/content/increase-radius.png' | url }}" 
         width="1252" 
@@ -131,7 +131,7 @@ While AR was the core focus of the app, the directory list also needed to stand 
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/room-finder/content/establishing-the-interface-sketch-one.png' | url }}" 
         width="1252" 
@@ -139,19 +139,19 @@ While AR was the core focus of the app, the directory list also needed to stand 
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/room-finder/content/establishing-the-interface-wire-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/room-finder/content/establishing-the-interface-wire-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/room-finder/content/establishing-the-interface-wire-three.png' | url }}" 
         width="486" 
@@ -209,7 +209,7 @@ Rather than introducing a new visual system, we carried this colour-coding into 
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/room-finder/content/color-coded-rooms-sketch-one.png' | url }}" 
         width="1252" 
@@ -239,13 +239,13 @@ Rather than building something from scratch, I explored Apple's built-in UI comp
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div class="bg">
+      <div class="bg media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/room-finder/content/notification-one.png' | url }}" 
         width="746" 
         alt="photo" />
       </div>
-      <div class="bg">
+      <div class="bg media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/room-finder/content/notification-two.png' | url }}" 
         width="746" 
@@ -268,7 +268,7 @@ However, early testing revealed a significant usability issue—users often were
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/room-finder/content/widget-notification-sketch-one.png' | url }}" 
         width="1252" 
@@ -276,19 +276,19 @@ However, early testing revealed a significant usability issue—users often were
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/room-finder/content/widget-notification-wire-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/room-finder/content/widget-notification-wire-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/room-finder/content/widget-notification-wire-three.png' | url }}" 
         width="486" 
@@ -339,7 +339,7 @@ The idea was simple: as soon as an employee entered AR mode, employees would loo
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/room-finder/content/tron-lightcycle-sketch-one.png' | url }}" 
         width="1252" 
@@ -347,19 +347,19 @@ The idea was simple: as soon as an employee entered AR mode, employees would loo
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/room-finder/content/tron-lightcycle-wire-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/room-finder/content/tron-lightcycle-wire-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/room-finder/content/tron-lightcycle-wire-three.png' | url }}" 
         width="486" 
@@ -414,7 +414,7 @@ For this project, I wanted to pay homage to Marsbot while giving her a subtle vi
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div class="bg padding">
+      <div class="bg padding media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/labs/room-finder/content/app-icon.png' | url }}" 
         width="1252" 
