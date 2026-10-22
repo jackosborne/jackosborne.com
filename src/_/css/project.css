@@ -1,6 +1,7 @@
 /* Project pages may override this locally when an identity color is needed. */
 #case-study {
   --brand-color: var(--color-ink);
+  --project-chapter-space: var(--space-9);
 }
 
 /* Visual overview: half-width stages share a row; full stages span the shell. */
@@ -9,7 +10,7 @@
   grid-template-columns: repeat(24, minmax(0, 1fr));
   gap: var(--space-3);
   align-items: start;
-  margin-bottom: var(--space-9);
+  margin-bottom: var(--project-chapter-space);
 }
 
 #case-study .highlight {
@@ -112,7 +113,7 @@
     overflow: hidden;
     background-color: var(--color-stage);
     border-radius: calc(3 * var(--spacing-unit));
-    margin-bottom: calc(5 * var(--spacing-unit));
+    margin-bottom: var(--project-chapter-space);
   }
   
   #case-study .banner.has-controls:hover {
@@ -130,11 +131,33 @@
     position: absolute;
     right: calc(3 * var(--spacing-unit));
     bottom: calc(3 * var(--spacing-unit));
-    visibility: hidden;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    width: var(--space-6);
+    height: var(--space-6);
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: var(--color-ink-muted);
+    cursor: pointer;
   }
   
-  #case-study .banner:hover .banner-controls {
-    visibility: visible;
+  #case-study .banner .banner-controls[hidden] {
+    display: none;
+  }
+
+  #case-study .banner .banner-controls:hover {
+    background: var(--color-ink);
+  }
+
+  #case-study .banner .banner-controls:focus-visible {
+    outline: var(--focus-ring-width) solid var(--color-focus);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  #case-study .banner .banner-controls:active {
+    transform: scale(0.96);
   }
   
   .banner-controls .icon {
@@ -143,7 +166,6 @@
     align-items: center;
     width: calc(6 * var(--spacing-unit));
     height: calc(6 * var(--spacing-unit));
-    background: var(--color-ink-muted);
     border-radius: 100%;
   }
   
@@ -170,9 +192,6 @@
     height: 100%;
     object-fit: contain;
     opacity: 0;
-    will-change: opacity;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
     z-index: 2;
   }
   
@@ -213,7 +232,7 @@
     text-transform: uppercase;
   }
   #case-study .content-main h5 {
-    margin: calc(5 * var(--spacing-unit)) 0 0;
+    margin: var(--project-chapter-space) 0 0;
   }
   #case-study .content-main h5 + h2 {
     margin-top: var(--space-2);
@@ -223,9 +242,51 @@
   #case-study .content-main figure {
     font-size: var(--font-size-sm);
     line-height: var(--line-height-base);
-    margin-bottom: calc(3 * var(--spacing-unit));
+    margin-bottom: 0;
   }
-  
+
+  #case-study .content-main > figure,
+  #case-study .content-main > .img {
+    margin-top: var(--prose-flow);
+  }
+
+  #case-study .content-main > h2 {
+    margin-top: var(--space-7);
+    padding-top: 0;
+  }
+
+  #case-study .content-main > h5 + h2 {
+    margin-top: var(--space-2);
+  }
+
+  /* Group the introductory prose with the first numbered chapter. */
+  #case-study .content-main > p ~ h5:first-of-type:has(+ h2) {
+    margin-top: var(--space-6);
+  }
+
+  #case-study .content-main > :first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  #case-study .content-main > .content-meta {
+    margin-top: var(--space-6);
+  }
+
+  #case-study .banner:has(+ .highlights) {
+    margin-bottom: var(--space-3);
+  }
+
+  @media (min-width: 1024px) {
+    #case-study .page-intro:has(+ .banner, + .highlights) {
+      margin-bottom: var(--space-7);
+    }
+
+    #case-study {
+      --project-chapter-space: var(--space-12);
+    }
+  }
+
   /* Images (multi) */
   #case-study .content-main .img div.multi {
     display: flex;
@@ -242,7 +303,8 @@
     flex: 1 1 0;
     max-width: 100%;
   }
-  #case-study .content-main .img div.multi.row > div {
+  /* Explicit surface treatment; row/column classes only arrange content. */
+  #case-study .content-main .img div.media-surface {
     background: var(--color-stage);
     border-radius: calc(1 * var(--spacing-unit));
     overflow: hidden;
@@ -314,16 +376,22 @@
     margin-left: calc(-3 * var(--spacing-unit));
   }
   
-  /* Persona quotes */
+  /* Research findings and App Store reviews share the same card rhythm. */
   #case-study .content-main .quotes {
+    --quote-supporting-ink: color-mix(in srgb, var(--color-ink-muted) 85%, var(--color-ink));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: var(--space-2);
+    align-items: stretch;
     padding: 0;
   }
   #case-study .content-main .quotes li {
-    background: var(--color-canvas);
-    border: 1px solid var(--color-divider);
-    border-radius: calc(0.5 * var(--spacing-unit));
+    background: var(--color-stage);
+    border: 0;
+    border-radius: var(--radius-small);
     display: flex;
-    margin-bottom: calc(1 * var(--spacing-unit));
+    min-width: 0;
+    margin: 0;
     padding: calc(3 * var(--spacing-unit));
   }
   #case-study .content-main .quotes li:last-child {
@@ -333,18 +401,19 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     row-gap: calc(3 * var(--spacing-unit));
   }
   .quotes .persona {
     display: inline-block;
     width: calc(7 * var(--spacing-unit));
     height: auto;
-    margin-top: 0;
+    margin-top: auto;
     border-radius: calc(0.5 * var(--spacing-unit));
     overflow: hidden;
   }
   #case-study .content-main .quotes li .card blockquote {
+    color: var(--quote-supporting-ink);
     border: 0;
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
@@ -359,6 +428,13 @@
   }
   #case-study .content-main .quotes li strong {
     display: block;
+    margin-bottom: var(--space-1);
+  }
+  #case-study .content-main .quotes .quote-rating {
+    display: block;
+    margin-bottom: var(--space-1);
+    color: var(--quote-supporting-ink);
+    font-weight: var(--font-weight-normal);
   }
   #case-study .content-main .quotes li .persona:has(svg) {
     background: transparent;
@@ -388,16 +464,6 @@
     padding-top: calc(3 * var(--spacing-unit));
   }
 
-  @media screen and (min-width: 1140px) {
-    #case-study .content-main .quotes {
-      gap: calc(1 * var(--spacing-unit));
-    }
-
-    #case-study .content-main .quotes li,
-    #case-study .content-main .quotes li:last-child {
-      margin-bottom: 0;
-    }
-  }
   
   /* ==========================================================================
      ICONS (mask)
@@ -425,3 +491,66 @@
     mask-position: center;
     mask-repeat: no-repeat;
   }
+
+/* Editorial comparisons: one frame, a quiet header, and clear row divisions. */
+#case-study .content-main table {
+  border-radius: var(--radius-small);
+  padding: 0;
+  color: var(--color-ink);
+}
+
+#case-study .content-main table thead {
+  background: var(--color-stage);
+}
+
+#case-study .content-main table th {
+  height: auto;
+  padding: var(--space-2);
+  font-weight: var(--font-weight-medium);
+}
+
+#case-study .content-main table tbody tr:nth-child(odd) {
+  background: transparent;
+}
+
+#case-study .content-main table tbody :is(th, td) {
+  border-top: 1px solid var(--color-divider);
+  border-radius: 0;
+  padding: var(--space-2);
+}
+
+#case-study .content-main table:has(.icon-check-yes, .icon-check-no) :is(th, td):not(:first-child) {
+  width: var(--space-7);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  #case-study .content-main .breakout table :is(th, td):first-child {
+    min-width: clamp(8rem, 12vw, 11rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  #case-study .content-main table thead th {
+    white-space: nowrap;
+  }
+
+  #case-study .content-main table:has(.icon-check-yes, .icon-check-no) :is(th, td):not(:first-child) {
+    /* Keep comparisons compact while allowing the header to set the minimum. */
+    width: 1%;
+  }
+}
+
+/* Standalone editorial quotations stay distinct without becoming a headline. */
+#case-study .content-main > blockquote {
+  border-left: calc(var(--space-1) / 4) solid var(--color-ink-muted);
+  padding-left: var(--space-3);
+  margin-inline: 0;
+  color: color-mix(in srgb, var(--color-ink-muted) 85%, var(--color-ink));
+  font-size: clamp(1.125rem, 1.5vw, var(--font-size-md));
+  line-height: var(--line-height-base);
+}
+
+#case-study .content-main > blockquote > :last-child {
+  margin-bottom: 0;
+}

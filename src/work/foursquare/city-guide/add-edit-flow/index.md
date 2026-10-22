@@ -114,7 +114,7 @@ These screenshots of the desktop interface highlight the complexity of the exist
 <figure class="img">
   <div class="multi col padding bg">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/old-edit-flow-one.png' | url }}" 
         width="1252" 
@@ -122,13 +122,13 @@ These screenshots of the desktop interface highlight the complexity of the exist
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/old-edit-flow-two.png' | url }}" 
         width="746" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/old-edit-flow-three.png' | url }}" 
         width="746" 
@@ -154,7 +154,7 @@ These conversations provided valuable insights into their workflows, frustration
 
 <figure class="img breakout">
 <div>
-<ul class="quotes grid grid-cols-4">
+<ul class="quotes">
 <li>
 <div class="card">
 <blockquote>
@@ -254,7 +254,7 @@ This approach ensured users could quickly scan all available attributes while pr
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/scanability-sketch-one.png' | url }}" 
         width="1252" 
@@ -262,19 +262,19 @@ This approach ensured users could quickly scan all available attributes while pr
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/scanability-wireframe-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/scanability-wireframe-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/scanability-wireframe-three.png' | url }}" 
         width="486" 
@@ -301,7 +301,7 @@ This led us to investigate section-level toggles. Instead of forcing users to en
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/toggle-sketch-one.png' | url }}" 
         width="1252" 
@@ -309,19 +309,19 @@ This led us to investigate section-level toggles. Instead of forcing users to en
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/toggle-wireframe-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/toggle-wireframe-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/toggle-wireframe-three.png' | url }}" 
         width="486" 
@@ -350,7 +350,7 @@ This challenge reminded me of an analogy I'd heard years ago about how Disney de
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/add-flow-sketch-one.png' | url }}" 
         width="1252" 
@@ -358,19 +358,19 @@ This challenge reminded me of an analogy I'd heard years ago about how Disney de
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/add-flow-wireframe-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/add-flow-wireframe-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/add-flow-wireframe-three.png' | url }}" 
         width="486" 
@@ -402,13 +402,13 @@ For users looking to edit a venue, the most natural place to access the edit flo
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/edit-flow-entry-point-wireframe-one.png' | url }}" 
         width="746" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/edit-flow-entry-point-wireframe-two.png' | url }}" 
         width="746" 
@@ -434,13 +434,13 @@ Integrating the Add Venue CTA within search could ensure that users had exhauste
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/add-flow-entry-point-wireframe-one.png' | url }}" 
         width="746" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/add-edit-flow/content/add-flow-entry-point-wireframe-two.png' | url }}" 
         width="746" 

@@ -84,7 +84,7 @@ In addition, we prioritised several user-requested features to enrich the in-app
 
 <figure class="img breakout">
 <div>
-<ul class="quotes grid grid-cols-4">
+<ul class="quotes">
 <li>
 <div class="card">
 <blockquote>
@@ -112,9 +112,6 @@ To bring feature parity across platforms, users requested that stickers be avail
 <span class="persona">{% personasvg "two.svg" %}</span>
 </div>
 </li>
-<li>
-&nbsp;
-</li>
 </ul>
 </div>
 <figcaption>
@@ -136,7 +133,7 @@ Our options were limited, but one area for improvement stood out: promoting the 
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/increasing-installation-awareness-sketch.png' | url }}" 
         width="1252" 
@@ -144,7 +141,7 @@ Our options were limited, but one area for improvement stood out: promoting the 
       </div>
     </div>
     <div class="multi row">
-      <div class="bg padding">
+      <div class="bg padding media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/increasing-installation-awareness-wireframe.png' | url }}" 
         width="1252" 
@@ -171,19 +168,19 @@ With the release of watchOS 4, Apple introduced "complications"<sup><a href="#fn
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/uncomplicated-complications-wireframe-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/uncomplicated-complications-wireframe-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/uncomplicated-complications-wireframe-three.png' | url }}" 
         width="486" 
@@ -218,19 +215,19 @@ To further enhance usability, we implemented visual cues such as prominently hig
       alt="photo" />
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/venue-picker-redesign-wireframe-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/venue-picker-redesign-wireframe-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/venue-picker-redesign-wireframe-three.png' | url }}" 
         width="486" 
@@ -251,7 +248,7 @@ Once the user has scrolled through the list and located their venue, stickers ca
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/sticker-flow-redesign-sketch.png' | url }}" 
         width="1252" 
@@ -259,25 +256,25 @@ Once the user has scrolled through the list and located their venue, stickers ca
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/sticker-flow-redesign-wireframe-one.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/sticker-flow-redesign-wireframe-two.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/sticker-flow-redesign-wireframe-three.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/sticker-flow-redesign-wireframe-four.png' | url }}" 
         width="358" 
@@ -304,7 +301,7 @@ This strategy enabled us to balance providing insightful details while ensuring 
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/checkin-flow-redesign-sketch.png' | url }}" 
         width="1252" 
@@ -312,25 +309,25 @@ This strategy enabled us to balance providing insightful details while ensuring 
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/checkin-flow-redesign-wireframe-one.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/checkin-flow-redesign-wireframe-two.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/venue-picker-redesign-wireframe-three.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/checkin-flow-redesign-wireframe-three.png' | url }}" 
         width="358" 
@@ -372,25 +369,25 @@ Our approach relied heavily on feedback from our dedicated community of super us
 <figure class="img">
   <div class="multi col bg padding">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/testing-and-feedback-wireframe-one.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/testing-and-feedback-wireframe-two.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/testing-and-feedback-wireframe-three.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/apple-watch/content/testing-and-feedback-wireframe-four.png' | url }}" 
         width="358" 

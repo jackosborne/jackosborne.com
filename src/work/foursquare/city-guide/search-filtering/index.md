@@ -100,19 +100,19 @@ The screenshots below show that basic filtering functionality was available to u
 
 <figure class="img">
   <div class="bg padding multi row">
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/old-flow-one.png' | url }}" 
       width="486" 
       alt="photo" />
     </div>
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/old-flow-two.png' | url }}" 
       width="486" 
       alt="photo" />
     </div>
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/old-flow-three.png' | url }}" 
       width="486" 
@@ -139,18 +139,20 @@ This feedback drove us to take a closer look at how filtering could evolve. We p
 
 <figure class="img breakout">
 <div>
-<ul class="quotes grid grid-cols-4">
+<ul class="quotes">
 <li>
 <div class="card">
 <blockquote>
-<strong>★★☆☆☆<br />Needs More Depth</strong> I've been a fan of Foursquare for years, but the filtering options haven't really evolved. They're good for the basics, but they just don't cut it when I'm looking for something specific—like places with outdoor seating, family-friendly spots, or late-night hours.
+<span class="quote-rating" role="img" aria-label="2 out of 5 stars">★★☆☆☆</span>
+<strong>Needs More Depth</strong> I've been a fan of Foursquare for years, but the filtering options haven't really evolved. They're good for the basics, but they just don't cut it when I'm looking for something specific—like places with outdoor seating, family-friendly spots, or late-night hours.
 </blockquote>
 </div>
 </li>
 <li>
 <div class="card">
 <blockquote>
-<strong>★★★☆☆<br />Filters Are Falling Behind</strong> 
+<span class="quote-rating" role="img" aria-label="3 out of 5 stars">★★★☆☆</span>
+<strong>Filters Are Falling Behind</strong>
 I often use Foursquare to discover places, but the filtering system feels outdated. There are so many more options I wish I had to narrow down results. Right now, it only gets me part of the way there, and I use other apps to fill in the gaps.
 </blockquote>
 </div>
@@ -158,7 +160,8 @@ I often use Foursquare to discover places, but the filtering system feels outdat
 <li>
 <div class="card">
 <blockquote>
-<strong>★★★★☆<br />Great App. Filters Need an Update</strong>
+<span class="quote-rating" role="img" aria-label="4 out of 5 stars">★★★★☆</span>
+<strong>Great App. Filters Need an Update</strong>
 I love using Foursquare to find hidden gems, but the filters haven't changed in years. They're super limited, and it's frustrating when I can't search for quiet spots or places with free Wi-Fi. Adding more filtering options would make it so much better.
 </blockquote>
 </div>
@@ -166,7 +169,8 @@ I love using Foursquare to find hidden gems, but the filters haven't changed in 
 <li>
 <div class="card">
 <blockquote>
-<strong>★★★☆☆<br />Useful, But I Want More</strong>
+<span class="quote-rating" role="img" aria-label="3 out of 5 stars">★★★☆☆</span>
+<strong>Useful, But I Want More</strong>
 Foursquare is one of my go-to apps, but the filters show their age. They work fine for general searches, but there's little room to get specific. I wish they'd add more modern options. Lots of untapped potential here.
 </blockquote>
 </div>
@@ -224,7 +228,7 @@ These filters offered high utility and were intuitive for users to understand an
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/filterbar-sketch-one.png' | url }}" 
         width="1252" 
@@ -232,7 +236,7 @@ These filters offered high utility and were intuitive for users to understand an
       </div>
     </div>
     <div class="multi row">
-      <div class="bg">
+      <div class="bg media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/filterbar-wireframe.png' | url }}" 
         width="1252" 
@@ -240,13 +244,13 @@ These filters offered high utility and were intuitive for users to understand an
       </div>
     </div>
     <div class="multi row">
-      <div class="bg padding">
+      <div class="bg padding media-surface">
           <img 
           src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/filterbar-mock-one.png' | url }}" 
           width="746" 
           alt="photo" />
       </div>
-      <div class="bg padding">
+      <div class="bg padding media-surface">
          <img 
           src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/filterbar-mock-two.png' | url }}" 
           width="746" 
@@ -254,13 +258,13 @@ These filters offered high utility and were intuitive for users to understand an
       </div>
     </div>
     <div class="multi row">
-      <div class="bg padding">
+      <div class="bg padding media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/filterbar-mock-three.png' | url }}" 
         width="746" 
         alt="photo" />
       </div>
-      <div class="bg padding">
+      <div class="bg padding media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/filterbar-mock-four.png' | url }}" 
         width="746" 
@@ -288,7 +292,7 @@ The Price filter required additional consideration due to its four segments—$ 
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/price-sketch-one.png' | url }}" 
         width="1252" 
@@ -296,13 +300,13 @@ The Price filter required additional consideration due to its four segments—$ 
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/price-wireframe-one.png' | url }}" 
         width="746" 
         alt="photo" />
       </div>    
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/price-wireframe-three.png' | url }}" 
         width="746" 
@@ -310,7 +314,7 @@ The Price filter required additional consideration due to its four segments—$ 
       </div>
     </div>
     <div class="multi row">
-      <div class="padding bg">
+      <div class="padding bg media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/price-mock-one.png' | url }}" 
         width="1252" 
@@ -363,19 +367,19 @@ This realisation led us to explore a new design paradigm: a dedicated content ar
 <figure class="img">
   <div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/modal-to-sheet-mock-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/modal-to-sheet-mock-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>  
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/modal-to-sheet-mock-three.png' | url }}" 
         width="486" 
@@ -404,7 +408,7 @@ While the new content area provided more space, we still had to think critically
 <figure class="img breakout">
   <div class="col multi">
     <div class="row multi">
-      <div class="bg padding">
+      <div class="bg padding media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/grouping-and-organising-mock.png' | url }}" 
         width="2572" 
@@ -436,7 +440,7 @@ The idea behind Just Show Me was to introduce an inline category filter to provi
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/justshowme-sketch-one.png' | url }}" 
         width="1252" 
@@ -444,7 +448,7 @@ The idea behind Just Show Me was to introduce an inline category filter to provi
       </div>
     </div>
     <div class="multi row">
-      <div class="padding bg">
+      <div class="padding bg media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/justshowme-wireframe.png' | url }}" 
         width="1252" 
@@ -491,7 +495,7 @@ This feedback loop, starting with internal reviews and expanding to external inp
 <figure class="img">
   <div class="multi col padding bg">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/design-revisions-mock-one.png' | url }}" 
         width="1252" 
@@ -499,13 +503,13 @@ This feedback loop, starting with internal reviews and expanding to external inp
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/design-revisions-mock-two.png' | url }}" 
         width="746" 
         alt="photo" />
       </div> 
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/search-filtering/content/design-revisions-mock-three.png' | url }}" 
         width="746" 

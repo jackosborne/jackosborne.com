@@ -91,7 +91,7 @@ An analysis revealed several areas for improvement, particularly around user fat
 
 <figure class="img breakout">
 <div>
-<ul class="quotes grid grid-cols-4">
+<ul class="quotes">
 <li>
 <div class="card">
 <blockquote>
@@ -171,19 +171,19 @@ We toned down visual elements in response to feedback to make the card more appr
       alt="photo" />
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/opinionator/content/stripping-back-wire-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/opinionator/content/stripping-back-wire-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/opinionator/content/stripping-back-wire-three.png' | url }}" 
         width="486" 
@@ -204,19 +204,19 @@ To improve navigation, we re-evaluated how users moved through the flow. The ori
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/opinionator/content/stripping-back-wire-four.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/opinionator/content/stripping-back-wire-five.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/opinionator/content/stripping-back-wire-six.png' | url }}" 
         width="486" 
@@ -243,7 +243,7 @@ Ultimately, the final design came together surprisingly fast, inspired by work I
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/opinionator/content/sketches.png' | url }}" 
         width="1252" 
@@ -251,7 +251,7 @@ Ultimately, the final design came together surprisingly fast, inspired by work I
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/opinionator/content/progression-design-sketch-one.png' | url }}" 
         width="1252" 
@@ -259,19 +259,19 @@ Ultimately, the final design came together surprisingly fast, inspired by work I
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/opinionator/content/progression-design-wire-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/opinionator/content/progression-design-wire-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/opinionator/content/progression-design-wire-three.png' | url }}" 
         width="486" 
@@ -316,13 +316,13 @@ To validate the updates further, we conducted a limited rollout to a small perce
 <figure class="img">
   <div class="multi col bg padding">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/opinionator/content/design-revisions-mock-one.png' | url }}" 
         width="746" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/city-guide/opinionator/content/design-revisions-mock-two.png' | url }}" 
         width="746" 

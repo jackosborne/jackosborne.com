@@ -57,7 +57,7 @@ We aimed to extend key features from the mobile app to the web, improving access
 <figure class="img">
   <div class="multi col bg padding">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/website/content/understanding-the-problem-screenshot.png' | url }}" 
         width="1252" 
@@ -123,7 +123,7 @@ As we built out our desktop offering, some aspects of the mobile app emerged as 
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/website/content/establishing-a-baseline-screenshot.png' | url }}" 
         width="1252" 
@@ -148,13 +148,13 @@ To further ensure consistency and usability, I continued exploring existing UI p
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/website/content/establishing-a-baseline-sketch-one.png' | url }}" 
         width="746" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/website/content/establishing-a-baseline-wireframe-one.png' | url }}" 
         width="746" 
@@ -162,7 +162,7 @@ To further ensure consistency and usability, I continued exploring existing UI p
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/website/content/establishing-a-baseline-sketch-two.png' | url }}" 
         width="1252" 
@@ -170,19 +170,19 @@ To further ensure consistency and usability, I continued exploring existing UI p
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/website/content/establishing-a-baseline-wireframe-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/website/content/establishing-a-baseline-wireframe-three.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/website/content/establishing-a-baseline-wireframe-four.png' | url }}" 
         width="486" 
@@ -211,13 +211,13 @@ With this new initiative, we were finally able to conceptualise and develop a fe
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/website/content/introducing-year-in-review-whiteboard.png' | url }}" 
         width="746" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/website/content/introducing-year-in-review-sketch.png' | url }}" 
         width="746" 
@@ -225,7 +225,7 @@ With this new initiative, we were finally able to conceptualise and develop a fe
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/website/content/introducing-year-in-review-wireframe.png' | url }}" 
         width="1252" 

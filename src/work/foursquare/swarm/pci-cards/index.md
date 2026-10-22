@@ -63,19 +63,19 @@ Addressing these issues was essential to sustaining user interest and ensuring t
 
 <figure class="img">
   <div class="bg padding multi row">
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/swarm/pci-cards/content/old1.png' | url }}" 
       width="486" 
       alt="photo" />
     </div>
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/swarm/pci-cards/content/old2.png' | url }}" 
       width="486" 
       alt="photo" />
     </div>
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/swarm/pci-cards/content/old3.png' | url }}" 
       width="486" 
@@ -142,7 +142,7 @@ Structured brainstorming sessions enabled us to explore various trivia ideas and
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <div>
           <img 
           src="{{ '/_/images/work/foursquare/swarm/pci-cards/content/new-concepts-wireframe-one.png' | url }}" 
@@ -150,7 +150,7 @@ Structured brainstorming sessions enabled us to explore various trivia ideas and
           alt="photo" />
         </div>
       </div>
-      <div>
+      <div class="media-surface">
         <div>
           <img 
           src="{{ '/_/images/work/foursquare/swarm/pci-cards/content/new-concepts-wireframe-two.png' | url }}" 
@@ -158,7 +158,7 @@ Structured brainstorming sessions enabled us to explore various trivia ideas and
           alt="photo" />
         </div>
       </div>
-      <div>
+      <div class="media-surface">
         <div>
           <img 
           src="{{ '/_/images/work/foursquare/swarm/pci-cards/content/new-concepts-wireframe-three.png' | url }}" 
@@ -183,19 +183,19 @@ Content freshness wasn't the only challenge we encountered. The visual design of
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/pci-cards/content/new-aesthetics-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/pci-cards/content/new-aesthetics-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/pci-cards/content/new-aesthetics-three.png' | url }}" 
         width="486" 
@@ -216,7 +216,7 @@ As Swarm moved towards a new visual direction, we aimed to simplify the design w
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div class="bg">
+      <div class="bg media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/pci-cards/content/scaffold.png' | url }}" 
         width="1252" 

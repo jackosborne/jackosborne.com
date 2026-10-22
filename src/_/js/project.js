@@ -1,125 +1,96 @@
 window.addEventListener("DOMContentLoaded", () => {
-    const bannerContainer = document.querySelector(".banner-container");
-    const banner = document.querySelector(".banner");
-    const images = bannerContainer
-      ? Array.from(bannerContainer.querySelectorAll("img"))
-      : [];
-    const controls = document.querySelector(".banner-controls");
-  
-    if (!bannerContainer || images.length === 0) return;
-  
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    const decodedImages = new WeakSet();
-    let isPaused = prefersReducedMotion;
-    let isChangingFrame = false;
-    let intervalId = null;
-    const INTERVAL_MS = 400;
-  
-    /* ------------------------------------------------------------------
-       Ensure first frame is visible immediately (HTML should already do this,
-       but this guarantees no blank state even if markup changes)
-    ------------------------------------------------------------------ */
-    images.forEach(img => img.classList.remove("active"));
-    images[0].classList.add("active");
-  
-    /* ------------------------------------------------------------------
-       Utility: is an image fully ready to display?
-    ------------------------------------------------------------------ */
-    function isImageReady(img) {
-      return img.complete && img.naturalWidth > 0;
+  const banner = document.querySelector(".banner");
+  const container = banner?.querySelector(".banner-container");
+  const images = container ? Array.from(container.querySelectorAll("img")) : [];
+  const controls = banner?.querySelector(".banner-controls");
+  if (!images.length) return;
+
+  const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const INTERVAL_MS = 400;
+  let paused = motion.matches;
+  let ready = false;
+  let current = 0;
+  let candidate = 0;
+  let timer = null;
+  let generation = 0;
+
+  function stop() {
+    clearTimeout(timer);
+    timer = null;
+    generation += 1;
+  }
+
+  function updateControl() {
+    if (!controls) return;
+    controls.classList.toggle("paused", paused);
+    controls.classList.toggle("playing", !paused);
+    controls.setAttribute("aria-label", paused ? "Play image sequence" : "Pause image sequence");
+    controls.hidden = !ready || images.length < 2;
+  }
+
+  async function decodeCurrentSource(img) {
+    // Request the upcoming frame even when native lazy loading defers it.
+    img.loading = "eager";
+    const source = img.currentSrc || img.src;
+    try {
+      await img.decode();
+      // A resize can select a new source while decode is pending. Keep the
+      // visible frame until that replacement has itself been decoded.
+      return img.complete && img.naturalWidth > 0 && source === (img.currentSrc || img.src);
+    } catch {
+      return false;
     }
+  }
 
-    async function ensureImageDecoded(img) {
-      if (decodedImages.has(img)) return true;
-
-      try {
-        await img.decode();
-        decodedImages.add(img);
-        return true;
-      } catch (error) {
-        return isImageReady(img);
+  function schedule() {
+    if (!ready || paused || document.hidden || images.length < 2) return;
+    const version = generation;
+    timer = setTimeout(async () => {
+      candidate = (candidate + 1) % images.length;
+      const next = images[candidate];
+      const decoded = await decodeCurrentSource(next);
+      if (version !== generation) return;
+      if (decoded) {
+        // Both updates happen within one task; a failed decode never clears
+        // the visible image. Do not cache decode state across source changes.
+        next.classList.add("active");
+        if (candidate !== current) images[current].classList.remove("active");
+        current = candidate;
       }
-    }
-  
-    /* ------------------------------------------------------------------
-       Advance carousel only if the next frame is ready
-       (prevents flicker with loading="lazy")
-    ------------------------------------------------------------------ */
-    async function passActiveClass() {
-      if (isPaused || isChangingFrame) return;
+      schedule();
+    }, INTERVAL_MS);
+  }
 
-      isChangingFrame = true;
-  
-      const currentIndex = images.findIndex(img =>
-        img.classList.contains("active")
-      );
-  
-      const safeCurrentIndex = currentIndex === -1 ? 0 : currentIndex;
-      const nextIndex = (safeCurrentIndex + 1) % images.length;
-      const nextImage = images[nextIndex];
-  
-      if ((await ensureImageDecoded(nextImage)) && !isPaused) {
-        images[safeCurrentIndex].classList.remove("active");
-        nextImage.classList.add("active");
-      }
+  function toggle() {
+    if (!ready || images.length < 2) return;
+    paused = !paused;
+    stop();
+    updateControl();
+    schedule();
+  }
 
-      isChangingFrame = false;
-    }
-  
-    /* ------------------------------------------------------------------
-       Pause / Play toggle
-    ------------------------------------------------------------------ */
-    function togglePause() {
-      isPaused = !isPaused;
-  
-      bannerContainer.classList.toggle("paused", isPaused);
-      bannerContainer.classList.toggle("playing", !isPaused);
-  
-      if (controls) {
-        controls.classList.toggle("paused", isPaused);
-        controls.classList.toggle("playing", !isPaused);
-      }
-  
-      if (isPaused) {
-        clearInterval(intervalId);
-        intervalId = null;
-      } else if (
-        !intervalId &&
-        bannerContainer.classList.contains("is-ready")
-      ) {
-        intervalId = setInterval(passActiveClass, INTERVAL_MS);
-      }
-    }
-  
-    /* ------------------------------------------------------------------
-       Start slideshow only after first image is ready
-       (prevents initial flicker / flash)
-    ------------------------------------------------------------------ */
-    async function prepareSlideshow() {
-      if (!(await ensureImageDecoded(firstImage))) return;
-
-      bannerContainer.classList.add("is-ready");
-
-      if (controls) {
-        controls.classList.toggle("paused", isPaused);
-        controls.classList.toggle("playing", !isPaused);
-      }
-
-      if (!isPaused && !intervalId) {
-        intervalId = setInterval(passActiveClass, INTERVAL_MS);
-      }
-    }
-  
-    const firstImage = images[0];
-
-    prepareSlideshow();
-  
-    /* ------------------------------------------------------------------
-       Click to pause / play
-    ------------------------------------------------------------------ */
-    if (banner) {
-      banner.addEventListener("click", togglePause);
-    }
+  images.forEach((img, index) => img.classList.toggle("active", index === 0));
+  banner.addEventListener("click", toggle);
+  // The native button's keyboard-generated click bubbles to the banner once.
+  document.addEventListener("visibilitychange", () => {
+    stop();
+    schedule();
   });
+  motion.addEventListener("change", () => {
+    if (!motion.matches) return;
+    paused = true;
+    stop();
+    updateControl();
+  });
+
+  async function prepare() {
+    if (ready || !(await decodeCurrentSource(images[0])) || ready) return;
+    ready = true;
+    container.classList.add("is-ready");
+    updateControl();
+    schedule();
+  }
+  // Retry if the first responsive source changes during initial decoding.
+  images[0].addEventListener("load", prepare);
+  prepare();
+});

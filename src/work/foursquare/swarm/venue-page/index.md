@@ -70,19 +70,19 @@ Before we dive in, it's important to note that Swarm did have a venue page, of s
 
 <figure class="img">
   <div class="bg padding multi row">
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/swarm/saved-places/content/understanding-the-problem-screenshot-one.png' | url }}" 
       width="486" 
       alt="photo" />
     </div>
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/swarm/saved-places/content/understanding-the-problem-screenshot-two.png' | url }}" 
       width="486" 
       alt="photo" />
     </div>
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/swarm/saved-places/content/understanding-the-problem-screenshot-three.png' | url }}" 
       width="486" 
@@ -107,11 +107,12 @@ Whether you were a seasoned Foursquare veteran or a recent sign-up, the call for
 
 <figure class="img breakout">
 <div>
-<ul class="quotes grid grid-cols-4">
+<ul class="quotes">
 <li>
 <div class="card">
 <blockquote>
-<strong>★★☆☆☆<br />Love checking in on Swarm, but the lack of venue details is frustrating</strong>
+<span class="quote-rating" role="img" aria-label="2 out of 5 stars">★★☆☆☆</span>
+<strong>Love checking in on Swarm, but the lack of venue details is frustrating</strong>
 Having to hop over to City Guide for basic information disrupts the experience. A standalone venue page within Swarm would be a game-changer!
 </blockquote>
 </div>
@@ -119,7 +120,8 @@ Having to hop over to City Guide for basic information disrupts the experience. 
 <li>
 <div class="card">
 <blockquote>
-<strong>★☆☆☆☆<br />App transition from Swarm to City Guide to get more context on a venue?</strong>
+<span class="quote-rating" role="img" aria-label="1 out of 5 stars">★☆☆☆☆</span>
+<strong>App transition from Swarm to City Guide to get more context on a venue?</strong>
 It's a usability nightmare. I would appreciate a revamp that allows me to gather all the info I need without the constant app shuffle.
 </blockquote>
 </div>
@@ -127,7 +129,8 @@ It's a usability nightmare. I would appreciate a revamp that allows me to gather
 <li>
 <div class="card">
 <blockquote>
-<strong>★★☆☆☆<br />Navigating between Swarm and City Guide feels cumbersome</strong>
+<span class="quote-rating" role="img" aria-label="2 out of 5 stars">★★☆☆☆</span>
+<strong>Navigating between Swarm and City Guide feels cumbersome</strong>
 I wish to explore more details about a venue within Swarm before being redirected. It interrupts the flow and makes the experience less seamless. Hoping for improvements!
 </blockquote>
 </div>
@@ -135,7 +138,8 @@ I wish to explore more details about a venue within Swarm before being redirecte
 <li>
 <div class="card">
 <blockquote>
-<strong>★★☆☆☆<br />Enjoy using Swarm, but the transition to City Guide for venue details is a hassle</strong>
+<span class="quote-rating" role="img" aria-label="2 out of 5 stars">★★☆☆☆</span>
+<strong>Enjoy using Swarm, but the transition to City Guide for venue details is a hassle</strong>
 It would be great if Swarm provided more information upfront so I could decide without bouncing between apps. Simplify, please!
 </blockquote>
 </div>
@@ -163,13 +167,13 @@ We explored several approaches to presenting venue information, each reflecting 
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/entry-point-sketch-one.png' | url }}" 
         width="746" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/entry-point-sketch-two.png' | url }}" 
         width="746" 
@@ -177,19 +181,19 @@ We explored several approaches to presenting venue information, each reflecting 
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/entry-point-wireframe-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/entry-point-wireframe-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/entry-point-wireframe-three.png' | url }}" 
         width="486" 
@@ -197,19 +201,19 @@ We explored several approaches to presenting venue information, each reflecting 
       </div>
     </div>
         <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/entry-point-mock-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/entry-point-mock-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/entry-point-mock-three.png' | url }}" 
         width="486" 
@@ -269,7 +273,7 @@ At the heart of the redesign was the goal of immediately immersing users in a se
 <figure class="img">
   <div class="multi col">
     <div class="multi row bg padding">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/photo-carousel-empty-states.png' | url }}" 
         width="1252" 
@@ -294,7 +298,7 @@ Directly beneath the photos, I explored adding interactive buttons for saving, r
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/content-as-a-framework-sketch.png' | url }}" 
         width="1252" 
@@ -302,19 +306,19 @@ Directly beneath the photos, I explored adding interactive buttons for saving, r
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/content-as-a-framework-wireframe-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/content-as-a-framework-wireframe-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/content-as-a-framework-wireframe-three.png' | url }}" 
         width="486" 
@@ -346,7 +350,7 @@ The venue information section was designed to highlight the most critical detail
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/showcasing-social-content-sketch-one.png' | url }}" 
         width="1252" 
@@ -354,19 +358,19 @@ The venue information section was designed to highlight the most critical detail
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/venue-wireframe-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/venue-wireframe-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/venue-wireframe-three.png' | url }}" 
         width="486" 
@@ -395,7 +399,7 @@ Above the tips, a set of pills highlights key themes or popular topics related t
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/showcasing-social-content-sketch-two.png' | url }}" 
         width="1252" 
@@ -403,19 +407,19 @@ Above the tips, a set of pills highlights key themes or popular topics related t
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/venue-wireframe-four.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/venue-wireframe-five.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/venue-wireframe-six.png' | url }}" 
         width="486" 
@@ -466,13 +470,13 @@ Combining these insights with internal feedback gave us a comprehensive understa
 <figure class="img">
   <div class="multi col bg padding">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/design-revisions-mock-one.png' | url }}" 
         width="746" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/design-revisions-mock-two.png' | url }}" 
         width="746" 
@@ -480,13 +484,13 @@ Combining these insights with internal feedback gave us a comprehensive understa
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/design-revisions-mock-three.png' | url }}" 
         width="746" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/venue-page/content/design-revisions-mock-four.png' | url }}" 
         width="746" 

@@ -63,25 +63,25 @@ Legacy users, in particular, voiced frustration with the cumbersome hand-off pro
 
 <figure class="img">
   <div class="bg padding multi row">
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/swarm/saved-places/content/understanding-the-problem-screenshot-one.png' | url }}" 
       width="358" 
       alt="photo" />
     </div>
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/swarm/saved-places/content/understanding-the-problem-screenshot-two.png' | url }}" 
       width="358" 
       alt="photo" />
     </div>
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/swarm/saved-places/content/understanding-the-problem-screenshot-three.png' | url }}" 
       width="358" 
       alt="photo" />
     </div>
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/swarm/saved-places/content/understanding-the-problem-screenshot-four.png' | url }}" 
       width="358" 
@@ -108,11 +108,12 @@ User reviews from the app stores, along with insights from our community of Supe
 
 <figure class="img breakout">
 <div>
-<ul class="quotes grid grid-cols-4">
+<ul class="quotes">
 <li>
 <div class="card">
 <blockquote>
-<strong>★★☆☆☆<br />Love the app, but it's frustrating</strong>
+<span class="quote-rating" role="img" aria-label="2 out of 5 stars">★★☆☆☆</span>
+<strong>Love the app, but it's frustrating</strong>
 Why do I have to switch between City Guide and Swarm to save places my friends are checking in to?
 </blockquote>
 </div>
@@ -120,7 +121,8 @@ Why do I have to switch between City Guide and Swarm to save places my friends a
 <li>
 <div class="card">
 <blockquote>
-<strong>★☆☆☆☆<br />The app was amazing before they split it into two</strong>
+<span class="quote-rating" role="img" aria-label="1 out of 5 stars">★☆☆☆☆</span>
+<strong>The app was amazing before they split it into two</strong>
 Now, it's just clunky. Saving places is unnecessarily complicated, and I've stopped bothering.
 </blockquote>
 </div>
@@ -128,7 +130,8 @@ Now, it's just clunky. Saving places is unnecessarily complicated, and I've stop
 <li>
 <div class="card">
 <blockquote>
-<strong>★☆☆☆☆<br />Amazing before they split it into two</strong>
+<span class="quote-rating" role="img" aria-label="1 out of 5 stars">★☆☆☆☆</span>
+<strong>Amazing before they split it into two</strong>
 I don't know what they were thinking when the split the apps, I just want everything back in one place.
 </blockquote>
 </div>
@@ -136,7 +139,8 @@ I don't know what they were thinking when the split the apps, I just want everyt
 <li>
 <div class="card">
 <blockquote>
-<strong>★☆☆☆☆<br />Used to be my favourite app for discovering new places through friends</strong>
+<span class="quote-rating" role="img" aria-label="1 out of 5 stars">★☆☆☆☆</span>
+<strong>Used to be my favourite app for discovering new places through friends</strong>
 Now, the whole saving process is a mess.
 </blockquote>
 </div>
@@ -183,19 +187,19 @@ We then turned to the modal, giving a subtle visual refresh during a two-week ex
 <figure class="img">
   <div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/saved-places/content/understanding-the-problem-screenshot-three.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/saved-places/content/saving-venues-mock-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/saved-places/content/saving-venues-mock-three.png' | url }}" 
         width="486" 
@@ -219,19 +223,19 @@ As a result, the user's profile emerged as a natural and prominent choice for th
 
 <figure class="img">
   <div class="multi row">
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/swarm/saved-places/content/housing-the-experience-mock-one.png' | url }}" 
       width="486" 
       alt="photo" />
     </div>
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/swarm/saved-places/content/housing-the-experience-mock-two.png' | url }}" 
       width="486" 
       alt="photo" />
     </div>
-    <div>
+    <div class="media-surface">
       <img 
       src="{{ '/_/images/work/foursquare/swarm/saved-places/content/housing-the-experience-sketch.png' | url }}" 
       width="486" 
@@ -255,7 +259,7 @@ As part of the design process, we conducted weekly testing sessions to evaluate 
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/saved-places/content/exploring-bottom-sheets-sketch.png' | url }}" 
         width="1252" 
@@ -263,19 +267,19 @@ As part of the design process, we conducted weekly testing sessions to evaluate 
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/saved-places/content/exploring-bottom-sheets-wireframe-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/saved-places/content/exploring-bottom-sheets-wireframe-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/saved-places/content/exploring-bottom-sheets-wireframe-three.png' | url }}" 
         width="486" 
@@ -296,25 +300,25 @@ Insights from testing sessions reaffirmed that the map should be our compelling 
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/saved-places/content/exploring-bottom-sheets-wireframe-four.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/saved-places/content/exploring-bottom-sheets-wireframe-five.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/saved-places/content/exploring-bottom-sheets-wireframe-six.png' | url }}" 
         width="358" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/saved-places/content/exploring-bottom-sheets-wireframe-seven.png' | url }}" 
         width="358" 
@@ -346,19 +350,19 @@ The bottom sheet would stay in its collapsed state until a map pin was selected.
 <figure class="img">
   <div class="multi col">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/saved-places/content/map-bottom-sheet-interactivity-wireframe-one.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/saved-places/content/map-bottom-sheet-interactivity-wireframe-two.png' | url }}" 
         width="486" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/saved-places/content/map-bottom-sheet-interactivity-wireframe-three.png' | url }}" 
         width="486" 
@@ -405,7 +409,7 @@ As we progressed, we shared weekly builds with employees for internal feedback a
 <figure class="img">
   <div class="multi col bg padding">
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/saved-places/content/testing-and-feedback-sketch.png' | url }}" 
         width="1252" 
@@ -413,13 +417,13 @@ As we progressed, we shared weekly builds with employees for internal feedback a
       </div>
     </div>
     <div class="multi row">
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/saved-places/content/design-revisions-mock-one.png' | url }}" 
         width="746" 
         alt="photo" />
       </div>
-      <div>
+      <div class="media-surface">
         <img 
         src="{{ '/_/images/work/foursquare/swarm/saved-places/content/design-revisions-mock-two.png' | url }}" 
         width="746" 
