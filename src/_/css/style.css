@@ -872,6 +872,21 @@ main[role="main"] header {
   line-height: var(--leading-normal);
 }
 
+body#blog-post {
+  --project-chapter-space: var(--space-9);
+}
+
+@media (min-width: 1024px) {
+  body#blog-post {
+    --project-chapter-space: var(--space-12);
+  }
+}
+
+/* Leave an editorial pause before the opening paragraph. */
+body#blog-post main[role="main"] .page-intro:not(:has(+ .post-artwork)):not(:has(+ .content .post-age-warning)) {
+  margin-bottom: var(--space-5);
+}
+
 body#blog-post .article-prose picture {
   display: block;
 }
@@ -984,7 +999,7 @@ body#case-study .article-prose h2 {
 }
 
 .dinkus {
-  margin: calc(6 * var(--spacing-unit)) auto;
+  margin: var(--space-12) auto;
   text-align: center;
   letter-spacing: 0.2em;
   opacity: 0.6;
@@ -1076,6 +1091,7 @@ body#case-study .article-prose h2 {
 
 .post-details {
   border-top: 1px solid var(--color-divider);
+  margin-top: var(--project-chapter-space, var(--space-12));
   padding-bottom: var(--space-3);
 }
 

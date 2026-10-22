@@ -367,6 +367,8 @@ Standalone prose blockquotes use the larger `--font-size-md` editorial treatment
 
 Collection grids align comparable objects to a common baseline when practical. Reading covers align to the bottom edge of each grid row while captions flow below; natural cover proportions are preserved.
 
+Blog posts without opening artwork or an age notice leave 40px (`--space-5`) between the title and muted opening paragraph. The opening paragraph flows into the body with the standard 24px paragraph spacing. Artwork and age notices retain their existing spacing. Dinkus separators use 96px (`--space-12`) above and below to mark a major narrative break. The Supplement uses `--project-chapter-space` before its divider, matching case-study chapters: 72px (`--space-9`) on smaller screens and 96px (`--space-12`) from 1024px. Retain its divider and internal spacing.
+
 ### Responsive imagery
 
 Blog posts may opt into artwork with an `artwork.src` front-matter field. Render it as a separate figure inside the main landmark, between the page intro and article content, spanning the full wrapper width. Reuse the case-study banner treatment: a relatively positioned, clipped stage with `--color-stage` background and 24px (`--radius-card-mobile`) corners. Its height is `clamp(240px, 36vw, 480px)`, with centered `object-fit: cover` imagery; choose artwork that tolerates cropping. Optional captions sit below the stage. Leave 40px (`--space-5`) before the article. Omit the entire figure and its spacing when no source is supplied. Use the shared `responsiveImage` shortcode with the `wide` profile and wrapper-width sizes; `artwork.src` is a site-root path to a local asset under `src/`.
@@ -626,6 +628,8 @@ Status: Provisional. Use only for a small group of mutually related controls suc
 - Avoid inventing a second name for an established equivalent state.
 
 ### Scoped visual systems
+
+The floating narration player keeps its blue play/pause button and frosted outer progress track. Completed progress uses semantic primary ink at 28% opacity against the remaining glass track, making playback position clearer in both themes without changing the button fill or its label contrast.
 
 Record sleeves and vinyl motion, ticket flipping and paper treatments, frosted audio controls, the records picker, PechaKucha scrolling, and the check-in map are content-specific visual systems. Keep their selectors and implementation in their existing page stylesheets. They may depart from the quiet global shell when that behavior serves their content, but they must not redefine shared typography, navigation, page surfaces, or default controls.
 
