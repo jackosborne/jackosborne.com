@@ -7,3 +7,7 @@ node_modules/
 __pycache__/
 /python/*.json
 .DS_Store
+
+# Regenerated UI review previews
+/plans/ui-stress-preview.html
+/plans/stress-fixtures/
