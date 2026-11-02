@@ -1,0 +1,8 @@
+{% macro floatingBar(className = "", innerClass = "", innerId = "", progress = false) %}
+<div class="floating-bar{% if className %} {{ className }}{% endif %}">
+  {% if progress %}<div class="floating-bar__progress post-audio__progress" aria-hidden="true"></div>{% endif %}
+  <div class="floating-bar__inner{% if innerClass %} {{ innerClass }}{% endif %}"{% if innerId %} id="{{ innerId }}"{% endif %}>
+    {{ caller() }}
+  </div>
+</div>
+{% endmacro %}

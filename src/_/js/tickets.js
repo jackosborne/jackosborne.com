@@ -24,9 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function createYearButton({ label, value, isActive = false }) {
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "year-pill floating-bar__chip music-toolbar-chip";
+    btn.className = "floating-bar__button";
     btn.dataset.filterValue = value;
     btn.textContent = label;
+    btn.setAttribute("aria-pressed", String(isActive));
   
     if (isActive) {
       btn.classList.add("is-active");
@@ -58,9 +59,37 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function syncYearButtonStates() {
-    yearFiltersContainer.querySelectorAll(".year-pill").forEach((btn) => {
-      btn.classList.toggle("is-active", btn.dataset.filterValue === state.year);
+    yearFiltersContainer.querySelectorAll("[data-filter-value]").forEach((btn) => {
+      const active = btn.dataset.filterValue === state.year;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-pressed", String(active));
     });
+  }
+
+  function updateYearFilterSpacing() {
+    const styles = getComputedStyle(yearFiltersContainer);
+    const inset = parseFloat(styles.paddingLeft);
+    const widths = Array.from(yearFiltersContainer.children, (button) => button.getBoundingClientRect().width);
+    const available = yearFiltersContainer.clientWidth;
+    const naturalWidth = widths.reduce((sum, width) => sum + width, 0) + inset * (widths.length + 1);
+    if (naturalWidth <= available) {
+      yearFiltersContainer.style.removeProperty("--ticket-filter-gap");
+      return;
+    }
+
+    // Keep the shell aligned to the content column. Choose the gap closest to
+    // the shared inset that places the viewport edge halfway through a year.
+    let precedingWidth = widths[0];
+    let bestGap = null;
+    widths.slice(1).forEach((width, offset) => {
+      const gaps = offset + 1;
+      const gap = (available - inset - precedingWidth - width / 2) / gaps;
+      if (gap >= 0 && (bestGap === null || Math.abs(gap - inset) < Math.abs(bestGap - inset))) {
+        bestGap = gap;
+      }
+      precedingWidth += width;
+    });
+    if (bestGap !== null) yearFiltersContainer.style.setProperty("--ticket-filter-gap", `${bestGap}px`);
   }
 
   function updateUrl() {
@@ -100,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function handleYearClick(event) {
-    const btn = event.target.closest(".year-pill");
+    const btn = event.target.closest("[data-filter-value]");
     if (!btn) return;
 
     const value = btn.dataset.filterValue;
@@ -134,6 +163,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   buildYearFilters();
+  updateYearFilterSpacing();
+  new ResizeObserver(updateYearFilterSpacing).observe(yearFiltersContainer.parentElement.parentElement);
+  document.fonts.ready.then(updateYearFilterSpacing);
   applyYearFilter();
 
   yearFiltersContainer.addEventListener("click", handleYearClick);

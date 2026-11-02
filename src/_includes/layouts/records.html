@@ -1,5 +1,6 @@
 {% extends "layouts/base.html" %}
 {% from "partials/page-intro.html" import pageIntro %}
+{% from "partials/floating-bar.html" import floatingBar %}
 
 {% block content %}
 
@@ -13,34 +14,28 @@
   </ul>
 </section>
 
-<div class="records-picker-sticky music-toolbar-sticky" aria-live="polite">
-  <div class="records-picker floating-bar" data-record-picker>
-    <div class="records-picker__inner floating-bar__inner music-toolbar-scroll">
+<div class="floating-bar-dock">
+  {% call floatingBar("records-picker") %}
       <button
         type="button"
-        class="records-picker__btn records-picker__btn--primary floating-bar__chip"
+        class="floating-bar__button floating-bar__button--primary records-picker__pick"
         data-random-record
       >
         <span class="records-picker__label">Pick a record</span>
       </button>
 
-      <span class="records-picker__result" data-random-result>
-        <span class="records-picker__result-text records-picker__placeholder" data-random-output>
-          <span data-record-count></span> chances to pick something good
-        </span>
-      </span>
-
       <button
         type="button"
-        class="records-picker__clear"
+        class="floating-bar__button records-picker__clear"
         data-clear-record
         hidden
         aria-label="Clear selection"
       >
-        ×
+        Clear
       </button>
-    </div>
-  </div>
+  {% endcall %}
 </div>
+
+<span class="visually-hidden" data-record-status role="status" aria-live="polite" aria-atomic="true"></span>
 
 {% endblock %}

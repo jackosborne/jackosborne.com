@@ -1,6 +1,7 @@
 {% extends "layouts/base.html" %}
 {% from "partials/accordion.html" import accordion %}
 {% from "partials/page-intro.html" import pageIntro %}
+{% from "partials/floating-bar.html" import floatingBar %}
 
 {% block content %}
 
@@ -261,6 +262,21 @@
         <h2 id="components-title">Components</h2>
         <p>Small, composable patterns support the content without becoming a visual system of their own.</p>
       </header>
+
+      <article class="pattern-specimen" id="floating-controls">
+        <header class="pattern-specimen__header">
+          <h3>Floating controls</h3>
+          <p>Narration, record selection and ticket filters share this glass shell, button spacing and interaction states.</p>
+        </header>
+        {% call floatingBar() %}
+          <button class="floating-bar__button floating-bar__button--primary" type="button">Primary action</button>
+          <button class="floating-bar__button" type="button" disabled>Unavailable</button>
+        {% endcall %}
+        {% call floatingBar("floating-bar--scroll", "floating-bar__inner--scroll") %}
+          <button class="floating-bar__button is-active" type="button" aria-pressed="true">Selected</button>
+          <button class="floating-bar__button" type="button" aria-pressed="false">Another option</button>
+        {% endcall %}
+      </article>
 
       <article class="pattern-specimen">
         <header class="pattern-specimen__header">

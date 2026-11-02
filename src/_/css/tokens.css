@@ -74,6 +74,13 @@
   --link-decoration-thickness: 1px;
   --link-underline-offset: 0.14em;
 
+  /* Floating audio and record controls: audio-player geometry */
+  --floating-control-inset: 0.35rem;
+  --floating-control-inset-mobile: 0.25rem;
+  --floating-control-button-padding: 0.85rem 1.2rem;
+  --floating-control-button-padding-mobile: 0.8rem 1rem;
+  --floating-control-button-height: 2.75rem;
+
   /* Link states */
   --color-link: var(--color-ink-muted);
   --color-link-visited: var(--color-ink-muted);

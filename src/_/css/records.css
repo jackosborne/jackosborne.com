@@ -34,6 +34,11 @@
   opacity: 1;
 }
 
+.record-card.is-picked .record-card__sleeve {
+  outline: var(--focus-ring-width) solid var(--color-ink);
+  outline-offset: var(--focus-ring-offset);
+}
+
 .record-card__figure {
   margin: 0;
 }
@@ -197,181 +202,32 @@
    Record picker
 --------------------------------------- */
 
-.records-picker-sticky {
-  position: sticky;
-  bottom: 32px;
-  z-index: 1000;
+.records-picker {
+  max-width: min(560px, calc(100vw - (2 * var(--space-4))));
 }
 
-.records-picker__placeholder {
-  opacity: 0.55;
-}
+.records-picker__label { letter-spacing: 0.01em; }
 
-.records-picker__label {
-  letter-spacing: 0.01em;
-}
-
-.records-picker__btn,
-.records-picker__result {
-  font: inherit;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.records-picker__btn {
-  appearance: none;
-  border: 0;
-  cursor: pointer;
-}
-
-.records-picker__btn--primary {
-  flex: 0 0 205px;
-  color: #ffffff;
-  background: linear-gradient(#0077ed, #0071e3);
-  opacity: 1;
-
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.22),
-    0 1px 2px rgba(0, 0, 0, 0.12);
-
-  transition:
-    background 160ms ease,
-    transform 120ms ease,
-    box-shadow 120ms ease;
-}
-
-.records-picker__btn--primary:hover {
-  background: linear-gradient(#0080ff, #0077ed);
-}
-
-.records-picker__btn--primary:active {
-  transform: scale(0.97);
-  box-shadow:
-    inset 0 2px 4px rgba(0, 0, 0, 0.18);
-}
-
-.records-picker__btn--primary:focus-visible {
-  outline: 2px solid rgba(0, 125, 250, 0.65);
-  outline-offset: 2px;
-}
-
-.records-picker__result {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.75rem;
-  padding: 0.85rem 1rem 0.85rem 0.65rem;
-
-  color: var(--color-ink);
-  font-weight: 500;
-  cursor: default;
-
-  flex: 1 1 auto;
+.records-picker__pick {
+  flex-shrink: 1;
   min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.records-picker__result-text {
-  display: block;
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.records-picker__btn[hidden],
-.records-picker__result[hidden],
-.records-picker__clear[hidden] {
-  display: none;
+  white-space: normal;
 }
 
 .records-picker__clear {
-  appearance: none;
-  border: 0;
-  background: transparent;
-  color: var(--color-ink);
-  font: inherit;
-  font-size: 1.25rem;
-  line-height: 1;
-
-  padding: 0 0.9rem;
-  min-height: 2.75rem;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  border-left: 1px solid hsl(0 0% 100% / 0.08);
-
-  opacity: 0.65;
-  cursor: pointer;
-
-  transition: opacity 140ms ease, transform 120ms ease;
-}
-
-.records-picker__clear:hover {
   opacity: 1;
+  background: color-mix(in srgb, var(--color-subtle-fill) 50%, transparent);
 }
 
-.records-picker__clear:active {
-  transform: scale(0.9);
-}
-
-.music-toolbar-sticky>.floating-bar {
-  width: auto;
-}
-
-@media (max-width: 720px) {
-  .records-picker-sticky {
-    bottom: var(--space-2);
-  }
-
-  .records-picker {
-    max-width: calc(100vw - (2 * var(--space-4)));
-  }
-
-  .records-picker__inner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    width: 100%;
-  }
-
-  .records-picker__btn--primary {
-    grid-column: 1 / -1;
-    width: 100%;
-  }
-
-  .records-picker__result {
-    justify-content: center;
-    min-height: 2.25rem;
-    padding: var(--space-1) var(--space-2);
-    text-align: center;
-  }
-
-  .records-picker__result:has(.records-picker__placeholder) {
-    grid-column: 1 / -1;
-  }
-
-  .records-picker__result-text {
-    font-size: var(--font-size-sm);
-    line-height: var(--leading-normal);
-    overflow: visible;
-    text-align: center;
-    text-overflow: clip;
-    white-space: normal;
-  }
-
-  .records-picker__clear {
-    border-left-color: var(--color-divider);
-    min-height: 2.25rem;
+@media (hover: hover) and (pointer: fine) {
+  .records-picker__clear:hover {
+    background: var(--color-subtle-fill);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .record-card__sleeve,
-  .record-card__vinyl,
-  .records-picker,
-  .records-picker__btn--primary {
+  .record-card__vinyl {
     transition: none;
   }
 }

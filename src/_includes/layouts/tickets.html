@@ -1,5 +1,6 @@
 {% extends "layouts/base.html" %}
 {% from "partials/page-intro.html" import pageIntro %}
+{% from "partials/floating-bar.html" import floatingBar %}
 
 {% block content %}
 
@@ -10,11 +11,8 @@
       this page celebrates the physical gig ticket. A personal archive of the concerts I attended, the designs I kept, and the memories slowly being added back in. {{ tickets.length }} tickets across 18 years, 13 cities and 35 venues.
     </p>
 
-    <div class="tickets-filterbar-sticky music-toolbar-sticky" aria-label="Filter tickets by year">
-      <div class="tickets-filterbar floating-bar">
-        <div class="tickets-filterbar__inner floating-bar__inner music-toolbar-scroll" id="year-filters">
-        </div>
-      </div>
+    <div class="tickets-filterbar-wrap" role="group" aria-label="Filter tickets by year">
+      {% call floatingBar("floating-bar--scroll", "floating-bar__inner--scroll", "year-filters") %}{% endcall %}
     </div>
 {% endcall %}
 

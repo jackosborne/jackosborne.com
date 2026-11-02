@@ -2,19 +2,13 @@ const cards = Array.from(document.querySelectorAll("[data-record-card]"));
 const grid = document.querySelector(".records-grid");
 const pickButton = document.querySelector("[data-random-record]");
 const label = document.querySelector(".records-picker__label");
-const resultWrap = document.querySelector("[data-random-result]");
-const resultText = document.querySelector("[data-random-output]");
-const countOutput = document.querySelector("[data-record-count]");
+const selectionStatus = document.querySelector("[data-record-status]");
 const clearButton = document.querySelector("[data-clear-record]");
 
 let lastPickedIndex = -1;
 
-if (countOutput) {
-  countOutput.textContent = cards.length;
-}
-
 function pickRandomRecord() {
-  if (!cards.length || !pickButton || !resultText) return;
+  if (!cards.length || !pickButton) return;
 
   cards.forEach(card => card.classList.remove("is-picked"));
 
@@ -35,14 +29,8 @@ function pickRandomRecord() {
   const title = selectedCard.dataset.title || "";
   const year = selectedCard.dataset.year || "";
 
-  resultText.textContent = year
-    ? `${artist} — ${title} (${year})`
-    : `${artist} — ${title}`;
-
-  resultText.classList.remove("records-picker__placeholder");
-
-  if (resultWrap) {
-    resultWrap.hidden = false;
+  if (selectionStatus) {
+    selectionStatus.textContent = `Selected ${artist} — ${title}${year ? ` (${year})` : ""}.`;
   }
 
   if (label) {
@@ -71,9 +59,8 @@ function clearSelection() {
     grid.classList.remove("has-picked");
   }
 
-  if (resultText) {
-    resultText.innerHTML = `<span data-record-count>${cards.length}</span> chances to pick something good`;
-    resultText.classList.add("records-picker__placeholder");
+  if (selectionStatus) {
+    selectionStatus.textContent = "Selection cleared.";
   }
 
   if (label) {
@@ -85,6 +72,7 @@ function clearSelection() {
   }
 
   lastPickedIndex = -1;
+  pickButton?.focus({ preventScroll: true });
 }
 
 if (pickButton) {

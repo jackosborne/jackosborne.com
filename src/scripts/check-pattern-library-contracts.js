@@ -6,6 +6,7 @@ const read = (relativePath) =>
   fs.readFileSync(path.join(projectRoot, relativePath), "utf8");
 
 const sources = {
+  floating: read("src/_includes/partials/floating-bar.html"),
   tokens: read("src/_/css/tokens.css"),
   shared: read("src/_/css/style.css"),
   pattern: read("src/_/css/pattern-library.css"),
@@ -14,6 +15,12 @@ const sources = {
 };
 
 const required = [
+  ["floating", "macro floatingBar("],
+  ["floating", "floating-bar__inner"],
+  ["shared", ".floating-bar__button--primary"],
+  ["shared", "padding: var(--floating-control-button-padding);"],
+  ["layout", "id=\"floating-controls\""],
+  ["layout", "{% call floatingBar("],
   ["tokens", "--focus-ring-width: 2px;"],
   ["tokens", "--focus-ring-offset: 3px;"],
   ["tokens", "--link-decoration-thickness: 1px;"],

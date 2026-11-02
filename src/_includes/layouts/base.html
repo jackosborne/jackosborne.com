@@ -1,3 +1,4 @@
+{% from "partials/floating-bar.html" import floatingBar %}
 {% set assetHash = global.assetHash %}
 <!DOCTYPE html>
 <html lang="en" id="top">
@@ -65,21 +66,16 @@
         </div>
 
         {% if audio %}
-        <div class="post-audio-sticky" aria-live="polite">
-        <div class="post-audio" data-audio-src="{{ audio | url }}">
-            <div class="post-audio__progress" aria-hidden="true"></div>
-
-            <div class="post-audio__inner">
-            <button type="button" class="post-audio__btn">
+        <div class="floating-bar-dock" aria-live="polite">
+        {% call floatingBar("post-audio", "", "", true) %}
+            <button type="button" class="floating-bar__button floating-bar__button--primary post-audio__btn">
                 <span class="post-audio__icon" aria-hidden="true">▶︎</span>
                 <span class="post-audio__text">Loading…</span>
             </button>
-            </div>
-
             <audio class="post-audio__audio" preload="metadata">
-            <source src="{{ (page.url ~ audio) | url }}" type="audio/mpeg">
+                <source src="{{ (page.url ~ audio) | url }}" type="audio/mpeg">
             </audio>
-        </div>
+        {% endcall %}
         </div>
         {% endif %}
         

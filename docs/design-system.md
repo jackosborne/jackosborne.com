@@ -67,6 +67,11 @@ This section is generated from `src/_/css/tokens.css`. Do not edit it manually. 
 | `--focus-ring-offset` | `3px` | — |
 | `--link-decoration-thickness` | `1px` | — |
 | `--link-underline-offset` | `0.14em` | — |
+| `--floating-control-inset` | `0.35rem` | — |
+| `--floating-control-inset-mobile` | `0.25rem` | — |
+| `--floating-control-button-padding` | `0.85rem 1.2rem` | — |
+| `--floating-control-button-padding-mobile` | `0.8rem 1rem` | — |
+| `--floating-control-button-height` | `2.75rem` | — |
 | `--color-link` | `var(--color-ink-muted)` | `var(--color-ink-muted)` |
 | `--color-link-visited` | `var(--color-ink-muted)` | `var(--color-ink-muted)` |
 | `--color-link-hover` | `var(--color-ink)` | `var(--color-ink)` |
@@ -566,7 +571,7 @@ The new homepage is the target visual direction. The Eleventy project is the mig
 | Callout | `.callout` | `style.css` | Implemented and reusable for short contextual notices. |
 | Blog supplement | `.post-details` | `style.css` | Always-visible editorial metadata with a divider, heading, and optional location, mood, and song rows. |
 | Metadata accordion | `.content-meta .acc` | `style.css` | Implemented for case-study metadata. |
-| Floating segmented bar | `.floating-bar`, `.floating-bar__chip` | `style.css` | Provisional shared control; glass, shadow, and blue active treatments are scoped exceptions. |
+| Floating controls | `.floating-bar`, `.floating-bar__button` | `style.css`, `partials/floating-bar.html` | Shared narration, record picker and ticket-filter shell; optional primary/selected buttons, progress and horizontal scrolling. |
 | Audio player | `.post-audio` | `narration.css` | Local. |
 | Record cards and picker | `.record-card`, `.records-picker__*` | `records.css` | Local to the records experience. |
 | Ticket cards | `.ticket-card` | `tickets.css` | Local to the tickets archive. |
@@ -595,25 +600,31 @@ Status: Implemented. The work card is the principal homepage project-stage compo
 - Preserve focus-visible, reduced-motion, and responsive simplification behavior.
 - Do not replace or restyle `#case-study .banner` as part of the homepage migration.
 
-#### Floating segmented bar
+#### Floating controls
 
-Status: Provisional. Use only for a small group of mutually related controls such as the records picker.
+Narration, the records picker, and ticket-year filters use the same `floatingBar` caller macro in `partials/floating-bar.html` and the same `.floating-bar` CSS in `style.css`. The component owns the frosted shell, inner spacing, optional progress fill, button geometry, hover/pressed/focus/disabled states, dark appearance and reduced-motion handling.
 
-- `.floating-bar__chip` is not the default site button.
-- Glass, shadow, and blue-gradient active states are allowed inside this component but do not establish a global accent or general button style.
-- Keep the current keyboard focus, active feedback, dark-mode tuning, and reduced-motion behavior.
+- Use `.floating-bar__button` for neutral actions and `.floating-bar__button--primary` for the persistent blue primary action. Ticket filters use `.is-active` plus synchronized `aria-pressed` for the selected year.
+- Spacing follows the narration player through `--floating-control-*`: 0.35rem glass inset and 0.85rem × 1.2rem button padding; at 720px and below use 0.25rem and 0.8rem × 1rem. All buttons retain a 2.75rem minimum height. Let labels determine their width.
+- Use `.floating-bar-dock` for sticky bottom placement on records and audio. Ticket filters remain in their page introduction and use `.floating-bar--scroll` with `.floating-bar__inner--scroll` for native horizontal scrolling. Do not add a second layer of toolbar padding.
+- Tickets adds a local overflow cue: keep the shell full-width and aligned to its content column. When all years cannot fit, adjust the inter-button gap to end the viewport halfway through the next year, choosing the nonnegative gap closest to the shared inset. Preserve the shared content-sized buttons, native scrolling and keyboard access. Recalculate spacing on container resizing and font readiness; do not add chevrons, fades or a scroll-hint animation. This behavior belongs only to the ticket page.
+- The ticket-filter shell does not scale on hover or press: it is a scroll viewport, not an action. Individual year buttons retain shared hover, pressed, focus and selected feedback.
+- Keep page-specific composition local: record selection feedback, audio icons/playback state, and ticket-filter placement. The record control remains a single compact row containing the content-sized pick action and, after selection, a “Clear” button with full-opacity ink text and a background mixing 50% semantic subtle fill with transparency (full subtle fill on pointer hover). Retain shared button padding and height; do not use an icon-only glass segment. Do not repeat the album title or collection count in the floating control.
+- Mark the chosen record with a semantic ink outline around its sleeve: white in dark mode and dark ink in light mode. Retain the full-opacity selected artwork, dimming of other albums and scroll-to-selection behavior. Do not add a Selected badge or blue selection border; blue remains scoped to the floating action buttons. Announce the artist, album and optional year through a separate polite status region. Clearing removes the outline and returns focus to the pick action. Keep the shell pill-shaped in both states at every width.
+- The optional progress layer uses `.floating-bar__progress`; narration retains its JS hook. Playback and random selection remain separate page behaviors.
+- Glass, shadow and blue-gradient buttons are scoped floating-control exceptions, not a general site accent or default prose button. Hover movement is gated to fine hover-capable pointers; reduced motion retains immediate state/color feedback.
 
 ### Controls and interaction taxonomy
 
 - Use links for navigation and buttons for in-page actions.
-- There is not yet one universal visual button component. Do not substitute `.floating-bar__chip`, `.records-picker__btn--primary`, `.post-audio__btn`, `.slider-btn`, or `.ticket-card__trigger` for one another.
+- There is not yet one universal visual button component. Narration, records and ticket filters share the floating-control component, while retaining their page behavior. Do not substitute `.floating-bar__button`, `.slider-btn`, or `.ticket-card__trigger` indiscriminately for one another.
 - Icon-only buttons need an accessible name and a minimum 44px touch target, including any invisible hit-area extension.
 - New controls require default, hover, active, focus-visible, and disabled states where applicable.
 - Shared disabled controls use the native `disabled` attribute (or `aria-disabled="true"` when native disabling is unavailable), retain their semantics, use a not-allowed cursor, and reduce to 45% opacity.
 - Ticket triggers are semantic button wrappers around ticket artwork, not a reusable visual button.
 - Extra-wide ticket scans use the local `.ticket--wide` variant, which contains the full artwork inside a `3 / 2` surface so the card remains usable within the masonry archive and has sufficient depth for its reverse-side details.
 - Slider buttons are compact circular controls local to PechaKucha.
-- The blue record-picker gradient is a scoped exception, not permission to introduce blue throughout shared navigation or calls to action.
+- The blue floating-control gradient is a scoped exception, not permission to introduce blue throughout shared navigation or calls to action.
 
 ### State conventions
 
